@@ -972,6 +972,878 @@
         sparkle(300, 34, 8, '#ffffff') +
         sparkle(270, 56, 6, '#ffe6f7') +
         sparkle(330, 56, 6, '#d9ffff')
+    },
+
+    // =========================================================================
+    // 13. Moonlight Platinum Waves + Shooting Star Tiara
+    // =========================================================================
+    {
+      id: 'hair-13',
+      name: 'Tóc Bạch Kim Ánh Trăng & Vương Miện Sao Băng',
+      icon: '🌙',
+      accentColor: '#a5b4fc',
+      previewBox: '120 22 360 354',
+      defs:
+        lg('hair13-base', '0%', '0%', '0%', '100%', [
+          ['0%', '#ffffff'],
+          ['26%', '#eef2ff'],
+          ['65%', '#c7d2fe'],
+          ['100%', '#818cf8']
+        ]) +
+        lg('hair13-deep', '0%', '0%', '0%', '100%', [
+          ['0%', '#a5b4fc'],
+          ['55%', '#6366f1'],
+          ['100%', '#3730a3']
+        ]) +
+        lg('hair13-hi', '0%', '0%', '100%', '0%', [
+          ['0%', '#ffffff', 0.15],
+          ['50%', '#ffffff', 0.96],
+          ['100%', '#ffffff', 0.15]
+        ]) +
+        lg('hair13-silver', '0%', '0%', '100%', '100%', [
+          ['0%', '#ffffff'],
+          ['38%', '#e0e7ff'],
+          ['75%', '#a5b4fc'],
+          ['100%', '#4f46e5']
+        ]) +
+        lg('hair13-gold', '0%', '0%', '100%', '100%', [
+          ['0%', '#fffbe6'],
+          ['45%', '#fde68a'],
+          ['100%', '#b45309']
+        ]) +
+        rg('hair13-gem', '38%', '32%', '68%', [
+          ['0%', '#ffffff'],
+          ['38%', '#a5b4fc'],
+          ['82%', '#4f46e5'],
+          ['100%', '#1e1b4b']
+        ]) +
+        rg('hair13-pearl', '35%', '30%', '65%', [
+          ['0%', '#ffffff'],
+          ['60%', '#eef2ff'],
+          ['100%', '#b8c3f2']
+        ]),
+      backSvg:
+        innerHeadShell('url(#hair13-deep)', '#4338ca') +
+        `<path d="M224,186 C182,232 158,302 174,376 C188,434 148,492 164,564 C174,610 158,648 192,668 C216,652 234,630 256,650 C278,668 290,644 300,658 C310,644 322,668 344,650 C366,630 384,652 408,668 C442,648 426,610 436,564 C452,492 412,434 426,376 C442,302 418,232 376,186 Z" fill="url(#hair13-base)" stroke="#4f46e5" stroke-width="2" stroke-linejoin="round"/>` +
+        `<path d="M186,332 C208,376 184,432 200,486 C214,534 180,586 198,642 C174,602 184,540 174,486 C160,424 184,374 186,332 Z" fill="url(#hair13-deep)" opacity="0.38"/>` +
+        `<path d="M414,332 C392,376 416,432 400,486 C386,534 420,586 402,642 C426,602 416,540 426,486 C440,424 416,374 414,332 Z" fill="url(#hair13-deep)" opacity="0.38"/>` +
+        `<path d="M196,280 C180,332 204,386 186,442 C202,394 190,340 206,288 Z" fill="#ffffff" opacity="0.65"/>` +
+        `<path d="M404,280 C420,332 396,386 414,442 C398,394 410,340 394,288 Z" fill="#ffffff" opacity="0.65"/>` +
+        sparkle(184, 396, 6, '#ffffff') +
+        sparkle(416, 412, 6, '#ffffff') +
+        sparkle(194, 548, 7, '#e0e7ff') +
+        sparkle(406, 548, 7, '#e0e7ff'),
+      frontSvg:
+        `<path d="M214,206 C214,150 250,124 300,124 C350,124 386,150 386,206 C372,184 352,168 330,168 C316,178 308,184 300,164 C292,184 284,178 270,168 C248,168 228,184 214,206 Z" fill="url(#hair13-base)" stroke="#4f46e5" stroke-width="1.8"/>` +
+        `<path d="M295,152 Q300,174 305,152 Z" fill="url(#hair13-base)" stroke="#4f46e5" stroke-width="1.1"/>` +
+        sideLocks('url(#hair13-base)', 'url(#hair13-base)', '#4f46e5', 316) +
+        `<path d="M216,208 C210,236 210,264 220,288 C216,262 216,236 222,210 Z" fill="#ffffff" opacity="0.68"/>` +
+        `<path d="M384,208 C390,236 390,264 380,288 C384,262 384,236 378,210 Z" fill="#ffffff" opacity="0.68"/>` +
+        angelRing('hair13-hi', 140, 0.9) +
+        `<path d="M236,136 Q300,114 364,136 L356,120 Q300,98 244,120 Z" fill="url(#hair13-silver)" stroke="#4338ca" stroke-width="1.6"/>` +
+        `<path d="M248,120 Q268,78 292,62" fill="none" stroke="url(#hair13-gold)" stroke-width="3.6" stroke-linecap="round"/>` +
+        `<path d="M352,120 Q332,78 308,62" fill="none" stroke="url(#hair13-gold)" stroke-width="3.6" stroke-linecap="round"/>` +
+        `<path d="M266,116 Q300,70 334,116" fill="none" stroke="url(#hair13-silver)" stroke-width="3" stroke-linecap="round"/>` +
+        `<path d="M254,112 Q272,88 286,98 M346,112 Q328,88 314,98" fill="none" stroke="#fff9c4" stroke-width="1.6" stroke-linecap="round" opacity="0.9"/>` +
+        (() => {
+          const star5 = (cx, cy, r, fill, stroke) =>
+            `<polygon transform="translate(${cx},${cy})" points="0,${-r} ${(r * 0.28).toFixed(1)},${(-r * 0.28).toFixed(1)} ${r},${(-r * 0.22).toFixed(1)} ${(r * 0.42).toFixed(1)},${(r * 0.2).toFixed(1)} ${(r * 0.62).toFixed(1)},${(r * 0.85).toFixed(1)} 0,${(r * 0.46).toFixed(1)} ${(-r * 0.62).toFixed(1)},${(r * 0.85).toFixed(1)} ${(-r * 0.42).toFixed(1)},${(r * 0.2).toFixed(1)} ${-r},${(-r * 0.22).toFixed(1)} ${(-r * 0.28).toFixed(1)},${(-r * 0.28).toFixed(1)}" fill="${fill}" stroke="${stroke}" stroke-width="1.3" stroke-linejoin="round"/>`;
+          return star5(300, 56, 17, 'url(#hair13-gold)', '#92400e') +
+            star5(260, 88, 11, 'url(#hair13-gold)', '#92400e') +
+            star5(340, 88, 11, 'url(#hair13-gold)', '#92400e');
+        })() +
+        diamondGem(300, 94, 9, 13, 'hair13-gem', '#e0e7ff') +
+        diamondGem(274, 114, 5, 7.5, 'hair13-gem', '#e0e7ff') +
+        diamondGem(326, 114, 5, 7.5, 'hair13-gem', '#e0e7ff') +
+        pearl(244, 122, 4, 'hair13-pearl') +
+        pearl(356, 122, 4, 'hair13-pearl') +
+        sparkle(300, 34, 7, '#ffffff') +
+        sparkle(242, 68, 6, '#fff9c4') +
+        sparkle(358, 68, 6, '#fff9c4')
+    },
+
+    // =========================================================================
+    // 14. Peach Pink Odango Buns + Jade Butterfly Hairpins
+    // =========================================================================
+    {
+      id: 'hair-14',
+      name: 'Tóc Búi Đôi Odango Hồng Đào & Trâm Ngọc Bướm',
+      icon: '🦋',
+      accentColor: '#fb7185',
+      previewBox: '105 32 390 345',
+      defs:
+        lg('hair14-base', '0%', '0%', '0%', '100%', [
+          ['0%', '#fff1f2'],
+          ['26%', '#fecdd3'],
+          ['68%', '#fb7185'],
+          ['100%', '#be123c']
+        ]) +
+        lg('hair14-deep', '0%', '0%', '0%', '100%', [
+          ['0%', '#e11d48'],
+          ['100%', '#881337']
+        ]) +
+        lg('hair14-hi', '0%', '0%', '100%', '0%', [
+          ['0%', '#ffffff', 0.15],
+          ['50%', '#fff5f7', 0.94],
+          ['100%', '#ffffff', 0.15]
+        ]) +
+        rg('hair14-bun', '38%', '32%', '68%', [
+          ['0%', '#ffe4e6'],
+          ['42%', '#fb7185'],
+          ['84%', '#be123c'],
+          ['100%', '#6b0926']
+        ]) +
+        lg('hair14-gold', '0%', '0%', '100%', '100%', [
+          ['0%', '#fffbeb'],
+          ['48%', '#fde047'],
+          ['100%', '#b45309']
+        ]) +
+        lg('hair14-wing', '0%', '0%', '100%', '100%', [
+          ['0%', '#fbcfe8', 0.95],
+          ['45%', '#5eead4', 0.92],
+          ['100%', '#38bdf8', 0.95]
+        ]) +
+        rg('hair14-pearl', '35%', '30%', '65%', [
+          ['0%', '#ffffff'],
+          ['62%', '#fff1f2'],
+          ['100%', '#e2c2cb']
+        ]) +
+        rg('hair14-gem', '38%', '32%', '68%', [
+          ['0%', '#ffffff'],
+          ['42%', '#fda4af'],
+          ['84%', '#e11d48'],
+          ['100%', '#881337']
+        ]),
+      backSvg:
+        innerHeadShell('url(#hair14-deep)', '#881337') +
+        `<line x1="234" y1="134" x2="152" y2="66" stroke="url(#hair14-gold)" stroke-width="4.2" stroke-linecap="round"/>` +
+        `<line x1="366" y1="134" x2="448" y2="66" stroke="url(#hair14-gold)" stroke-width="4.2" stroke-linecap="round"/>` +
+        `<line x1="154" y1="72" x2="152" y2="128" stroke="#fde047" stroke-width="1.6"/>` +
+        `<line x1="446" y1="72" x2="448" y2="128" stroke="#fde047" stroke-width="1.6"/>` +
+        pearl(152, 102, 4, 'hair14-pearl') +
+        pearl(152, 128, 5, 'hair14-pearl') +
+        pearl(448, 102, 4, 'hair14-pearl') +
+        pearl(448, 128, 5, 'hair14-pearl') +
+        `<path d="M214,138 C176,154 146,204 144,268 C142,324 124,376 140,432 C152,472 134,518 158,564 C172,586 192,578 194,552 C196,528 182,502 194,474 C210,436 192,386 206,340 C218,296 204,232 224,180 Z" fill="url(#hair14-base)" stroke="#9f1239" stroke-width="2" stroke-linejoin="round"/>` +
+        `<path d="M386,138 C424,154 454,204 456,268 C458,324 476,376 460,432 C448,472 466,518 442,564 C428,586 408,578 406,552 C404,528 418,502 406,474 C390,436 408,386 394,340 C382,296 396,232 376,180 Z" fill="url(#hair14-base)" stroke="#9f1239" stroke-width="2" stroke-linejoin="round"/>` +
+        `<path d="M168,246 C152,294 170,342 154,398 C142,436 164,478 156,524 C170,488 176,442 166,396 C182,344 166,296 184,252 Z" fill="url(#hair14-deep)" opacity="0.4"/>` +
+        `<path d="M432,246 C448,294 430,342 446,398 C458,436 436,478 444,524 C430,488 424,442 434,396 C418,344 434,296 416,252 Z" fill="url(#hair14-deep)" opacity="0.4"/>` +
+        `<path d="M174,210 C158,256 162,302 152,350 C170,308 170,260 186,218 Z" fill="#fff5f7" opacity="0.62"/>` +
+        `<path d="M426,210 C442,256 438,302 448,350 C430,308 430,260 414,218 Z" fill="#fff5f7" opacity="0.62"/>`,
+      frontSvg:
+        `<g>` +
+          `<ellipse cx="214" cy="108" rx="39" ry="36" fill="url(#hair14-bun)" stroke="#881337" stroke-width="1.9"/>` +
+          `<path d="M186,108 C192,84 222,78 238,94 C246,104 240,124 222,128 C206,132 196,118 202,106" fill="none" stroke="#881337" stroke-width="1.9" stroke-linecap="round" opacity="0.5"/>` +
+          `<path d="M194,88 Q214,76 234,88" fill="none" stroke="#fff1f2" stroke-width="4" stroke-linecap="round" opacity="0.68"/>` +
+          `<ellipse cx="226" cy="140" rx="22" ry="7" transform="rotate(-32 226 140)" fill="url(#hair14-gold)" stroke="#92400e" stroke-width="1.3"/>` +
+        `</g>` +
+        `<g>` +
+          `<ellipse cx="386" cy="108" rx="39" ry="36" fill="url(#hair14-bun)" stroke="#881337" stroke-width="1.9"/>` +
+          `<path d="M414,108 C408,84 378,78 362,94 C354,104 360,124 378,128 C394,132 404,118 398,106" fill="none" stroke="#881337" stroke-width="1.9" stroke-linecap="round" opacity="0.5"/>` +
+          `<path d="M366,88 Q386,76 406,88" fill="none" stroke="#fff1f2" stroke-width="4" stroke-linecap="round" opacity="0.68"/>` +
+          `<ellipse cx="374" cy="140" rx="22" ry="7" transform="rotate(32 374 140)" fill="url(#hair14-gold)" stroke="#92400e" stroke-width="1.3"/>` +
+        `</g>` +
+        `<path d="M216,206 C214,150 250,124 300,124 C350,124 386,150 384,206 C370,186 352,172 332,170 C318,180 308,186 300,166 C292,186 282,180 268,170 C248,172 230,186 216,206 Z" fill="url(#hair14-base)" stroke="#9f1239" stroke-width="1.8"/>` +
+        `<path d="M294,148 C292,168 296,184 300,192 C304,184 308,168 306,148 Z" fill="url(#hair14-base)" stroke="#9f1239" stroke-width="1.2"/>` +
+        sideLocks('url(#hair14-base)', 'url(#hair14-base)', '#9f1239', 308) +
+        angelRing('hair14-hi', 140, 0.85) +
+        `<g transform="translate(198,98) rotate(-24)">` +
+          `<path d="M0,0 C-20,-28 -40,-14 -26,4 C-34,18 -14,28 0,10 Z" fill="url(#hair14-wing)" stroke="#0f766e" stroke-width="1.3"/>` +
+          `<path d="M0,0 C20,-28 40,-14 26,4 C34,18 14,28 0,10 Z" fill="url(#hair14-wing)" stroke="#0f766e" stroke-width="1.3"/>` +
+          `<ellipse cx="0" cy="4" rx="3" ry="11" fill="url(#hair14-gold)" stroke="#92400e" stroke-width="1"/>` +
+          `<circle cx="-14" cy="-5" r="3" fill="#ffffff" opacity="0.85"/>` +
+          `<circle cx="14" cy="-5" r="3" fill="#ffffff" opacity="0.85"/>` +
+          pearl(0, 2, 3.6, 'hair14-pearl') +
+        `</g>` +
+        `<g transform="translate(402,98) rotate(24)">` +
+          `<path d="M0,0 C-20,-28 -40,-14 -26,4 C-34,18 -14,28 0,10 Z" fill="url(#hair14-wing)" stroke="#0f766e" stroke-width="1.3"/>` +
+          `<path d="M0,0 C20,-28 40,-14 26,4 C34,18 14,28 0,10 Z" fill="url(#hair14-wing)" stroke="#0f766e" stroke-width="1.3"/>` +
+          `<ellipse cx="0" cy="4" rx="3" ry="11" fill="url(#hair14-gold)" stroke="#92400e" stroke-width="1"/>` +
+          `<circle cx="-14" cy="-5" r="3" fill="#ffffff" opacity="0.85"/>` +
+          `<circle cx="14" cy="-5" r="3" fill="#ffffff" opacity="0.85"/>` +
+          pearl(0, 2, 3.6, 'hair14-pearl') +
+        `</g>` +
+        `<path d="M266,130 Q300,114 334,130" fill="none" stroke="url(#hair14-gold)" stroke-width="3.2" stroke-linecap="round"/>` +
+        diamondGem(300, 122, 6, 8.5, 'hair14-gem', '#fffbeb') +
+        pearl(280, 124, 3.8, 'hair14-pearl') +
+        pearl(320, 124, 3.8, 'hair14-pearl') +
+        sparkle(160, 56, 6, '#ffffff') +
+        sparkle(440, 56, 6, '#ffffff') +
+        sparkle(300, 108, 6, '#ffe4e6')
+    },
+
+    // =========================================================================
+    // 15. Royal Ruby Red Ringlets + Pearl Velvet Beret
+    // =========================================================================
+    {
+      id: 'hair-15',
+      name: 'Tóc Xoăn Đỏ Ruby Hoàng Gia & Mũ Beret Ngọc Trai',
+      icon: '🎩',
+      accentColor: '#e11d48',
+      previewBox: '120 34 360 342',
+      defs:
+        lg('hair15-base', '0%', '0%', '0%', '100%', [
+          ['0%', '#ffe4e6'],
+          ['26%', '#fb7185'],
+          ['65%', '#e11d48'],
+          ['100%', '#881337']
+        ]) +
+        lg('hair15-deep', '0%', '0%', '0%', '100%', [
+          ['0%', '#be123c'],
+          ['100%', '#5e0820']
+        ]) +
+        lg('hair15-hi', '0%', '0%', '100%', '0%', [
+          ['0%', '#ffffff', 0.14],
+          ['50%', '#fff0f3', 0.9],
+          ['100%', '#ffffff', 0.14]
+        ]) +
+        rg('hair15-beret', '38%', '28%', '68%', [
+          ['0%', '#fb7185'],
+          ['42%', '#be123c'],
+          ['82%', '#881337'],
+          ['100%', '#4c0519']
+        ]) +
+        lg('hair15-gold', '0%', '0%', '100%', '100%', [
+          ['0%', '#fffbe0'],
+          ['48%', '#fcd34d'],
+          ['100%', '#b45309']
+        ]) +
+        rg('hair15-pearl', '35%', '30%', '65%', [
+          ['0%', '#ffffff'],
+          ['60%', '#fff5f7'],
+          ['100%', '#d8c0cb']
+        ]) +
+        rg('hair15-gem', '38%', '32%', '68%', [
+          ['0%', '#ffffff'],
+          ['40%', '#ff85a1'],
+          ['82%', '#be123c'],
+          ['100%', '#59051d']
+        ]),
+      backSvg:
+        innerHeadShell('url(#hair15-deep)', '#6e0924') +
+        `<path d="M224,186 C180,224 156,282 174,340 C150,382 152,442 176,478 C154,518 158,576 184,614 C168,642 192,664 218,648 C238,666 268,648 286,658 C294,650 306,650 314,658 C332,648 362,666 382,648 C408,664 432,642 416,614 C442,576 446,518 424,478 C448,442 450,382 426,340 C444,282 420,224 376,186 Z" fill="url(#hair15-base)" stroke="#780b28" stroke-width="2" stroke-linejoin="round"/>` +
+        `<path d="M188,308 C216,336 218,376 184,406 C214,436 214,482 184,516 C216,548 214,598 192,636 C174,602 176,554 192,516 C168,482 170,434 196,406 C170,376 172,334 188,308 Z" fill="url(#hair15-deep)" opacity="0.45"/>` +
+        `<path d="M412,308 C384,336 382,376 416,406 C386,436 386,482 416,516 C384,548 386,598 408,636 C426,602 424,554 408,516 C432,482 430,434 404,406 C430,376 428,334 412,308 Z" fill="url(#hair15-deep)" opacity="0.45"/>` +
+        `<path d="M196,262 C178,302 204,334 182,378 C198,342 186,304 206,268 Z" fill="#ffd1db" opacity="0.58"/>` +
+        `<path d="M404,262 C422,302 396,334 418,378 C402,342 414,304 394,268 Z" fill="#ffd1db" opacity="0.58"/>` +
+        `<path d="M192,438 Q210,468 188,504 Q216,472 204,438 Z" fill="#ffd1db" opacity="0.52"/>` +
+        `<path d="M408,438 Q390,468 412,504 Q384,472 396,438 Z" fill="#ffd1db" opacity="0.52"/>`,
+      frontSvg:
+        `<path d="M216,208 C216,152 252,126 300,126 C348,126 384,152 384,208 C370,186 350,172 328,170 C312,182 292,184 274,174 C252,178 232,190 216,208 Z" fill="url(#hair15-base)" stroke="#780b28" stroke-width="1.8"/>` +
+        sideLocks('url(#hair15-base)', 'url(#hair15-base)', '#780b28', 318) +
+        angelRing('hair15-hi', 144, 0.78) +
+        `<g transform="translate(310,106) rotate(14)">` +
+          `<path d="M44,-12 Q88,-48 110,-32 Q82,-14 48,-2 Z" fill="#fff5f7" stroke="#e2c2cb" stroke-width="1.2"/>` +
+          `<path d="M52,-12 Q86,-38 104,-28" fill="none" stroke="#fda4af" stroke-width="1.8" stroke-linecap="round"/>` +
+          `<path d="M0,-48 C-2,-58 4,-60 6,-52 C7,-46 3,-42 0,-48 Z" fill="#881337" stroke="#4c0519" stroke-width="1.2"/>` +
+          `<path d="M-82,12 C-94,-22 -52,-50 2,-50 C58,-50 96,-22 82,12 C56,28 -58,28 -82,12 Z" fill="url(#hair15-beret)" stroke="#4c0519" stroke-width="1.8"/>` +
+          `<path d="M-54,-14 Q-10,-36 38,-24" fill="none" stroke="#ffd1db" stroke-width="3.6" stroke-linecap="round" opacity="0.42"/>` +
+          `<path d="M-68,16 Q0,2 68,16 Q70,28 62,30 Q0,16 -62,30 Q-70,28 -68,16 Z" fill="#6b0724" stroke="#4c0519" stroke-width="1.5"/>` +
+          (() => {
+            let p = '';
+            for (let i = -3; i <= 3; i++) {
+              const px = i * 18;
+              const py = 18 + Math.round((i * i) * 0.4);
+              p += pearl(px, py, 4.2, 'hair15-pearl');
+            }
+            return p;
+          })() +
+          `<g transform="translate(42,-4)">` +
+            `<circle cx="0" cy="0" r="10.5" fill="url(#hair15-gold)" stroke="#78350f" stroke-width="1.3"/>` +
+            ovalGem(0, 0, 5.5, 7.5, 'hair15-gem', '#fde68a') +
+          `</g>` +
+        `</g>` +
+        sparkle(214, 78, 6, '#ffffff') +
+        sparkle(386, 64, 7, '#fff0f3') +
+        sparkle(424, 102, 5, '#ffffff')
+    },
+
+    // =========================================================================
+    // 16. Emerald Teal Mermaid Waves + Branching Coral Crown
+    // =========================================================================
+    {
+      id: 'hair-16',
+      name: 'Tóc Xanh Ngọc Bích Tiên Cá & Vương Miện San Hô',
+      icon: '🧜‍♀️',
+      accentColor: '#2dd4bf',
+      previewBox: '118 16 364 360',
+      defs:
+        lg('hair16-base', '0%', '0%', '0%', '100%', [
+          ['0%', '#ecfeff'],
+          ['24%', '#99f6e4'],
+          ['60%', '#2dd4bf'],
+          ['100%', '#0f766e']
+        ]) +
+        lg('hair16-deep', '0%', '0%', '0%', '100%', [
+          ['0%', '#14b8a6'],
+          ['55%', '#0f766e'],
+          ['100%', '#064e3b']
+        ]) +
+        lg('hair16-hi', '0%', '0%', '100%', '0%', [
+          ['0%', '#ffffff', 0.15],
+          ['50%', '#f0fdfa', 0.94],
+          ['100%', '#ffffff', 0.15]
+        ]) +
+        lg('hair16-coral', '0%', '0%', '100%', '100%', [
+          ['0%', '#ffe4e6'],
+          ['38%', '#fda4af'],
+          ['75%', '#fb7185'],
+          ['100%', '#be123c']
+        ]) +
+        lg('hair16-gold', '0%', '0%', '100%', '100%', [
+          ['0%', '#fffbeb'],
+          ['50%', '#fcd34d'],
+          ['100%', '#b45309']
+        ]) +
+        rg('hair16-pearl', '35%', '30%', '65%', [
+          ['0%', '#ffffff'],
+          ['60%', '#f0fdfa'],
+          ['100%', '#a7e3dc']
+        ]) +
+        rg('hair16-gem', '38%', '32%', '68%', [
+          ['0%', '#ffffff'],
+          ['42%', '#5eead4'],
+          ['84%', '#0d9488'],
+          ['100%', '#042f2e']
+        ]),
+      backSvg:
+        innerHeadShell('url(#hair16-deep)', '#0f5952') +
+        `<path d="M224,184 C176,226 150,296 168,368 C184,428 142,486 160,562 C172,614 152,658 188,676 C214,660 232,636 254,656 C274,672 288,648 300,662 C312,648 326,672 346,656 C368,636 386,660 412,676 C448,658 428,614 440,562 C458,486 416,428 432,368 C450,296 424,226 376,184 Z" fill="url(#hair16-base)" stroke="#0f5952" stroke-width="2" stroke-linejoin="round"/>` +
+        `<path d="M182,318 C206,368 178,424 198,482 C214,530 176,588 198,642 C172,602 182,536 170,482 C156,418 182,364 182,318 Z" fill="url(#hair16-deep)" opacity="0.4"/>` +
+        `<path d="M418,318 C394,368 422,424 402,482 C386,530 424,588 402,642 C428,602 418,536 430,482 C444,418 418,364 418,318 Z" fill="url(#hair16-deep)" opacity="0.4"/>` +
+        `<path d="M190,268 C172,316 198,364 180,418 C196,370 186,318 202,274 Z" fill="#f0fdfa" opacity="0.62"/>` +
+        `<path d="M410,268 C428,316 402,364 420,418 C404,370 414,318 398,274 Z" fill="#f0fdfa" opacity="0.62"/>` +
+        pearl(184, 386, 4.2, 'hair16-pearl') +
+        pearl(416, 404, 4.2, 'hair16-pearl') +
+        pearl(192, 536, 4.8, 'hair16-pearl') +
+        pearl(408, 548, 4.8, 'hair16-pearl'),
+      frontSvg:
+        `<path d="M214,208 C214,152 250,124 300,124 C350,124 386,152 386,208 C370,186 350,170 328,168 C314,180 306,184 300,166 C294,184 286,180 272,168 C250,170 230,186 214,208 Z" fill="url(#hair16-base)" stroke="#0f5952" stroke-width="1.8"/>` +
+        sideLocks('url(#hair16-base)', 'url(#hair16-base)', '#0f5952', 316) +
+        angelRing('hair16-hi', 140, 0.86) +
+        `<path d="M236,136 Q300,114 364,136" fill="none" stroke="url(#hair16-gold)" stroke-width="5" stroke-linecap="round"/>` +
+        `<path d="M254,126 C244,104 234,82 240,66 C244,58 252,64 250,74 C248,84 254,96 260,104 C260,86 262,64 270,56 C276,52 280,62 276,74 C272,88 274,104 278,118 Z" fill="url(#hair16-coral)" stroke="#9f1239" stroke-width="1.5" stroke-linejoin="round"/>` +
+        `<path d="M346,126 C356,104 366,82 360,66 C356,58 348,64 350,74 C352,84 346,96 340,104 C340,86 338,64 330,56 C324,52 320,62 324,74 C328,88 326,104 322,118 Z" fill="url(#hair16-coral)" stroke="#9f1239" stroke-width="1.5" stroke-linejoin="round"/>` +
+        `<path d="M286,118 C280,92 278,64 288,46 C294,40 298,52 296,68 C298,52 300,36 304,36 C308,36 310,54 308,70 C312,56 318,46 322,52 C326,64 320,92 314,118 Z" fill="url(#hair16-coral)" stroke="#9f1239" stroke-width="1.5" stroke-linejoin="round"/>` +
+        diamondGem(300, 104, 9, 13, 'hair16-gem', '#fef08a') +
+        pearl(242, 66, 4.2, 'hair16-pearl') +
+        pearl(271, 56, 4.5, 'hair16-pearl') +
+        pearl(329, 56, 4.5, 'hair16-pearl') +
+        pearl(358, 66, 4.2, 'hair16-pearl') +
+        pearl(264, 124, 5, 'hair16-pearl') +
+        pearl(336, 124, 5, 'hair16-pearl') +
+        sparkle(300, 26, 7, '#ffffff') +
+        sparkle(226, 84, 6, '#ccfbf1') +
+        sparkle(374, 84, 6, '#ccfbf1')
+    },
+
+    // =========================================================================
+    // 17. Galaxy Violet Hair + Crystal Witch Hat
+    // =========================================================================
+    {
+      id: 'hair-17',
+      name: 'Tóc Tím Ngân Hà & Mũ Phù Thủy Pha Lê',
+      icon: '🔮',
+      accentColor: '#8b5cf6',
+      previewBox: '112 2 376 372',
+      defs:
+        lg('hair17-base', '0%', '0%', '0%', '100%', [
+          ['0%', '#f5f3ff'],
+          ['24%', '#c4b5fd'],
+          ['62%', '#8b5cf6'],
+          ['100%', '#3b0764']
+        ]) +
+        lg('hair17-deep', '0%', '0%', '0%', '100%', [
+          ['0%', '#6d28d9'],
+          ['55%', '#3b0764'],
+          ['100%', '#170536']
+        ]) +
+        lg('hair17-hi', '0%', '0%', '100%', '0%', [
+          ['0%', '#ffffff', 0.14],
+          ['50%', '#f3e8ff', 0.9],
+          ['100%', '#ffffff', 0.14]
+        ]) +
+        lg('hair17-hat', '0%', '0%', '100%', '100%', [
+          ['0%', '#7c3aed'],
+          ['48%', '#4c1d95'],
+          ['100%', '#1e1b4b']
+        ]) +
+        lg('hair17-sash', '0%', '0%', '100%', '0%', [
+          ['0%', '#f472b6'],
+          ['50%', '#a855f7'],
+          ['100%', '#6366f1']
+        ]) +
+        lg('hair17-gold', '0%', '0%', '100%', '100%', [
+          ['0%', '#fffbeb'],
+          ['48%', '#fde047'],
+          ['100%', '#b45309']
+        ]) +
+        rg('hair17-orb', '34%', '30%', '68%', [
+          ['0%', '#ffffff'],
+          ['42%', '#e0f2fe'],
+          ['80%', '#a855f7'],
+          ['100%', '#4c1d95']
+        ]),
+      backSvg:
+        innerHeadShell('url(#hair17-deep)', '#2e1065') +
+        `<ellipse cx="300" cy="146" rx="170" ry="32" fill="#2e1065" stroke="#170536" stroke-width="1.8"/>` +
+        `<path d="M222,188 C184,238 164,312 178,392 C190,456 156,518 174,588 C186,626 214,650 238,628 C258,648 282,636 300,648 C318,636 342,648 362,628 C386,650 414,626 426,588 C444,518 410,456 422,392 C436,312 416,238 378,188 Z" fill="url(#hair17-base)" stroke="#3b0764" stroke-width="2" stroke-linejoin="round"/>` +
+        `<path d="M192,312 C210,368 188,432 204,496 C182,450 186,382 192,312 Z" fill="#f472b6" opacity="0.24"/>` +
+        `<path d="M408,312 C390,368 412,432 396,496 C418,450 414,382 408,312 Z" fill="#67e8f9" opacity="0.24"/>` +
+        `<path d="M196,268 C180,322 202,380 186,442 C202,390 190,330 206,276 Z" fill="#f3e8ff" opacity="0.52"/>` +
+        `<path d="M404,268 C420,322 398,380 414,442 C398,390 410,330 394,276 Z" fill="#f3e8ff" opacity="0.52"/>` +
+        sparkle(194, 412, 6, '#fde047') +
+        sparkle(406, 444, 6, '#e0f2fe') +
+        sparkle(206, 560, 7, '#ffffff') +
+        sparkle(394, 560, 7, '#ffffff'),
+      frontSvg:
+        `<path d="M216,208 C216,152 252,126 300,126 C348,126 384,152 384,208 C370,186 350,172 328,170 C314,180 306,184 300,168 C294,184 286,180 272,170 C250,172 230,186 216,208 Z" fill="url(#hair17-base)" stroke="#3b0764" stroke-width="1.8"/>` +
+        sideLocks('url(#hair17-base)', 'url(#hair17-base)', '#3b0764', 316) +
+        angelRing('hair17-hi', 144, 0.72) +
+        `<path d="M130,148 Q300,98 470,148 Q384,126 300,126 Q216,126 130,148 Z" fill="url(#hair17-hat)" stroke="#1e1b4b" stroke-width="1.9" stroke-linejoin="round"/>` +
+        `<path d="M130,148 Q300,98 470,148" fill="none" stroke="url(#hair17-gold)" stroke-width="2.6" stroke-linecap="round"/>` +
+        `<path d="M216,134 C226,86 244,44 294,20 C320,8 346,16 360,34 C338,32 324,42 332,64 C344,88 370,112 384,134 Q300,116 216,134 Z" fill="url(#hair17-hat)" stroke="#1e1b4b" stroke-width="1.9" stroke-linejoin="round"/>` +
+        `<path d="M258,84 Q282,42 320,26" fill="none" stroke="#c4b5fd" stroke-width="3.2" stroke-linecap="round" opacity="0.45"/>` +
+        `<path d="M216,124 Q300,106 384,124 L387,136 Q300,118 213,136 Z" fill="url(#hair17-sash)" stroke="#3b0764" stroke-width="1.4"/>` +
+        `<path d="M262,92 A12,12 0 1,0 278,108 A9,9 0 1,1 262,92 Z" fill="url(#hair17-gold)" stroke="#92400e" stroke-width="1"/>` +
+        `<rect x="290" y="108" width="20" height="18" rx="4" fill="none" stroke="url(#hair17-gold)" stroke-width="2.6"/>` +
+        diamondGem(300, 117, 6.5, 9, 'hair17-orb', '#fde047') +
+        `<line x1="168" y1="142" x2="168" y2="166" stroke="url(#hair17-gold)" stroke-width="1.8"/>` +
+        `<circle cx="168" cy="176" r="10.5" fill="url(#hair17-orb)" stroke="url(#hair17-gold)" stroke-width="1.8"/>` +
+        `<circle cx="164" cy="172" r="3" fill="#ffffff" opacity="0.9"/>` +
+        `<line x1="432" y1="142" x2="432" y2="158" stroke="url(#hair17-gold)" stroke-width="1.6"/>` +
+        diamondGem(432, 168, 6.5, 10, 'hair17-orb', '#fde047') +
+        sparkle(362, 34, 7, '#fde047') +
+        sparkle(226, 62, 6, '#ffffff') +
+        sparkle(168, 196, 6, '#e0f2fe')
+    },
+
+    // =========================================================================
+    // 18. Honey Gold Twin Braids + Daisy Straw Boater Hat
+    // =========================================================================
+    {
+      id: 'hair-18',
+      name: 'Tóc Vàng Mật Ong Tết Đôi & Mũ Rơm Hoa Cúc',
+      icon: '🌻',
+      accentColor: '#eab308',
+      previewBox: '102 42 396 340',
+      defs:
+        lg('hair18-base', '0%', '0%', '0%', '100%', [
+          ['0%', '#fefce8'],
+          ['26%', '#fde047'],
+          ['66%', '#eab308'],
+          ['100%', '#a16207']
+        ]) +
+        lg('hair18-deep', '0%', '0%', '0%', '100%', [
+          ['0%', '#ca8a04'],
+          ['100%', '#713f12']
+        ]) +
+        lg('hair18-hi', '0%', '0%', '100%', '0%', [
+          ['0%', '#ffffff', 0.14],
+          ['50%', '#fef9c3', 0.9],
+          ['100%', '#ffffff', 0.14]
+        ]) +
+        rg('hair18-straw', '50%', '35%', '65%', [
+          ['0%', '#fffbeb'],
+          ['52%', '#fde68a'],
+          ['100%', '#d97706']
+        ]) +
+        lg('hair18-band', '0%', '0%', '100%', '0%', [
+          ['0%', '#38bdf8'],
+          ['50%', '#7dd3fc'],
+          ['100%', '#0284c7']
+        ]) +
+        lg('hair18-bow', '0%', '0%', '100%', '100%', [
+          ['0%', '#bae6fd'],
+          ['48%', '#38bdf8'],
+          ['100%', '#0369a1']
+        ]),
+      backSvg:
+        innerHeadShell('url(#hair18-deep)', '#78350f') +
+        `<ellipse cx="300" cy="144" rx="180" ry="38" fill="#c28025" stroke="#854d0e" stroke-width="1.8"/>` +
+        `<path d="M222,200 C216,256 226,304 252,320 L348,320 C374,304 384,256 378,200 Z" fill="url(#hair18-deep)" stroke="#78350f" stroke-width="1.6"/>` +
+        (() => {
+          let svg = '';
+          const drawBraid = (cxBase, dir) => {
+            for (let i = 0; i < 9; i++) {
+              const y = 236 + i * 32;
+              const rx = 20 - i * 0.7;
+              const ry = 15 - i * 0.4;
+              const x = cxBase + (i % 2 === 0 ? -4 : 4) * dir;
+              svg += `<ellipse cx="${x}" cy="${y}" rx="${rx.toFixed(1)}" ry="${ry.toFixed(1)}" transform="rotate(${(i % 2 === 0 ? -18 : 18) * dir} ${x} ${y})" fill="url(#hair18-base)" stroke="#854d0e" stroke-width="1.7"/>`;
+              svg += `<ellipse cx="${x - 2}" cy="${y - 3}" rx="${(rx * 0.5).toFixed(1)}" ry="${(ry * 0.35).toFixed(1)}" transform="rotate(${(i % 2 === 0 ? -18 : 18) * dir} ${x} ${y})" fill="#fef9c3" opacity="0.65"/>`;
+            }
+            const endY = 524;
+            svg += `<path d="M${cxBase - 8},${endY} C${cxBase - 18},${endY + 28} ${cxBase - 12},${endY + 58} ${cxBase},${endY + 72} C${cxBase + 12},${endY + 58} ${cxBase + 18},${endY + 28} ${cxBase + 8},${endY} Z" fill="url(#hair18-base)" stroke="#854d0e" stroke-width="1.6"/>`;
+            svg += `<g transform="translate(${cxBase},${endY})">`;
+            svg += `<path d="M-2,2 L-12,32 L-3,26 L2,34 L4,2 Z" fill="url(#hair18-bow)" stroke="#075985" stroke-width="1.1"/>`;
+            svg += `<path d="M2,2 L12,32 L3,26 L-2,34 L-4,2 Z" fill="url(#hair18-bow)" stroke="#075985" stroke-width="1.1"/>`;
+            svg += `<path d="M0,0 C-14,-12 -24,-4 -18,6 C-12,12 -4,6 0,2 Z" fill="url(#hair18-bow)" stroke="#075985" stroke-width="1.2"/>`;
+            svg += `<path d="M0,0 C14,-12 24,-4 18,6 C12,12 4,6 0,2 Z" fill="url(#hair18-bow)" stroke="#075985" stroke-width="1.2"/>`;
+            svg += `<circle cx="0" cy="1" r="4" fill="#e0f2fe" stroke="#075985" stroke-width="1.1"/>`;
+            svg += `</g>`;
+          };
+          drawBraid(198, -1);
+          drawBraid(402, 1);
+          return svg;
+        })(),
+      frontSvg:
+        `<path d="M218,206 C218,150 252,128 300,128 C348,128 382,150 382,206 C368,186 346,172 324,170 C310,180 304,184 300,168 C296,184 290,180 276,170 C254,172 232,186 218,206 Z" fill="url(#hair18-base)" stroke="#854d0e" stroke-width="1.7"/>` +
+        sideLocks('url(#hair18-base)', 'url(#hair18-base)', '#854d0e', 306) +
+        angelRing('hair18-hi', 145, 0.74) +
+        `<path d="M118,144 Q300,82 482,144 Q390,122 300,122 Q210,122 118,144 Z" fill="url(#hair18-straw)" stroke="#92400e" stroke-width="1.8"/>` +
+        `<path d="M142,138 Q300,90 458,138 M172,132 Q300,96 428,132" fill="none" stroke="#b45309" stroke-width="1.2" opacity="0.5"/>` +
+        `<path d="M216,120 L224,68 Q300,56 376,68 L384,120 Q300,106 216,120 Z" fill="url(#hair18-straw)" stroke="#92400e" stroke-width="1.8" stroke-linejoin="round"/>` +
+        `<path d="M222,84 Q300,72 378,84 M219,102 Q300,90 381,102" fill="none" stroke="#b45309" stroke-width="1.2" opacity="0.42"/>` +
+        `<path d="M217,108 Q300,94 383,108 L385,121 Q300,106 215,121 Z" fill="url(#hair18-band)" stroke="#075985" stroke-width="1.3"/>` +
+        `<g transform="translate(362,114) rotate(14)">` +
+          `<path d="M0,0 C-14,-14 -28,-6 -22,6 C-16,14 -6,8 0,2 Z" fill="url(#hair18-bow)" stroke="#075985" stroke-width="1.2"/>` +
+          `<path d="M0,0 C14,-14 28,-6 22,6 C16,14 6,8 0,2 Z" fill="url(#hair18-bow)" stroke="#075985" stroke-width="1.2"/>` +
+          `<circle cx="0" cy="1" r="4.2" fill="#e0f2fe" stroke="#075985" stroke-width="1.1"/>` +
+        `</g>` +
+        `<ellipse cx="222" cy="112" rx="12" ry="5" transform="rotate(-24 222 112)" fill="#4ade80" stroke="#15803d" stroke-width="1"/>` +
+        `<ellipse cx="256" cy="100" rx="12" ry="5" transform="rotate(14 256 100)" fill="#4ade80" stroke="#15803d" stroke-width="1"/>` +
+        daisy(240, 112, 16, '#ffffff', '#facc15') +
+        daisy(268, 102, 13.5, '#fefce8', '#eab308') +
+        daisy(222, 126, 12, '#ffffff', '#facc15') +
+        sparkle(366, 62, 6, '#ffffff') +
+        sparkle(164, 118, 6, '#fef9c3')
+    },
+
+    // =========================================================================
+    // 19. Strawberry Rose Hime Cut + Crystal Cat-Ear Headband
+    // =========================================================================
+    {
+      id: 'hair-19',
+      name: 'Tóc Hồng Dâu Hime Cut & Bờm Tai Mèo Pha Lê',
+      icon: '🐱',
+      accentColor: '#f43f5e',
+      previewBox: '130 36 340 328',
+      defs:
+        lg('hair19-base', '0%', '0%', '0%', '100%', [
+          ['0%', '#fff1f2'],
+          ['24%', '#fecdd3'],
+          ['62%', '#fb7185'],
+          ['100%', '#be123c']
+        ]) +
+        lg('hair19-deep', '0%', '0%', '0%', '100%', [
+          ['0%', '#e11d48'],
+          ['100%', '#881337']
+        ]) +
+        lg('hair19-hi', '0%', '0%', '100%', '0%', [
+          ['0%', '#ffffff', 0.15],
+          ['50%', '#fff5f7', 0.95],
+          ['100%', '#ffffff', 0.15]
+        ]) +
+        lg('hair19-crystal', '0%', '0%', '100%', '100%', [
+          ['0%', '#ffffff', 0.96],
+          ['38%', '#ffe4e6', 0.9],
+          ['75%', '#fda4af', 0.86],
+          ['100%', '#f43f5e', 0.9]
+        ]) +
+        lg('hair19-gold', '0%', '0%', '100%', '100%', [
+          ['0%', '#fffbeb'],
+          ['48%', '#fde047'],
+          ['100%', '#b45309']
+        ]) +
+        rg('hair19-gem', '38%', '32%', '68%', [
+          ['0%', '#ffffff'],
+          ['40%', '#fda4af'],
+          ['82%', '#f43f5e'],
+          ['100%', '#881337']
+        ]) +
+        rg('hair19-pearl', '35%', '30%', '65%', [
+          ['0%', '#ffffff'],
+          ['60%', '#fff1f2'],
+          ['100%', '#e5c3cb']
+        ]),
+      backSvg:
+        innerHeadShell('url(#hair19-deep)', '#881337') +
+        `<path d="M222,190 C205,280 190,438 184,622 Q242,638 300,632 Q358,638 416,622 C410,438 395,280 378,190 Z" fill="url(#hair19-base)" stroke="#9f1239" stroke-width="2"/>` +
+        `<path d="M214,320 L204,590 L216,592 L224,322 Z" fill="#fff1f2" opacity="0.34"/>` +
+        `<path d="M386,320 L396,590 L384,592 L376,322 Z" fill="#fff1f2" opacity="0.34"/>` +
+        `<path d="M198,488 Q208,540 200,602" fill="none" stroke="#ffe4e6" stroke-width="2.4" opacity="0.5" stroke-linecap="round"/>` +
+        `<path d="M402,488 Q392,540 400,602" fill="none" stroke="#ffe4e6" stroke-width="2.4" opacity="0.5" stroke-linecap="round"/>`,
+      frontSvg:
+        `<path d="M216,204 C216,150 250,124 300,124 C350,124 384,150 384,204 L368,196 L360,178 L352,184 L322,184 L315,174 L308,184 L292,184 L285,174 L278,184 L248,184 L240,178 L232,196 Z" fill="url(#hair19-base)" stroke="#9f1239" stroke-width="1.8" stroke-linejoin="round"/>` +
+        `<path d="M221,178 C205,206 202,248 203,290 L221,290 C219,254 220,218 226,186 Z" fill="url(#hair19-base)" stroke="#9f1239" stroke-width="1.7"/>` +
+        `<path d="M379,178 C395,206 398,248 397,290 L379,290 C381,254 380,218 374,186 Z" fill="url(#hair19-base)" stroke="#9f1239" stroke-width="1.7"/>` +
+        `<rect x="208" y="218" width="5.5" height="46" rx="2.8" fill="#fff1f2" opacity="0.55"/>` +
+        `<rect x="386.5" y="218" width="5.5" height="46" rx="2.8" fill="#fff1f2" opacity="0.55"/>` +
+        angelRing('hair19-hi', 140, 0.88) +
+        `<path d="M222,158 Q300,110 378,158" fill="none" stroke="url(#hair19-gold)" stroke-width="6" stroke-linecap="round"/>` +
+        `<path d="M228,144 C220,100 226,64 242,56 C258,60 272,94 276,126 Z" fill="url(#hair19-crystal)" stroke="url(#hair19-gold)" stroke-width="2" stroke-linejoin="round"/>` +
+        `<polyline points="242,56 248,96 228,144" fill="none" stroke="#ffffff" stroke-width="1.4" opacity="0.8"/>` +
+        `<polyline points="242,56 254,96 276,126" fill="none" stroke="#ffffff" stroke-width="1.2" opacity="0.7"/>` +
+        `<path d="M372,144 C380,100 374,64 358,56 C342,60 328,94 324,126 Z" fill="url(#hair19-crystal)" stroke="url(#hair19-gold)" stroke-width="2" stroke-linejoin="round"/>` +
+        `<polyline points="358,56 352,96 372,144" fill="none" stroke="#ffffff" stroke-width="1.4" opacity="0.8"/>` +
+        `<polyline points="358,56 346,96 324,126" fill="none" stroke="#ffffff" stroke-width="1.2" opacity="0.7"/>` +
+        diamondGem(250, 102, 6, 9, 'hair19-gem', '#fffbeb') +
+        diamondGem(350, 102, 6, 9, 'hair19-gem', '#fffbeb') +
+        pearl(282, 126, 3.8, 'hair19-pearl') +
+        pearl(318, 126, 3.8, 'hair19-pearl') +
+        diamondGem(300, 122, 6.5, 8.5, 'hair19-gem', '#fffbeb') +
+        sparkle(242, 46, 6, '#ffffff') +
+        sparkle(358, 46, 6, '#ffffff') +
+        sparkle(300, 104, 6, '#ffe4e6')
+    },
+
+    // =========================================================================
+    // 20. Ice Blue High Chignon Updo + Crystal Snowflake Hairpin
+    // =========================================================================
+    {
+      id: 'hair-20',
+      name: 'Tóc Xanh Băng Tuyết Búi Cao & Trâm Hoa Tuyết',
+      icon: '💎',
+      accentColor: '#38bdf8',
+      previewBox: '132 22 336 328',
+      defs:
+        lg('hair20-base', '0%', '0%', '0%', '100%', [
+          ['0%', '#f0f9ff'],
+          ['26%', '#bae6fd'],
+          ['65%', '#38bdf8'],
+          ['100%', '#0284c7']
+        ]) +
+        lg('hair20-deep', '0%', '0%', '0%', '100%', [
+          ['0%', '#0284c7'],
+          ['100%', '#0c4a6e']
+        ]) +
+        lg('hair20-hi', '0%', '0%', '100%', '0%', [
+          ['0%', '#ffffff', 0.18],
+          ['50%', '#f8fdff', 0.95],
+          ['100%', '#ffffff', 0.18]
+        ]) +
+        lg('hair20-ice', '0%', '0%', '100%', '100%', [
+          ['0%', '#ffffff'],
+          ['42%', '#e0f2fe'],
+          ['78%', '#7dd3fc'],
+          ['100%', '#0284c7']
+        ]) +
+        lg('hair20-silver', '0%', '0%', '100%', '100%', [
+          ['0%', '#ffffff'],
+          ['50%', '#e2e8f0'],
+          ['100%', '#64748b']
+        ]) +
+        rg('hair20-gem', '38%', '32%', '68%', [
+          ['0%', '#ffffff'],
+          ['42%', '#7dd3fc'],
+          ['84%', '#0ea5e9'],
+          ['100%', '#0c4a6e']
+        ]) +
+        rg('hair20-pearl', '35%', '30%', '65%', [
+          ['0%', '#ffffff'],
+          ['62%', '#f0f9ff'],
+          ['100%', '#bae6fd']
+        ]),
+      backSvg:
+        innerHeadShell('url(#hair20-deep)', '#075985') +
+        `<line x1="234" y1="116" x2="368" y2="54" stroke="url(#hair20-silver)" stroke-width="3.8" stroke-linecap="round"/>` +
+        `<line x1="236" y1="118" x2="228" y2="152" stroke="#bae6fd" stroke-width="1.5"/>` +
+        diamondGem(228, 156, 5, 8, 'hair20-gem', '#ffffff') +
+        `<ellipse cx="300" cy="86" rx="54" ry="44" fill="url(#hair20-base)" stroke="#075985" stroke-width="1.9"/>` +
+        `<path d="M256,82 Q300,56 344,82" fill="none" stroke="#ffffff" stroke-width="4.2" stroke-linecap="round" opacity="0.82"/>` +
+        `<path d="M264,98 Q300,76 336,98" fill="none" stroke="#0369a1" stroke-width="1.8" stroke-linecap="round" opacity="0.42"/>` +
+        `<path d="M234,268 C222,294 222,322 232,340 C242,326 244,304 248,282 Z" fill="url(#hair20-base)" stroke="#075985" stroke-width="1.5"/>` +
+        `<path d="M366,268 C378,294 378,322 368,340 C358,326 356,304 352,282 Z" fill="url(#hair20-base)" stroke="#075985" stroke-width="1.5"/>`,
+      frontSvg:
+        `<path d="M216,208 C216,150 252,124 300,124 C348,124 384,150 384,208 C370,186 350,170 328,168 C316,178 306,184 300,166 C294,184 284,178 272,168 C250,170 230,186 216,208 Z" fill="url(#hair20-base)" stroke="#075985" stroke-width="1.8"/>` +
+        sideLocks('url(#hair20-base)', 'url(#hair20-base)', '#075985', 304) +
+        `<path d="M248,122 Q300,98 352,122" fill="none" stroke="url(#hair20-ice)" stroke-width="5.5" stroke-linecap="round"/>` +
+        pearl(258, 118, 4.2, 'hair20-pearl') +
+        pearl(278, 110, 4.5, 'hair20-pearl') +
+        pearl(322, 110, 4.5, 'hair20-pearl') +
+        pearl(342, 118, 4.2, 'hair20-pearl') +
+        angelRing('hair20-hi', 140, 0.88) +
+        `<g transform="translate(342,74)">` +
+          `<g stroke="url(#hair20-ice)" stroke-width="2.8" stroke-linecap="round">` +
+            `<line x1="0" y1="-26" x2="0" y2="26"/>` +
+            `<line x1="-22.5" y1="-13" x2="22.5" y2="13"/>` +
+            `<line x1="22.5" y1="-13" x2="-22.5" y2="13"/>` +
+            `<polyline points="-6,-18 0,-12 6,-18" fill="none"/>` +
+            `<polyline points="-6,18 0,12 6,18" fill="none"/>` +
+            `<polyline points="-19,-3 -11,-6 -13,-14" fill="none"/>` +
+            `<polyline points="19,3 11,6 13,14" fill="none"/>` +
+            `<polyline points="13,-14 11,-6 19,-3" fill="none"/>` +
+            `<polyline points="-13,14 -11,6 -19,3" fill="none"/>` +
+          `</g>` +
+          diamondGem(0, 0, 7, 9, 'hair20-gem', '#ffffff') +
+        `</g>` +
+        diamondGem(300, 108, 7.5, 10.5, 'hair20-gem', '#ffffff') +
+        diamondGem(264, 96, 5.5, 8, 'hair20-gem', '#ffffff') +
+        sparkle(368, 44, 7, '#ffffff') +
+        sparkle(242, 74, 6, '#e0f2fe') +
+        sparkle(300, 36, 7, '#ffffff')
+    },
+
+    // =========================================================================
+    // 21. Coral Apricot Ocean Waves + Golden Rose Tiara
+    // =========================================================================
+    {
+      id: 'hair-21',
+      name: 'Tóc Cam San Hô Xoăn Sóng & Vương Miện Hoa Hồng Vàng',
+      icon: '🌹',
+      accentColor: '#fb923c',
+      previewBox: '120 36 360 342',
+      defs:
+        lg('hair21-base', '0%', '0%', '0%', '100%', [
+          ['0%', '#fff7ed'],
+          ['24%', '#fed7aa'],
+          ['62%', '#fb923c'],
+          ['100%', '#9a3412']
+        ]) +
+        lg('hair21-deep', '0%', '0%', '0%', '100%', [
+          ['0%', '#ea580c'],
+          ['55%', '#9a3412'],
+          ['100%', '#5c1c06']
+        ]) +
+        lg('hair21-hi', '0%', '0%', '100%', '0%', [
+          ['0%', '#ffffff', 0.14],
+          ['50%', '#fffbeb', 0.9],
+          ['100%', '#ffffff', 0.14]
+        ]) +
+        lg('hair21-gold', '0%', '0%', '100%', '100%', [
+          ['0%', '#fffbeb'],
+          ['40%', '#fde047'],
+          ['75%', '#eab308'],
+          ['100%', '#a16207']
+        ]) +
+        rg('hair21-rose', '38%', '32%', '68%', [
+          ['0%', '#fffbeb'],
+          ['38%', '#fde047'],
+          ['74%', '#f59e0b'],
+          ['100%', '#b45309']
+        ]) +
+        lg('hair21-leaf', '0%', '0%', '100%', '100%', [
+          ['0%', '#bef264'],
+          ['55%', '#22c55e'],
+          ['100%', '#15803d']
+        ]) +
+        rg('hair21-gem', '38%', '32%', '68%', [
+          ['0%', '#ffffff'],
+          ['42%', '#fdba74'],
+          ['84%', '#ea580c'],
+          ['100%', '#7c2d12']
+        ]),
+      backSvg:
+        innerHeadShell('url(#hair21-deep)', '#7c2d12') +
+        `<path d="M224,186 C180,230 156,298 172,366 C186,422 146,478 164,552 C176,604 156,648 190,664 C216,648 234,626 256,646 C276,664 288,642 300,656 C312,642 324,664 344,646 C366,626 384,648 410,664 C444,648 424,604 436,552 C454,478 414,422 428,366 C444,298 420,230 376,186 Z" fill="url(#hair21-base)" stroke="#9a3412" stroke-width="2" stroke-linejoin="round"/>` +
+        `<path d="M184,322 C210,368 182,420 202,478 C218,526 180,582 200,636 C176,598 184,534 172,478 C158,416 184,366 184,322 Z" fill="url(#hair21-deep)" opacity="0.42"/>` +
+        `<path d="M416,322 C390,368 418,420 398,478 C382,526 420,582 400,636 C424,598 416,534 428,478 C442,416 416,366 416,322 Z" fill="url(#hair21-deep)" opacity="0.42"/>` +
+        `<path d="M192,272 C176,320 200,368 182,422 C198,376 188,324 204,278 Z" fill="#ffedd5" opacity="0.6"/>` +
+        `<path d="M408,272 C424,320 400,368 418,422 C402,376 412,324 396,278 Z" fill="#ffedd5" opacity="0.6"/>`,
+      frontSvg:
+        `<path d="M214,208 C214,152 250,124 300,124 C350,124 386,152 386,208 C370,186 350,170 328,168 C314,180 306,184 300,166 C294,184 286,180 272,168 C250,170 230,186 214,208 Z" fill="url(#hair21-base)" stroke="#9a3412" stroke-width="1.8"/>` +
+        sideLocks('url(#hair21-base)', 'url(#hair21-base)', '#9a3412', 318) +
+        angelRing('hair21-hi', 141, 0.84) +
+        `<path d="M234,136 Q300,112 366,136" fill="none" stroke="url(#hair21-gold)" stroke-width="5.2" stroke-linecap="round"/>` +
+        `<path d="M244,126 C246,96 266,76 286,74 C294,62 306,62 314,74 C334,76 354,96 356,126" fill="none" stroke="url(#hair21-gold)" stroke-width="3.4" stroke-linecap="round"/>` +
+        `<ellipse cx="278" cy="96" rx="12" ry="5" transform="rotate(-28 278 96)" fill="url(#hair21-leaf)" stroke="#15803d" stroke-width="1"/>` +
+        `<ellipse cx="322" cy="96" rx="12" ry="5" transform="rotate(28 322 96)" fill="url(#hair21-leaf)" stroke="#15803d" stroke-width="1"/>` +
+        `<ellipse cx="246" cy="112" rx="10" ry="4.5" transform="rotate(-38 246 112)" fill="url(#hair21-leaf)" stroke="#15803d" stroke-width="1"/>` +
+        `<ellipse cx="354" cy="112" rx="10" ry="4.5" transform="rotate(38 354 112)" fill="url(#hair21-leaf)" stroke="#15803d" stroke-width="1"/>` +
+        (() => {
+          const goldRose = (cx, cy, r) =>
+            `<circle cx="${cx}" cy="${cy}" r="${r}" fill="url(#hair21-rose)" stroke="#92400e" stroke-width="1.3"/>` +
+            `<path d="M${cx - r * 0.65},${cy - r * 0.25} C${cx - r * 0.3},${cy - r * 0.85} ${cx + r * 0.55},${cy - r * 0.75} ${cx + r * 0.65},${cy - r * 0.15} C${cx + r * 0.7},${cy + r * 0.55} ${cx - r * 0.2},${cy + r * 0.78} ${cx - r * 0.52},${cy + r * 0.28}" fill="none" stroke="#92400e" stroke-width="1.2" stroke-linecap="round"/>` +
+            `<path d="M${cx - r * 0.28},${cy + r * 0.08} C${cx - r * 0.2},${cy - r * 0.42} ${cx + r * 0.38},${cy - r * 0.34} ${cx + r * 0.28},${cy + r * 0.18} C${cx + r * 0.12},${cy + r * 0.38} ${cx - r * 0.16},${cy + r * 0.22} ${cx},${cy}" fill="none" stroke="#fef9c3" stroke-width="1.3" stroke-linecap="round"/>` +
+            `<circle cx="${(cx - r * 0.26).toFixed(1)}" cy="${(cy - r * 0.28).toFixed(1)}" r="${(r * 0.14).toFixed(1)}" fill="#ffffff" opacity="0.85"/>`;
+          return goldRose(244, 120, 8.5) +
+            goldRose(356, 120, 8.5) +
+            goldRose(262, 102, 13) +
+            goldRose(338, 102, 13) +
+            goldRose(300, 84, 19);
+        })() +
+        diamondGem(300, 114, 7, 10, 'hair21-gem', '#fef08a') +
+        sparkle(300, 52, 7, '#ffffff') +
+        sparkle(242, 82, 6, '#fef9c3') +
+        sparkle(358, 82, 6, '#fef9c3')
+    },
+
+    // =========================================================================
+    // 22. Midnight Violet-Black Hime Cut + Golden Phoenix Empress Crown
+    // =========================================================================
+    {
+      id: 'hair-22',
+      name: 'Tóc Đen Ánh Tím Hime & Mũ Miện Phượng Hoàng Vàng',
+      icon: '👑',
+      accentColor: '#c084fc',
+      previewBox: '116 8 368 368',
+      defs:
+        lg('hair22-base', '0%', '0%', '0%', '100%', [
+          ['0%', '#581c87'],
+          ['26%', '#2e1065'],
+          ['68%', '#171026'],
+          ['100%', '#090612']
+        ]) +
+        lg('hair22-deep', '0%', '0%', '0%', '100%', [
+          ['0%', '#240c45'],
+          ['100%', '#05030a']
+        ]) +
+        lg('hair22-hi', '0%', '0%', '100%', '0%', [
+          ['0%', '#d8b4fe', 0.18],
+          ['50%', '#f3e8ff', 0.94],
+          ['100%', '#d8b4fe', 0.18]
+        ]) +
+        lg('hair22-gold', '0%', '0%', '100%', '100%', [
+          ['0%', '#fffbeb'],
+          ['36%', '#fde047'],
+          ['74%', '#eab308'],
+          ['100%', '#92400e']
+        ]) +
+        lg('hair22-flame', '0%', '0%', '100%', '100%', [
+          ['0%', '#fef08a'],
+          ['50%', '#fb923c'],
+          ['100%', '#e11d48']
+        ]) +
+        rg('hair22-amethyst', '38%', '32%', '68%', [
+          ['0%', '#ffffff'],
+          ['40%', '#d8b4fe'],
+          ['82%', '#9333ea'],
+          ['100%', '#3b0764']
+        ]) +
+        rg('hair22-pearl', '35%', '30%', '65%', [
+          ['0%', '#ffffff'],
+          ['60%', '#f3e8ff'],
+          ['100%', '#c4b5fd']
+        ]),
+      backSvg:
+        innerHeadShell('url(#hair22-deep)', '#090514') +
+        `<path d="M236,120 C196,102 180,68 192,42 C214,62 240,80 264,98 Z" fill="url(#hair22-gold)" stroke="#78350f" stroke-width="1.5"/>` +
+        `<path d="M364,120 C404,102 420,68 408,42 C386,62 360,80 336,98 Z" fill="url(#hair22-gold)" stroke="#78350f" stroke-width="1.5"/>` +
+        `<path d="M222,190 C202,282 186,442 174,634 L208,616 L224,644 L264,626 L300,646 L336,626 L376,644 L392,616 L426,634 C414,442 398,282 378,190 Z" fill="url(#hair22-base)" stroke="#1e0b36" stroke-width="2" stroke-linejoin="round"/>` +
+        `<path d="M214,316 L202,598 L216,600 L226,318 Z" fill="#a855f7" opacity="0.28"/>` +
+        `<path d="M386,316 L398,598 L384,600 L374,318 Z" fill="#a855f7" opacity="0.28"/>` +
+        `<path d="M196,480 Q206,542 196,608" fill="none" stroke="#c084fc" stroke-width="2.2" opacity="0.45" stroke-linecap="round"/>` +
+        `<path d="M404,480 Q394,542 404,608" fill="none" stroke="#c084fc" stroke-width="2.2" opacity="0.45" stroke-linecap="round"/>`,
+      frontSvg:
+        `<path d="M216,204 C216,150 250,124 300,124 C350,124 384,150 384,204 L368,196 L360,178 L352,184 L322,184 L315,174 L308,184 L292,184 L285,174 L278,184 L248,184 L240,178 L232,196 Z" fill="url(#hair22-base)" stroke="#1e0b36" stroke-width="1.8" stroke-linejoin="round"/>` +
+        `<path d="M220,178 C204,206 201,250 202,294 L220,294 C218,256 219,218 225,186 Z" fill="url(#hair22-base)" stroke="#1e0b36" stroke-width="1.7"/>` +
+        `<path d="M380,178 C396,206 399,250 398,294 L380,294 C382,256 381,218 375,186 Z" fill="url(#hair22-base)" stroke="#1e0b36" stroke-width="1.7"/>` +
+        `<rect x="207" y="218" width="5.5" height="48" rx="2.8" fill="#c084fc" opacity="0.48"/>` +
+        `<rect x="387.5" y="218" width="5.5" height="48" rx="2.8" fill="#c084fc" opacity="0.48"/>` +
+        angelRing('hair22-hi', 140, 0.88) +
+        `<line x1="208" y1="126" x2="208" y2="196" stroke="#fde047" stroke-width="1.8"/>` +
+        pearl(208, 152, 4, 'hair22-pearl') +
+        pearl(208, 174, 4.4, 'hair22-pearl') +
+        diamondGem(208, 198, 4.5, 7, 'hair22-amethyst', '#fde047') +
+        `<line x1="392" y1="126" x2="392" y2="196" stroke="#fde047" stroke-width="1.8"/>` +
+        pearl(392, 152, 4, 'hair22-pearl') +
+        pearl(392, 174, 4.4, 'hair22-pearl') +
+        diamondGem(392, 198, 4.5, 7, 'hair22-amethyst', '#fde047') +
+        `<path d="M230,136 Q300,112 370,136 L362,118 Q300,94 238,118 Z" fill="url(#hair22-gold)" stroke="#78350f" stroke-width="1.7"/>` +
+        `<path d="M242,118 C216,104 198,78 206,56 C224,74 246,84 268,106 Z" fill="url(#hair22-gold)" stroke="#78350f" stroke-width="1.6" stroke-linejoin="round"/>` +
+        `<path d="M358,118 C384,104 402,78 394,56 C376,74 354,84 332,106 Z" fill="url(#hair22-gold)" stroke="#78350f" stroke-width="1.6" stroke-linejoin="round"/>` +
+        `<path d="M276,108 C264,74 274,46 288,36 C292,52 294,68 300,82 C306,68 308,52 312,36 C326,46 336,74 324,108 Z" fill="url(#hair22-gold)" stroke="#78350f" stroke-width="1.6" stroke-linejoin="round"/>` +
+        `<path d="M294,62 L300,26 L306,62 L300,76 Z" fill="url(#hair22-flame)" stroke="#78350f" stroke-width="1.4" stroke-linejoin="round"/>` +
+        `<path d="M284,48 L300,32 L316,48" fill="none" stroke="#fffbeb" stroke-width="2" stroke-linecap="round"/>` +
+        diamondGem(300, 96, 9, 13, 'hair22-amethyst', '#fef08a') +
+        diamondGem(264, 110, 5.5, 8, 'hair22-flame', '#fef08a') +
+        diamondGem(336, 110, 5.5, 8, 'hair22-flame', '#fef08a') +
+        pearl(238, 124, 4, 'hair22-pearl') +
+        pearl(362, 124, 4, 'hair22-pearl') +
+        sparkle(300, 20, 8, '#fef08a') +
+        sparkle(194, 42, 6, '#ffffff') +
+        sparkle(406, 42, 6, '#ffffff')
     }
   ];
 })();

@@ -1590,12 +1590,14 @@
       legs: clone.querySelector('#rig-legs'),
       legLeft: clone.querySelector('#rig-leg-left'),
       legRight: clone.querySelector('#rig-leg-right'),
+      shoeLeft: clone.querySelector('#layer-shoe-left'),
+      shoeRight: clone.querySelector('#layer-shoe-right'),
       eyelids: clone.querySelector('#doll-eyelids')
     };
 
     // Clear inline CSS transform-origin on animated rig groups because applyRigPose()
     // embeds exact SVG pivot coordinates inside transform="rotate(angle cx cy)"
-    [rigRefs.head, rigRefs.backHair, rigRefs.armLeft, rigRefs.armRight, rigRefs.legLeft, rigRefs.legRight].forEach(function (el) {
+    [rigRefs.head, rigRefs.backHair, rigRefs.armLeft, rigRefs.armRight, rigRefs.legLeft, rigRefs.legRight, rigRefs.shoeLeft, rigRefs.shoeRight].forEach(function (el) {
       if (el && el.style) {
         if (typeof el.style.removeProperty === 'function') {
           el.style.removeProperty('transform-origin');
@@ -1863,13 +1865,17 @@
     if (rig.backHair) rig.backHair.setAttribute('transform', headTf);
     if (rig.armLeft) rig.armLeft.setAttribute('transform', 'rotate(' + (opts.armL || 0).toFixed(2) + ' 230 330)');
     if (rig.armRight) rig.armRight.setAttribute('transform', 'rotate(' + (opts.armR || 0).toFixed(2) + ' 370 330)');
-    if (rig.legLeft) {
+    if (rig.legLeft || rig.shoeLeft) {
       var lLift = opts.legLiftL || 0;
-      rig.legLeft.setAttribute('transform', 'translate(0,' + lLift.toFixed(2) + ') rotate(' + (opts.legL || 0).toFixed(2) + ' 274 500)');
+      var legLTf = 'translate(0,' + lLift.toFixed(2) + ') rotate(' + (opts.legL || 0).toFixed(2) + ' 274 500)';
+      if (rig.legLeft) rig.legLeft.setAttribute('transform', legLTf);
+      if (rig.shoeLeft) rig.shoeLeft.setAttribute('transform', legLTf);
     }
-    if (rig.legRight) {
+    if (rig.legRight || rig.shoeRight) {
       var rLift = opts.legLiftR || 0;
-      rig.legRight.setAttribute('transform', 'translate(0,' + rLift.toFixed(2) + ') rotate(' + (opts.legR || 0).toFixed(2) + ' 326 500)');
+      var legRTf = 'translate(0,' + rLift.toFixed(2) + ') rotate(' + (opts.legR || 0).toFixed(2) + ' 326 500)';
+      if (rig.legRight) rig.legRight.setAttribute('transform', legRTf);
+      if (rig.shoeRight) rig.shoeRight.setAttribute('transform', legRTf);
     }
   }
 

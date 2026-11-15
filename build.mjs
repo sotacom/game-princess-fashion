@@ -11,6 +11,7 @@ const SOURCE_FILES = [
   'src/wardrobe-hair.js',
   'src/wardrobe-tops.js',
   'src/wardrobe-bottoms.js',
+  'src/wardrobe-shoes.js',
   'src/nails-stage.js',
   'src/app-shell.js'
 ];
@@ -142,7 +143,7 @@ ${inlineScripts}
   const kb = (Buffer.byteLength(html, 'utf8') / 1024).toFixed(1);
   console.log(`Built index.html successfully (${kb} KB)`);
   console.log(
-    `Datasets: hair=${sandbox.WARDROBE_HAIR_HATS?.length}, tops=${sandbox.WARDROBE_TOPS?.length}, bottoms=${sandbox.WARDROBE_BOTTOMS?.length}, ` +
+    `Datasets: hair=${sandbox.WARDROBE_HAIR_HATS?.length}, tops=${sandbox.WARDROBE_TOPS?.length}, bottoms=${sandbox.WARDROBE_BOTTOMS?.length}, shoes=${sandbox.WARDROBE_SHOES?.length}, ` +
     `lipstick=${sandbox.MAKEUP_DATA?.lipsticks?.length}, eyeshadow=${sandbox.MAKEUP_DATA?.eyeshadows?.length}, ` +
     `eyeColor=${sandbox.MAKEUP_DATA?.eyeColors?.length}, blush=${sandbox.MAKEUP_DATA?.blushes?.length}`
   );

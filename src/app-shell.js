@@ -5,6 +5,7 @@
  *   - window.WARDROBE_HAIR_HATS (src/wardrobe-hair.js)
  *   - window.WARDROBE_TOPS (src/wardrobe-tops.js)
  *   - window.WARDROBE_BOTTOMS (src/wardrobe-bottoms.js)
+ *   - window.WARDROBE_SHOES (src/wardrobe-shoes.js)
  *   - window.SOUND_FX, window.NAIL_SALON, window.STAGE_SHOW (src/nails-stage.js)
  *
  * Exports: window.APP_SHELL_CSS, window.APP_SHELL
@@ -728,11 +729,11 @@
       overflow: hidden;
     }
 
-    /* ==================== RIGHT PANEL: 3 SWIPEABLE WARDROBE DRAWERS ==================== */
+    /* ==================== RIGHT PANEL: 4 SWIPEABLE WARDROBE DRAWERS ==================== */
     .right-panel {
       display: grid;
-      grid-template-rows: repeat(3, minmax(0, 1fr));
-      gap: clamp(8px, 1.3vh, 14px);
+      grid-template-rows: repeat(4, minmax(0, 1fr));
+      gap: clamp(6px, 1vh, 10px);
       min-height: 0;
       z-index: 25;
     }
@@ -740,11 +741,11 @@
     .wardrobe-card {
       position: relative;
       min-height: 0;
-      border-radius: 24px;
-      border: 3px solid rgba(255, 255, 255, 0.96);
+      border-radius: 20px;
+      border: 2.5px solid rgba(255, 255, 255, 0.96);
       background: linear-gradient(180deg, rgba(255, 255, 255, 0.94) 0%, rgba(255, 232, 246, 0.9) 100%);
-      box-shadow: 0 7px 0 #eb9bc8, 0 12px 24px rgba(190, 56, 132, 0.2);
-      padding: 8px 10px;
+      box-shadow: 0 5px 0 #eb9bc8, 0 10px 20px rgba(190, 56, 132, 0.2);
+      padding: 6px 9px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -753,7 +754,7 @@
     }
 
     .wardrobe-card.is-swiping {
-      box-shadow: 0 7px 0 #ff69b4, 0 0 0 3px rgba(255, 105, 180, 0.35), 0 14px 28px rgba(255, 77, 166, 0.28);
+      box-shadow: 0 5px 0 #ff69b4, 0 0 0 3px rgba(255, 105, 180, 0.35), 0 14px 28px rgba(255, 77, 166, 0.28);
     }
 
     .card-header {
@@ -768,17 +769,17 @@
       display: inline-flex;
       align-items: center;
       gap: 5px;
-      font-size: clamp(13px, 1.55vw, 16px);
+      font-size: clamp(12px, 1.35vw, 14.5px);
       font-weight: 900;
       color: #8f1659;
     }
 
     .card-counter {
-      font-size: 13px;
+      font-size: 12px;
       font-weight: 900;
       color: #ffffff;
       background: linear-gradient(180deg, #ff7bc0 0%, #ea3a95 100%);
-      padding: 2px 10px;
+      padding: 1.5px 8px;
       border-radius: 999px;
       border: 1.5px solid #ffffff;
       box-shadow: 0 2px 5px rgba(234, 58, 149, 0.3);
@@ -803,15 +804,15 @@
     .card-arrow {
       appearance: none;
       flex: 0 0 auto;
-      width: 40px;
-      height: 40px;
+      width: 34px;
+      height: 34px;
       border-radius: 50%;
       border: 2.5px solid #ffffff;
       background: linear-gradient(180deg, #ffffff 0%, #ffd5ec 100%);
       box-shadow: 0 3px 0 #e686bc, 0 6px 12px rgba(190, 56, 132, 0.2);
       color: #b51870;
       font-family: inherit;
-      font-size: 20px;
+      font-size: 17px;
       font-weight: 900;
       line-height: 1;
       display: flex;
@@ -850,7 +851,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 4px;
+      padding: 3px;
       will-change: transform, opacity;
       transition: transform 0.26s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.2s ease;
     }
@@ -874,11 +875,11 @@
       align-items: center;
       justify-content: center;
       gap: 6px;
-      padding-top: 2px;
+      padding-top: 1px;
     }
 
     .card-item-name {
-      font-size: clamp(12px, 1.35vw, 14px);
+      font-size: clamp(11px, 1.2vw, 13px);
       font-weight: 800;
       color: #691b49;
       text-align: center;
@@ -901,10 +902,32 @@
         padding: 10px 6px;
       }
 
+      .right-panel {
+        gap: 6px;
+      }
+
+      .wardrobe-card {
+        border-radius: 18px;
+        padding: 5px 8px;
+      }
+
+      .card-title {
+        font-size: 12px;
+      }
+
+      .card-counter {
+        font-size: 11px;
+        padding: 1px 7px;
+      }
+
       .card-arrow {
-        width: 34px;
-        height: 34px;
-        font-size: 17px;
+        width: 30px;
+        height: 30px;
+        font-size: 15px;
+      }
+
+      .card-item-name {
+        font-size: 11px;
       }
 
       .makeup-swatches-grid {
@@ -948,28 +971,48 @@
         font-size: 12px;
       }
 
+      .right-panel {
+        gap: 5px;
+      }
+
       .wardrobe-card {
-        border-radius: 18px;
-        padding: 5px 6px;
+        border-radius: 15px;
+        padding: 4px 5px;
+        border-width: 2px;
+        box-shadow: 0 4px 0 #eb9bc8, 0 6px 12px rgba(190, 56, 132, 0.18);
       }
 
       .card-title {
-        font-size: 11.5px;
+        font-size: 10.5px;
+        gap: 3px;
       }
 
       .card-counter {
-        font-size: 11px;
-        padding: 1px 6px;
+        font-size: 10px;
+        padding: 1px 5px;
       }
 
       .card-arrow {
-        width: 28px;
-        height: 28px;
-        font-size: 14px;
+        width: 24px;
+        height: 24px;
+        font-size: 13px;
+        border-width: 2px;
+      }
+
+      .card-preview-window {
+        border-radius: 12px;
+      }
+
+      .card-preview-track {
+        padding: 2px;
+      }
+
+      .card-footer {
+        padding-top: 0;
       }
 
       .card-item-name {
-        font-size: 11px;
+        font-size: 10px;
       }
 
       .center-swipe-hint {
@@ -1292,6 +1335,7 @@
       hairIdx: 0,
       topIdx: 0,
       bottomIdx: 0,
+      shoeIdx: 0,
       makeupOpen: false,
       makeupTab: 'lipstick',
       makeup: {
@@ -1312,7 +1356,7 @@
     return ((idx % len) + len) % len;
   }
 
-  function loadSavedState(hairsLen, topsLen, botsLen, makeupData) {
+  function loadSavedState(hairsLen, topsLen, botsLen, shoesLen, makeupData) {
     var base = createDefaultState();
     try {
       var raw = global.localStorage && global.localStorage.getItem(STORAGE_KEY);
@@ -1322,11 +1366,13 @@
       if (typeof parsed.hairIdx === 'number') base.hairIdx = wrapIdx(parsed.hairIdx, hairsLen);
       if (typeof parsed.topIdx === 'number') base.topIdx = wrapIdx(parsed.topIdx, topsLen);
       if (typeof parsed.bottomIdx === 'number') base.bottomIdx = wrapIdx(parsed.bottomIdx, botsLen);
+      if (typeof parsed.shoeIdx === 'number' && !isNaN(parsed.shoeIdx)) base.shoeIdx = wrapIdx(parsed.shoeIdx, shoesLen);
+      var md = makeupData || {};
       if (parsed.makeup && typeof parsed.makeup === 'object') {
-        base.makeup.lipstick = wrapIdx(Number(parsed.makeup.lipstick) || 0, (makeupData.lipsticks || []).length || 12);
-        base.makeup.eyeshadow = wrapIdx(Number(parsed.makeup.eyeshadow) || 0, (makeupData.eyeshadows || []).length || 12);
-        base.makeup.eyeColor = wrapIdx(Number(parsed.makeup.eyeColor) || 0, (makeupData.eyeColors || []).length || 12);
-        base.makeup.blush = wrapIdx(Number(parsed.makeup.blush) || 0, (makeupData.blushes || []).length || 12);
+        base.makeup.lipstick = wrapIdx(Number(parsed.makeup.lipstick) || 0, (md.lipsticks || []).length || 12);
+        base.makeup.eyeshadow = wrapIdx(Number(parsed.makeup.eyeshadow) || 0, (md.eyeshadows || []).length || 12);
+        base.makeup.eyeColor = wrapIdx(Number(parsed.makeup.eyeColor) || 0, (md.eyeColors || []).length || 12);
+        base.makeup.blush = wrapIdx(Number(parsed.makeup.blush) || 0, (md.blushes || []).length || 12);
       }
       if (Array.isArray(parsed.nails) && parsed.nails.length === 5) {
         base.nails = parsed.nails.map(function (n) {
@@ -1350,6 +1396,7 @@
         hairIdx: state.hairIdx,
         topIdx: state.topIdx,
         bottomIdx: state.bottomIdx,
+        shoeIdx: state.shoeIdx,
         makeup: state.makeup,
         nails: state.nails,
         muted: state.muted
@@ -1390,6 +1437,7 @@
     var HAIRS = global.WARDROBE_HAIR_HATS || [];
     var TOPS = global.WARDROBE_TOPS || [];
     var BOTTOMS = global.WARDROBE_BOTTOMS || [];
+    var SHOES = global.WARDROBE_SHOES || [];
     var SOUND_FX = global.SOUND_FX || {
       isMuted: false,
       setMuted: function () {},
@@ -1401,7 +1449,7 @@
       playCamera: function () {}
     };
 
-    var state = loadSavedState(HAIRS.length, TOPS.length, BOTTOMS.length, MAKEUP_DATA);
+    var state = loadSavedState(HAIRS.length, TOPS.length, BOTTOMS.length, SHOES.length, MAKEUP_DATA);
     if (typeof SOUND_FX.setMuted === 'function') {
       SOUND_FX.setMuted(state.muted);
     }
@@ -1479,6 +1527,7 @@
                       (DOLL_RIG.legsSvg || '') +
                       (DOLL_RIG.torsoSvg || '') +
                       '<g id="layer-bottoms"></g>' +
+                      '<g id="layer-shoes"><g id="layer-shoe-left"></g><g id="layer-shoe-right"></g></g>' +
                       (DOLL_RIG.armsSvg || '') +
                       '<g id="layer-tops"></g>' +
                       headSvgWithHairLayer +
@@ -1494,11 +1543,12 @@
           '</div>' +
         '</section>' +
 
-        // RIGHT SIDE: EXACT 3 WARDROBE DRAWERS TOP -> BOTTOM (Hair/Hat, Tops, Bottoms)
+        // RIGHT SIDE: 4 WARDROBE DRAWERS TOP -> BOTTOM (Hair/Hat, Tops, Bottoms, Shoes)
         '<aside id="right-wardrobe" class="right-panel" aria-label="Tủ đồ công chúa">' +
           buildDrawerMarkup('hair', '👑', 'Mũ / Tóc') +
           buildDrawerMarkup('top', '👚', 'Áo') +
           buildDrawerMarkup('bottom', '👗', 'Quần / Váy') +
+          buildDrawerMarkup('shoe', '👠', 'Giày') +
         '</aside>' +
       '</main>' +
 
@@ -1542,6 +1592,8 @@
     var layerBackTrain = document.getElementById('layer-back-train');
     var layerBackHair = document.getElementById('layer-back-hair');
     var layerBottoms = document.getElementById('layer-bottoms');
+    var layerShoeLeft = document.getElementById('layer-shoe-left');
+    var layerShoeRight = document.getElementById('layer-shoe-right');
     var layerTops = document.getElementById('layer-tops');
     var layerFrontHairHat = document.getElementById('layer-front-hair-hat');
     var zoomLayer = document.getElementById('princess-zoom-layer');
@@ -1618,13 +1670,15 @@
       var hair = HAIRS[state.hairIdx] || { defs: '', backSvg: '', frontSvg: '' };
       var top = TOPS[state.topIdx] || { defs: '', backSvg: '', svg: '' };
       var bottom = BOTTOMS[state.bottomIdx] || { defs: '', backSvg: '', svg: '' };
+      var shoe = SHOES[state.shoeIdx] || { defs: '', leftSvg: '', rightSvg: '', svg: '' };
 
       if (princessDefs) {
         princessDefs.innerHTML =
           (DOLL_RIG.defsSvg || '') +
           (hair.defs || '') +
           (top.defs || '') +
-          (bottom.defs || '');
+          (bottom.defs || '') +
+          (shoe.defs || '');
       }
       if (layerBackTrain) {
         layerBackTrain.innerHTML = (bottom.backSvg || '') + (top.backSvg || '');
@@ -1634,6 +1688,35 @@
       }
       if (layerBottoms) {
         layerBottoms.innerHTML = bottom.svg || '';
+      }
+      var defaultShoeLeft = princessSvg ? princessSvg.querySelector('#doll-shoe-left') : null;
+      var defaultShoeRight = princessSvg ? princessSvg.querySelector('#doll-shoe-right') : null;
+      if (SHOES.length > 0) {
+        if (defaultShoeLeft) {
+          defaultShoeLeft.setAttribute('display', 'none');
+          if (defaultShoeLeft.style) defaultShoeLeft.style.display = 'none';
+        }
+        if (defaultShoeRight) {
+          defaultShoeRight.setAttribute('display', 'none');
+          if (defaultShoeRight.style) defaultShoeRight.style.display = 'none';
+        }
+        if (layerShoeLeft) {
+          layerShoeLeft.innerHTML = shoe.leftSvg || shoe.svg || '';
+        }
+        if (layerShoeRight) {
+          layerShoeRight.innerHTML = shoe.rightSvg || '';
+        }
+      } else {
+        if (defaultShoeLeft) {
+          if (typeof defaultShoeLeft.removeAttribute === 'function') defaultShoeLeft.removeAttribute('display');
+          if (defaultShoeLeft.style) defaultShoeLeft.style.display = '';
+        }
+        if (defaultShoeRight) {
+          if (typeof defaultShoeRight.removeAttribute === 'function') defaultShoeRight.removeAttribute('display');
+          if (defaultShoeRight.style) defaultShoeRight.style.display = '';
+        }
+        if (layerShoeLeft) layerShoeLeft.innerHTML = '';
+        if (layerShoeRight) layerShoeRight.innerHTML = '';
       }
       if (layerTops) {
         layerTops.innerHTML = top.svg || '';
@@ -1651,6 +1734,9 @@
       }
       if (category === 'top') {
         return { list: TOPS, key: 'topIdx', sparkleY: 42, defaultBox: '180 295 240 200' };
+      }
+      if (category === 'shoe') {
+        return { list: SHOES, key: 'shoeIdx', sparkleY: 88, defaultBox: '225 775 150 120' };
       }
       return { list: BOTTOMS, key: 'bottomIdx', sparkleY: 66, defaultBox: '100 410 400 455' };
     }
@@ -1671,9 +1757,14 @@
       if (counterEl) counterEl.textContent = (idx + 1) + ' / ' + list.length;
       if (nameEl) nameEl.textContent = (item.icon ? item.icon + ' ' : '') + item.name;
       if (trackEl) {
-        var rawBody = category === 'hair'
-          ? (item.backSvg || '') + (item.frontSvg || '')
-          : (item.backSvg || '') + (item.svg || '');
+        var rawBody;
+        if (category === 'hair') {
+          rawBody = (item.backSvg || '') + (item.frontSvg || '');
+        } else if (category === 'shoe') {
+          rawBody = item.svg || ((item.leftSvg || '') + (item.rightSvg || ''));
+        } else {
+          rawBody = (item.backSvg || '') + (item.svg || '');
+        }
         var combined = '<defs>' + (item.defs || '') + '</defs>' + rawBody;
         var scoped = scopeSvgIds(combined, 'thumb-' + category + '-');
         var vb = item.previewBox || info.defaultBox;
@@ -1823,8 +1914,8 @@
       });
     }
 
-    // Wire up the 3 Right Wardrobe Drawers (Arrow taps + Swipe)
-    ['hair', 'top', 'bottom'].forEach(function (category) {
+    // Wire up the 4 Right Wardrobe Drawers (Arrow taps + Swipe)
+    ['hair', 'top', 'bottom', 'shoe'].forEach(function (category) {
       var card = document.getElementById('drawer-' + category);
       if (!card) return;
       var stage = card.querySelector('.card-swipe-stage');
@@ -1866,7 +1957,7 @@
       });
     });
 
-    // Wire up direct Head / Torso / Skirt swipe zones on Center Princess Mirror
+    // Wire up direct Head / Torso / Skirt / Shoe swipe zones on Center Princess Mirror
     attachSwipeHandler(mirrorViewport, {
       canStart: function () {
         return !state.makeupOpen;
@@ -1877,7 +1968,8 @@
         var relY = rect.height > 0 ? ((clientY - rect.top) / rect.height) * 950 : 400;
         if (relY < 325) return 'hair';
         if (relY < 475) return 'top';
-        return 'bottom';
+        if (relY < 760) return 'bottom';
+        return 'shoe';
       },
       onMove: function (s) {
         if (!princessSvg) return;
@@ -2115,15 +2207,18 @@
         state.hairIdx = pickDifferentRandom(state.hairIdx, HAIRS.length);
         state.topIdx = pickDifferentRandom(state.topIdx, TOPS.length);
         state.bottomIdx = pickDifferentRandom(state.bottomIdx, BOTTOMS.length);
+        state.shoeIdx = pickDifferentRandom(state.shoeIdx, SHOES.length);
         renderPrincessOutfit();
         renderDrawerCard('hair', 1);
         renderDrawerCard('top', 1);
         renderDrawerCard('bottom', 1);
+        renderDrawerCard('shoe', 1);
         persistState(state);
         SOUND_FX.playChime();
         spawnSparkles(50, 26, 7);
         spawnSparkles(50, 48, 7);
         spawnSparkles(50, 70, 7);
+        spawnSparkles(50, 88, 7);
         showToast('🪄 Biến Hình Phép Thuật!');
       });
     }
@@ -2240,6 +2335,7 @@
     renderDrawerCard('hair', 0);
     renderDrawerCard('top', 0);
     renderDrawerCard('bottom', 0);
+    renderDrawerCard('shoe', 0);
     renderMakeupSwatches();
 
     global.APP_SHELL = {

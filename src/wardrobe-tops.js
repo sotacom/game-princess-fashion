@@ -134,6 +134,26 @@
     return out;
   }
 
+  /** Renders a 5-petal notched cherry blossom flower with golden center. */
+  function sakuraFlower(cx, cy, r, fill, stroke, centerFill) {
+    var out = '<g transform="translate(' + cx + ',' + cy + ')">';
+    var p =
+      'M0,0 C' + (-r * 0.42).toFixed(1) + ',' + (-r * 0.35).toFixed(1) +
+      ' ' + (-r * 0.46).toFixed(1) + ',' + (-r * 0.88).toFixed(1) +
+      ' ' + (-r * 0.14).toFixed(1) + ',' + (-r * 0.98).toFixed(1) +
+      ' L0,' + (-r * 0.78).toFixed(1) +
+      ' L' + (r * 0.14).toFixed(1) + ',' + (-r * 0.98).toFixed(1) +
+      ' C' + (r * 0.46).toFixed(1) + ',' + (-r * 0.88).toFixed(1) +
+      ' ' + (r * 0.42).toFixed(1) + ',' + (-r * 0.35).toFixed(1) + ' 0,0 Z';
+    var st = stroke ? ' stroke="' + stroke + '" stroke-width="0.6"' : '';
+    for (var i = 0; i < 5; i++) {
+      out += '<path d="' + p + '" transform="rotate(' + (i * 72) + ')" fill="' + fill + '"' + st + '/>';
+    }
+    out += '<circle cx="0" cy="0" r="' + (r * 0.23).toFixed(1) + '" fill="' + (centerFill || '#fde047') + '"/>';
+    out += '</g>';
+    return out;
+  }
+
   /** Builds symmetric twin-element pair using SVG mirror around x=300. */
   function mirrorX(innerSvg) {
     return innerSvg + '<g transform="translate(600,0) scale(-1,1)">' + innerSvg + '</g>';
@@ -1039,6 +1059,953 @@
           star4(284, 336, 4.5, '#ffffff', 0.95) +
           star4(316, 336, 4.5, '#ffffff', 0.95) +
           star4(300, 431, 4.5, '#ffffff', 0.95) +
+        '</g>'
+    },
+
+    /* ======================================================================
+       13. Áo Corset Nhung Đỏ Hoàng Gia & Choàng Lông Trắng
+       ====================================================================== */
+    {
+      id: 'top-13',
+      name: 'Áo Corset Nhung Đỏ Hoàng Gia & Choàng Lông Trắng',
+      icon: '👑',
+      accentColor: '#e11d48',
+      previewBox: '142 288 316 230',
+      defs:
+        '<linearGradient id="top13-velvet" x1="0%" y1="0%" x2="100%" y2="10%">' +
+          '<stop offset="0%" stop-color="#4c0519"/>' +
+          '<stop offset="24%" stop-color="#be123c"/>' +
+          '<stop offset="48%" stop-color="#fb7185"/>' +
+          '<stop offset="74%" stop-color="#9f1239"/>' +
+          '<stop offset="100%" stop-color="#4c0519"/>' +
+        '</linearGradient>' +
+        '<linearGradient id="top13-cape" x1="50%" y1="0%" x2="50%" y2="100%">' +
+          '<stop offset="0%" stop-color="#9f1239"/>' +
+          '<stop offset="55%" stop-color="#6b0722"/>' +
+          '<stop offset="100%" stop-color="#3b0210"/>' +
+        '</linearGradient>' +
+        '<linearGradient id="top13-lining" x1="0%" y1="0%" x2="100%" y2="100%">' +
+          '<stop offset="0%" stop-color="#fff8dc"/>' +
+          '<stop offset="55%" stop-color="#fde68a"/>' +
+          '<stop offset="100%" stop-color="#d97706"/>' +
+        '</linearGradient>' +
+        '<linearGradient id="top13-fur" x1="0%" y1="0%" x2="0%" y2="100%">' +
+          '<stop offset="0%" stop-color="#ffffff"/>' +
+          '<stop offset="68%" stop-color="#f8fafc"/>' +
+          '<stop offset="100%" stop-color="#cbd5e1"/>' +
+        '</linearGradient>' +
+        '<linearGradient id="top13-gold" x1="0%" y1="0%" x2="100%" y2="100%">' +
+          '<stop offset="0%" stop-color="#fef9c3"/>' +
+          '<stop offset="48%" stop-color="#fbbf24"/>' +
+          '<stop offset="100%" stop-color="#b45309"/>' +
+        '</linearGradient>' +
+        '<radialGradient id="top13-ruby" cx="35%" cy="30%" r="70%">' +
+          '<stop offset="0%" stop-color="#ffe4ec"/>' +
+          '<stop offset="32%" stop-color="#f43f5e"/>' +
+          '<stop offset="72%" stop-color="#be123c"/>' +
+          '<stop offset="100%" stop-color="#4c0519"/>' +
+        '</radialGradient>' +
+        '<radialGradient id="top13-pearl" cx="34%" cy="30%" r="68%">' +
+          '<stop offset="0%" stop-color="#ffffff"/>' +
+          '<stop offset="58%" stop-color="#fff1f2"/>' +
+          '<stop offset="100%" stop-color="#d6c2c9"/>' +
+        '</radialGradient>',
+      backSvg:
+        '<g>' +
+          /* Majestic royal crimson coronation cape */
+          '<path d="M234,326 C184,380 156,488 150,620 C200,638 252,642 300,635 C348,642 400,638 450,620 C444,488 416,380 366,326 Z" fill="url(#top13-cape)" stroke="#3b0210" stroke-width="1.4"/>' +
+          mirrorX(
+            '<path d="M236,330 C198,388 176,492 170,612 L188,615 C194,498 214,398 246,338 Z" fill="url(#top13-lining)" opacity="0.28"/>' +
+            '<path d="M224,352 C202,414 190,502 186,598" fill="none" stroke="url(#top13-gold)" stroke-width="1.5" opacity="0.72"/>'
+          ) +
+          /* Plush scalloped ermine fur cape hem with royal flecks */
+          '<path d="M154,606 Q178,596 202,608 Q228,618 254,608 Q278,598 300,608 Q322,598 346,608 Q372,618 398,608 Q422,596 446,606 L452,622 Q424,634 398,626 Q372,638 346,628 Q322,638 300,628 Q278,638 254,628 Q228,638 202,626 Q176,634 148,622 Z" fill="url(#top13-fur)" stroke="#cbd5e1" stroke-width="1"/>' +
+          '<path d="M180,614 L182,621 M228,618 L230,625 M276,614 L278,621 M324,614 L322,621 M372,618 L370,625 M420,614 L418,621" stroke="#334155" stroke-width="2" stroke-linecap="round" opacity="0.7"/>' +
+        '</g>',
+      svg:
+        '<g>' +
+          /* Sculpted crimson velvet sweetheart corset covering full bust & waist cleanly */
+          '<path d="M238,338 C256,329 280,333 300,346 C320,333 344,329 362,338 C362,368 357,396 349,415 L342,435 L356,456 Q328,466 300,468 Q272,466 244,456 L258,435 L251,415 C243,396 238,368 238,338 Z" fill="url(#top13-velvet)" stroke="#4c0519" stroke-width="1.3"/>' +
+          /* 2.5D Velvet bust sheen & curved gold corset boning channels */
+          '<path d="M248,348 C264,344 282,350 290,366 C278,376 258,374 246,360 Z" fill="#fda4af" opacity="0.34"/>' +
+          '<path d="M352,348 C336,344 318,350 310,366 C322,376 342,374 354,360 Z" fill="#fda4af" opacity="0.22"/>' +
+          mirrorX(
+            '<path d="M266,345 C270,378 273,408 274,434" fill="none" stroke="url(#top13-gold)" stroke-width="1.6" opacity="0.9"/>' +
+            '<path d="M284,352 C286,382 287,410 288,434" fill="none" stroke="url(#top13-gold)" stroke-width="1.4" opacity="0.85"/>' +
+            '<path d="M276,348 C279,380 281,410 282,434" fill="none" stroke="#4c0519" stroke-width="1.2" opacity="0.5"/>'
+          ) +
+          /* Center gold corset cross-lacing over velvet panel */
+          '<rect x="290" y="362" width="20" height="70" rx="4" fill="#4c0519" opacity="0.55"/>' +
+          '<path d="M291,368 L309,380 L291,392 L309,404 L291,416 L309,428" fill="none" stroke="url(#top13-gold)" stroke-width="1.7" stroke-linecap="round"/>' +
+          '<path d="M309,368 L291,380 L309,392 L291,404 L309,416 L291,428" fill="none" stroke="#fef08a" stroke-width="1.2" stroke-linecap="round"/>' +
+          /* Crimson sleeves & cuffs peeking beneath plush white fur shoulder stole */
+          mirrorX(
+            '<ellipse cx="220" cy="343" rx="30" ry="26" fill="url(#top13-velvet)" stroke="#4c0519" stroke-width="1.1"/>' +
+            '<path d="M196,358 Q220,368 244,358 L242,370 Q220,379 198,369 Z" fill="url(#top13-gold)" stroke="#92400e" stroke-width="0.9"/>'
+          ) +
+          /* Plush snowy white ermine fur collar & shoulder boa covering joints cleanly */
+          '<path d="M280,317 Q300,326 320,317 C332,317 346,321 352,329 C334,335 316,337 300,342 C284,337 266,335 248,329 C254,321 268,317 280,317 Z" fill="url(#top13-fur)" stroke="#cbd5e1" stroke-width="1"/>' +
+          mirrorX(
+            '<path d="M254,320 C236,312 208,316 196,328 C186,338 188,356 202,363 C214,368 228,366 238,358 C248,352 254,340 256,328 Z" fill="url(#top13-fur)" stroke="#cbd5e1" stroke-width="1.1"/>' +
+            '<circle cx="212" cy="336" r="14" fill="url(#top13-fur)" opacity="0.88"/>' +
+            '<circle cx="234" cy="332" r="12" fill="url(#top13-fur)" opacity="0.92"/>' +
+            '<path d="M206,326 C216,318 232,318 242,326" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round"/>' +
+            /* Royal black ermine flecks */
+            '<path d="M208,342 L207,348 M224,332 L223,338 M236,346 L235,352" stroke="#1e293b" stroke-width="2" stroke-linecap="round" opacity="0.72"/>' +
+            '<circle cx="207" cy="349" r="1.2" fill="#1e293b" opacity="0.75"/>' +
+            '<circle cx="223" cy="339" r="1.2" fill="#1e293b" opacity="0.75"/>' +
+            '<circle cx="235" cy="353" r="1.2" fill="#1e293b" opacity="0.75"/>'
+          ) +
+          /* Scalloped white ermine fur peplum trim & gold filigree waist belt */
+          '<path d="M244,452 Q272,462 300,464 Q328,462 356,452 L359,462 Q330,472 300,472 Q270,472 241,462 Z" fill="url(#top13-fur)" stroke="#cbd5e1" stroke-width="1"/>' +
+          '<path d="M254,447 Q276,456 300,458 Q324,456 346,447" fill="none" stroke="url(#top13-gold)" stroke-width="1.6"/>' +
+          '<path d="M258,426 Q300,435 342,426 L343,438 Q300,447 257,438 Z" fill="url(#top13-gold)" stroke="#92400e" stroke-width="1"/>' +
+          /* Draped royal pearl swags & crowned ruby brooch */
+          pearlChain(244, 336, 272, 356, 294, 354, 6, 2.2, 'top13-pearl', '#cbd5e1') +
+          pearlChain(356, 336, 328, 356, 306, 354, 6, 2.2, 'top13-pearl', '#cbd5e1') +
+          '<path d="M291,344 L294,335 L298,340 L300,332 L302,340 L306,335 L309,344 Z" fill="url(#top13-gold)" stroke="#92400e" stroke-width="0.8"/>' +
+          gemCircle(300, 354, 6.2, 'top13-ruby', 'url(#top13-gold)') +
+          gemCircle(300, 434, 4.6, 'top13-ruby', '#fef08a') +
+          gemCircle(276, 433, 2.6, 'top13-ruby', '#fef08a') +
+          gemCircle(324, 433, 2.6, 'top13-ruby', '#fef08a') +
+          star4(312, 344, 5, '#ffffff', 0.95) +
+          star4(286, 360, 4, '#fef08a', 0.9) +
+        '</g>'
+    },
+
+    /* ======================================================================
+       14. Áo Thủy Thủ Thần Tượng Ánh Sao Hồng Tím
+       ====================================================================== */
+    {
+      id: 'top-14',
+      name: 'Áo Thủy Thủ Thần Tượng Ánh Sao Hồng Tím',
+      icon: '⭐',
+      accentColor: '#ec4899',
+      previewBox: '164 292 272 208',
+      defs:
+        '<linearGradient id="top14-blouse" x1="0%" y1="0%" x2="100%" y2="0%">' +
+          '<stop offset="0%" stop-color="#f5d0fe"/>' +
+          '<stop offset="25%" stop-color="#fff5fa"/>' +
+          '<stop offset="52%" stop-color="#ffffff"/>' +
+          '<stop offset="78%" stop-color="#fce7f3"/>' +
+          '<stop offset="100%" stop-color="#e9d5ff"/>' +
+        '</linearGradient>' +
+        '<linearGradient id="top14-collar" x1="0%" y1="0%" x2="100%" y2="100%">' +
+          '<stop offset="0%" stop-color="#f472b6"/>' +
+          '<stop offset="50%" stop-color="#db2777"/>' +
+          '<stop offset="100%" stop-color="#7e22ce"/>' +
+        '</linearGradient>' +
+        '<linearGradient id="top14-bow" x1="0%" y1="0%" x2="100%" y2="25%">' +
+          '<stop offset="0%" stop-color="#a21caf"/>' +
+          '<stop offset="30%" stop-color="#ec4899"/>' +
+          '<stop offset="54%" stop-color="#fbcfe8"/>' +
+          '<stop offset="80%" stop-color="#d946ef"/>' +
+          '<stop offset="100%" stop-color="#701a75"/>' +
+        '</linearGradient>' +
+        '<linearGradient id="top14-skirt" x1="0%" y1="0%" x2="100%" y2="10%">' +
+          '<stop offset="0%" stop-color="#9333ea"/>' +
+          '<stop offset="32%" stop-color="#ec4899"/>' +
+          '<stop offset="52%" stop-color="#f9a8d4"/>' +
+          '<stop offset="74%" stop-color="#c026d3"/>' +
+          '<stop offset="100%" stop-color="#6b21a8"/>' +
+        '</linearGradient>' +
+        '<linearGradient id="top14-gold" x1="0%" y1="0%" x2="100%" y2="100%">' +
+          '<stop offset="0%" stop-color="#fef9c3"/>' +
+          '<stop offset="50%" stop-color="#fde047"/>' +
+          '<stop offset="100%" stop-color="#ca8a04"/>' +
+        '</linearGradient>' +
+        '<radialGradient id="top14-gem" cx="35%" cy="30%" r="70%">' +
+          '<stop offset="0%" stop-color="#ffffff"/>' +
+          '<stop offset="35%" stop-color="#f9a8d4"/>' +
+          '<stop offset="72%" stop-color="#d946ef"/>' +
+          '<stop offset="100%" stop-color="#4a044e"/>' +
+        '</radialGradient>',
+      backSvg:
+        '<g>' +
+          '<path d="M276,318 Q300,310 324,318 L318,328 L282,328 Z" fill="url(#top14-collar)" stroke="#7e22ce" stroke-width="1"/>' +
+          mirrorX(
+            '<path d="M270,404 C248,430 234,464 228,494 L244,486 L252,498 C260,468 268,438 278,414 Z" fill="url(#top14-bow)" opacity="0.88" stroke="#86198f" stroke-width="0.9"/>' +
+            star5(242, 476, 4.2, 1.9, 'url(#top14-gold)', '#a16207', 0.5)
+          ) +
+        '</g>',
+      svg:
+        '<g>' +
+          /* Fluffy idol pink-lilac puff sleeves */
+          mirrorX(
+            '<ellipse cx="220" cy="338" rx="31" ry="29" fill="url(#top14-blouse)" stroke="#c084fc" stroke-width="1.2"/>' +
+            '<path d="M198,323 C210,313 230,315 240,328" fill="none" stroke="#ffffff" stroke-width="2.4" opacity="0.9" stroke-linecap="round"/>' +
+            star5(208, 338, 5, 2.2, 'url(#top14-collar)', '#ffffff', 0.7) +
+            '<path d="M195,358 Q220,367 243,358 L241,370 Q220,379 197,369 Z" fill="url(#top14-collar)" stroke="#7e22ce" stroke-width="1"/>' +
+            '<path d="M196,363 Q220,372 242,363" fill="none" stroke="#ffffff" stroke-width="1.5"/>' +
+            '<path d="M197,367 Q220,376 241,367" fill="none" stroke="url(#top14-gold)" stroke-width="1.1"/>'
+          ) +
+          /* Fitted pink-lilac idol sailor blouse */
+          '<path d="M236,331 C250,320 272,318 284,318 L316,318 C328,318 350,320 364,331 C363,365 358,395 350,415 L342,434 L258,434 L250,415 C242,395 237,365 236,331 Z" fill="url(#top14-blouse)" stroke="#c084fc" stroke-width="1.2"/>' +
+          '<path d="M275,376 C277,396 279,414 281,428 M325,376 C323,396 321,414 319,428" fill="none" stroke="#e9d5ff" stroke-width="1.4" opacity="0.85"/>' +
+          /* Magenta-violet idol sailor V-collar with sparkling double stripes */
+          '<path d="M282,318 C263,318 243,324 236,336 C243,354 258,369 300,384 C342,369 357,354 364,336 C357,324 337,318 318,318 L315,326 L300,370 L285,326 Z" fill="url(#top14-collar)" stroke="#701a75" stroke-width="1.2"/>' +
+          '<path d="M240,337 C248,352 263,365 300,379 C337,365 352,352 360,337" fill="none" stroke="#ffffff" stroke-width="1.7"/>' +
+          '<path d="M245,334 C254,347 267,359 300,373 C333,359 346,347 355,334" fill="none" stroke="url(#top14-gold)" stroke-width="1.3"/>' +
+          star5(254, 342, 5.4, 2.4, 'url(#top14-gold)', '#a16207', 0.6) +
+          star5(346, 342, 5.4, 2.4, 'url(#top14-gold)', '#a16207', 0.6) +
+          /* Pleated starlight idol peplum waistband */
+          '<path d="M258,426 Q300,432 342,426 L343,437 Q300,443 257,437 Z" fill="url(#top14-collar)" stroke="#701a75" stroke-width="1"/>' +
+          '<path d="M257,436 L248,454 Q274,461 300,456 Q326,461 352,454 L343,436 Z" fill="url(#top14-skirt)" stroke="#701a75" stroke-width="1.1"/>' +
+          '<path d="M270,437 L264,455 M284,438 L282,456 M300,438 L300,456 M316,438 L318,456 M330,437 L336,455" fill="none" stroke="#701a75" stroke-width="1" opacity="0.45"/>' +
+          '<path d="M250,450 Q275,457 300,452 Q325,457 350,450" fill="none" stroke="#ffffff" stroke-width="1.5"/>' +
+          star5(300, 432, 5.5, 2.4, 'url(#top14-gold)', '#854d0e', 0.6) +
+          /* Big layered 2.5D idol double bow + star jewel brooch */
+          '<g>' +
+            '<path d="M294,376 L276,424 L289,418 L298,428 L300,380 L302,428 L311,418 L324,424 L306,376 Z" fill="url(#top14-bow)" stroke="#701a75" stroke-width="1"/>' +
+            '<path d="M296,368 C260,342 248,376 266,390 C277,397 292,387 297,376 Z" fill="url(#top14-bow)" stroke="#701a75" stroke-width="1.1"/>' +
+            '<path d="M304,368 C340,342 352,376 334,390 C323,397 308,387 303,376 Z" fill="url(#top14-bow)" stroke="#701a75" stroke-width="1.1"/>' +
+            '<path d="M295,368 C272,356 262,370 274,380 C282,384 292,378 296,373 Z" fill="#f9a8d4" opacity="0.55"/>' +
+            '<path d="M305,368 C328,356 338,370 326,380 C318,384 308,378 304,373 Z" fill="#f9a8d4" opacity="0.55"/>' +
+            '<rect x="292" y="362" width="16" height="15" rx="5" fill="url(#top14-bow)" stroke="#701a75" stroke-width="1"/>' +
+            gemCircle(300, 369.5, 6.2, 'top14-gem', 'url(#top14-gold)') +
+            star5(300, 369.5, 4.5, 2, '#fef08a', '#ffffff', 0.4) +
+          '</g>' +
+          glitterDots([
+            [266, 368, 1.5, '#ffffff'], [334, 368, 1.5, '#ffffff'],
+            [268, 444, 1.6, '#fef08a'], [332, 444, 1.6, '#fef08a']
+          ], '#ffffff', 0.92) +
+          star4(312, 358, 4.5, '#ffffff', 0.95) +
+          star4(288, 358, 4, '#fef08a', 0.9) +
+        '</g>'
+    },
+
+    /* ======================================================================
+       15. Áo Kimono Hoa Anh Đào Cách Tân
+       ====================================================================== */
+    {
+      id: 'top-15',
+      name: 'Áo Kimono Hoa Anh Đào Cách Tân',
+      icon: '🌸',
+      accentColor: '#fb7185',
+      previewBox: '148 286 304 232',
+      defs:
+        '<linearGradient id="top15-silk" x1="0%" y1="0%" x2="100%" y2="12%">' +
+          '<stop offset="0%" stop-color="#e11d48"/>' +
+          '<stop offset="22%" stop-color="#fb7185"/>' +
+          '<stop offset="50%" stop-color="#ffe4ea"/>' +
+          '<stop offset="78%" stop-color="#fda4af"/>' +
+          '<stop offset="100%" stop-color="#be123c"/>' +
+        '</linearGradient>' +
+        '<linearGradient id="top15-inner" x1="0%" y1="0%" x2="0%" y2="100%">' +
+          '<stop offset="0%" stop-color="#ffffff"/>' +
+          '<stop offset="100%" stop-color="#fff1f2"/>' +
+        '</linearGradient>' +
+        '<linearGradient id="top15-obi" x1="0%" y1="0%" x2="100%" y2="10%">' +
+          '<stop offset="0%" stop-color="#b45309"/>' +
+          '<stop offset="28%" stop-color="#fbbf24"/>' +
+          '<stop offset="52%" stop-color="#fef3c7"/>' +
+          '<stop offset="76%" stop-color="#f59e0b"/>' +
+          '<stop offset="100%" stop-color="#92400e"/>' +
+        '</linearGradient>' +
+        '<linearGradient id="top15-ribbon" x1="0%" y1="0%" x2="100%" y2="20%">' +
+          '<stop offset="0%" stop-color="#9f1239"/>' +
+          '<stop offset="50%" stop-color="#f43f5e"/>' +
+          '<stop offset="100%" stop-color="#881337"/>' +
+        '</linearGradient>' +
+        '<linearGradient id="top15-gold" x1="0%" y1="0%" x2="100%" y2="100%">' +
+          '<stop offset="0%" stop-color="#fef9c3"/>' +
+          '<stop offset="50%" stop-color="#fbbf24"/>' +
+          '<stop offset="100%" stop-color="#b45309"/>' +
+        '</linearGradient>' +
+        '<radialGradient id="top15-petal" cx="40%" cy="35%" r="65%">' +
+          '<stop offset="0%" stop-color="#ffffff"/>' +
+          '<stop offset="55%" stop-color="#fbcfe8"/>' +
+          '<stop offset="100%" stop-color="#f472b6"/>' +
+        '</radialGradient>',
+      backSvg:
+        '<g>' +
+          /* Billowing neo-kimono furisode wing-sleeves behind arms */
+          mirrorX(
+            '<path d="M244,332 C202,348 176,404 182,472 C196,488 228,486 244,458 C252,438 254,386 250,350 Z" fill="url(#top15-silk)" stroke="#be123c" stroke-width="1.2"/>' +
+            '<path d="M188,464 C202,478 226,476 240,454" fill="none" stroke="url(#top15-gold)" stroke-width="1.6"/>' +
+            '<path d="M192,438 Q210,428 226,440" fill="none" stroke="#fef08a" stroke-width="1.2" opacity="0.75"/>' +
+            sakuraFlower(204, 412, 8, 'url(#top15-petal)', '#f43f5e', '#fde047') +
+            sakuraFlower(224, 448, 6.5, '#ffffff', '#fb7185', '#fbbf24') +
+            /* Sculpted back obi bow wings peeking gracefully at waist */
+            '<path d="M262,396 C234,386 226,414 246,430 L264,424 Z" fill="url(#top15-obi)" stroke="#92400e" stroke-width="1"/>' +
+            '<path d="M254,426 C244,454 236,486 234,512 L250,502 L258,516 C264,486 268,454 270,430 Z" fill="url(#top15-ribbon)" opacity="0.9" stroke="#881337" stroke-width="0.9"/>'
+          ) +
+        '</g>',
+      svg:
+        '<g>' +
+          /* Crisp white inner juban collar & base kimono torso */
+          '<path d="M236,332 C250,321 272,318 284,318 L316,318 C328,318 350,321 364,332 C363,365 358,396 349,416 L342,436 L258,436 L251,416 C242,396 237,365 236,332 Z" fill="url(#top15-silk)" stroke="#be123c" stroke-width="1.2"/>' +
+          /* Traditional layered Y-shaped kimono neckline (left-over-right) */
+          '<path d="M282,318 L300,362 L318,318 L311,318 L300,348 L289,318 Z" fill="url(#top15-inner)" stroke="#e2e8f0" stroke-width="0.8"/>' +
+          '<path d="M320,318 C312,334 300,354 290,368 L302,374 C314,358 326,336 332,320 Z" fill="#fda4af" stroke="#be123c" stroke-width="1"/>' +
+          '<path d="M280,318 C288,338 302,360 314,376 L300,382 C288,366 274,342 268,320 Z" fill="url(#top15-inner)" stroke="url(#top15-gold)" stroke-width="1.3"/>' +
+          '<path d="M276,320 C284,340 298,360 310,376" fill="none" stroke="url(#top15-ribbon)" stroke-width="2.2"/>' +
+          /* Sculpted neo-kimono shoulder caps covering shoulder joints cleanly */
+          mirrorX(
+            '<path d="M248,322 C220,312 192,324 192,350 C194,368 220,374 246,360 Z" fill="url(#top15-silk)" stroke="#be123c" stroke-width="1.2"/>' +
+            '<path d="M202,326 C214,318 230,319 240,329" fill="none" stroke="#fff1f2" stroke-width="2" opacity="0.82" stroke-linecap="round"/>' +
+            '<path d="M194,354 Q220,364 244,354 L242,365 Q220,374 196,365 Z" fill="url(#top15-obi)" stroke="#92400e" stroke-width="0.9"/>' +
+            '<path d="M206,365 L206,378" stroke="url(#top15-ribbon)" stroke-width="2" stroke-linecap="round"/>' +
+            '<circle cx="206" cy="366" r="2.5" fill="url(#top15-gold)"/>'
+          ) +
+          /* Delicate painted sakura branch & blossoms across bodice */
+          '<path d="M248,392 Q268,374 288,366 M262,380 Q270,388 278,386" fill="none" stroke="#881337" stroke-width="1.5" stroke-linecap="round" opacity="0.72"/>' +
+          sakuraFlower(262, 360, 7.5, 'url(#top15-petal)', '#e11d48', '#fde047') +
+          sakuraFlower(276, 382, 6, '#ffffff', '#fb7185', '#fbbf24') +
+          sakuraFlower(334, 358, 7, 'url(#top15-petal)', '#e11d48', '#fde047') +
+          /* Ornate golden brocade Obi sash wrapping waist + crimson obijime cord */
+          '<path d="M254,398 Q300,404 346,398 L343,435 Q300,441 257,435 Z" fill="url(#top15-obi)" stroke="#92400e" stroke-width="1.1"/>' +
+          '<path d="M262,402 L274,434 M284,403 L292,435 M316,403 L308,435 M338,402 L326,434" fill="none" stroke="#fef3c7" stroke-width="1" opacity="0.65"/>' +
+          '<path d="M255,416 Q300,422 345,416" fill="none" stroke="url(#top15-ribbon)" stroke-width="3.2"/>' +
+          '<path d="M255,416 Q300,422 345,416" fill="none" stroke="#fde68a" stroke-width="0.9" stroke-dasharray="3,2"/>' +
+          /* Layered sakura petal peplum hem */
+          '<path d="M258,434 C246,444 242,456 254,461 C268,466 280,458 286,448 C292,462 300,466 300,466 C300,466 308,462 314,448 C320,458 332,466 346,461 C358,456 354,444 342,434 Z" fill="url(#top15-silk)" stroke="#be123c" stroke-width="1.1"/>' +
+          '<path d="M266,436 C260,448 268,458 280,456 C290,454 295,446 300,442 C305,446 310,454 320,456 C332,458 340,448 334,436 Z" fill="url(#top15-inner)" opacity="0.92" stroke="#fda4af" stroke-width="0.9"/>' +
+          /* Central sakura obidome jewel clasp */
+          sakuraFlower(300, 417, 9, 'url(#top15-petal)', '#9f1239', '#fbbf24') +
+          sakuraFlower(268, 446, 5.5, '#ffffff', '#fb7185', '#fde047') +
+          sakuraFlower(332, 446, 5.5, '#ffffff', '#fb7185', '#fde047') +
+          star4(300, 386, 4.5, '#ffffff', 0.95) +
+          star4(284, 344, 3.8, '#fef08a', 0.9) +
+        '</g>'
+    },
+
+    /* ======================================================================
+       16. Áo Tiên Tử Ngọc Lục Bảo Cánh Chuồn
+       ====================================================================== */
+    {
+      id: 'top-16',
+      name: 'Áo Tiên Tử Ngọc Lục Bảo Cánh Chuồn',
+      icon: '🧚‍♀️',
+      accentColor: '#10b981',
+      previewBox: '110 232 380 302',
+      defs:
+        '<linearGradient id="top16-wing-hi" x1="0%" y1="0%" x2="100%" y2="100%">' +
+          '<stop offset="0%" stop-color="#a7f3d0" stop-opacity="0.82"/>' +
+          '<stop offset="48%" stop-color="#67e8f9" stop-opacity="0.7"/>' +
+          '<stop offset="100%" stop-color="#fef08a" stop-opacity="0.65"/>' +
+        '</linearGradient>' +
+        '<linearGradient id="top16-wing-lo" x1="0%" y1="0%" x2="100%" y2="100%">' +
+          '<stop offset="0%" stop-color="#6ee7b7" stop-opacity="0.76"/>' +
+          '<stop offset="55%" stop-color="#a5f3fc" stop-opacity="0.66"/>' +
+          '<stop offset="100%" stop-color="#d9f99d" stop-opacity="0.62"/>' +
+        '</linearGradient>' +
+        '<linearGradient id="top16-emerald" x1="0%" y1="0%" x2="100%" y2="12%">' +
+          '<stop offset="0%" stop-color="#064e3b"/>' +
+          '<stop offset="26%" stop-color="#059669"/>' +
+          '<stop offset="52%" stop-color="#6ee7b7"/>' +
+          '<stop offset="78%" stop-color="#10b981"/>' +
+          '<stop offset="100%" stop-color="#064e3b"/>' +
+        '</linearGradient>' +
+        '<linearGradient id="top16-leaf" x1="0%" y1="0%" x2="100%" y2="100%">' +
+          '<stop offset="0%" stop-color="#d9f99d"/>' +
+          '<stop offset="45%" stop-color="#34d399"/>' +
+          '<stop offset="100%" stop-color="#047857"/>' +
+        '</linearGradient>' +
+        '<linearGradient id="top16-yoke" x1="0%" y1="0%" x2="0%" y2="100%">' +
+          '<stop offset="0%" stop-color="#ecfdf5"/>' +
+          '<stop offset="100%" stop-color="#a7f3d0"/>' +
+        '</linearGradient>' +
+        '<linearGradient id="top16-gold" x1="0%" y1="0%" x2="100%" y2="100%">' +
+          '<stop offset="0%" stop-color="#fef9c3"/>' +
+          '<stop offset="50%" stop-color="#fbbf24"/>' +
+          '<stop offset="100%" stop-color="#b45309"/>' +
+        '</linearGradient>' +
+        '<radialGradient id="top16-gem" cx="35%" cy="30%" r="70%">' +
+          '<stop offset="0%" stop-color="#ffffff"/>' +
+          '<stop offset="32%" stop-color="#6ee7b7"/>' +
+          '<stop offset="72%" stop-color="#059669"/>' +
+          '<stop offset="100%" stop-color="#022c22"/>' +
+        '</radialGradient>',
+      backSvg:
+        '<g>' +
+          /* Elongated gossamer veined 4-blade Dragonfly Fairy Wings */
+          mirrorX(
+            /* Upper dragonfly wing */
+            '<path d="M276,348 C236,274 140,224 114,248 C102,262 128,312 184,342 C222,362 256,370 276,366 Z" fill="url(#top16-wing-hi)" stroke="url(#top16-gold)" stroke-width="1.4"/>' +
+            '<path d="M266,352 C218,302 156,260 120,254" fill="none" stroke="#ffffff" stroke-width="1.2" opacity="0.8"/>' +
+            '<path d="M254,356 C208,322 158,296 132,292" fill="none" stroke="#fef08a" stroke-width="0.9" opacity="0.72"/>' +
+            '<path d="M244,360 C206,342 174,328 152,324" fill="none" stroke="#ffffff" stroke-width="0.8" opacity="0.65"/>' +
+            '<path d="M174,274 L164,318 M206,298 L194,338 M234,322 L222,354" fill="none" stroke="#ecfdf5" stroke-width="0.8" opacity="0.55"/>' +
+            '<ellipse cx="136" cy="264" rx="11" ry="4.5" transform="rotate(24 136 264)" fill="#fef08a" opacity="0.68"/>' +
+            /* Lower dragonfly wing */
+            '<path d="M274,370 C226,370 144,386 128,422 C120,444 166,462 214,440 C248,424 268,396 274,380 Z" fill="url(#top16-wing-lo)" stroke="url(#top16-gold)" stroke-width="1.3"/>' +
+            '<path d="M262,376 C214,392 162,414 134,424" fill="none" stroke="#ffffff" stroke-width="1.1" opacity="0.75"/>' +
+            '<path d="M254,382 C214,412 180,432 162,440" fill="none" stroke="#fef08a" stroke-width="0.85" opacity="0.65"/>' +
+            '<ellipse cx="152" cy="422" rx="9" ry="4" transform="rotate(-16 152 422)" fill="#ffffff" opacity="0.52"/>' +
+            star4(126, 256, 6, '#ffffff', 0.95) +
+            star4(142, 434, 5, '#fef08a', 0.9)
+          ) +
+        '</g>',
+      svg:
+        '<g>' +
+          /* Opaque dew-emerald silk upper yoke covering collarbone cleanly */
+          '<path d="M236,342 C242,324 268,319 285,320 Q300,328 315,320 C332,319 358,324 364,342 L348,366 L252,366 Z" fill="url(#top16-yoke)" stroke="#6ee7b7" stroke-width="0.9"/>' +
+          '<path d="M282,319 Q300,328 318,319" fill="none" stroke="url(#top16-gold)" stroke-width="2.2"/>' +
+          /* Sculpted overlapping fairy leaf-petal shoulder sleeves covering arm joints cleanly */
+          mirrorX(
+            '<path d="M248,322 C222,308 190,320 192,344 C196,360 222,368 246,356 Z" fill="url(#top16-leaf)" stroke="#047857" stroke-width="1.1"/>' +
+            '<path d="M244,335 C218,334 194,348 198,366 C212,376 234,372 248,358 Z" fill="url(#top16-emerald)" stroke="url(#top16-gold)" stroke-width="1"/>' +
+            '<path d="M204,330 C216,322 230,324 239,334" fill="none" stroke="#ecfdf5" stroke-width="1.6" opacity="0.82" stroke-linecap="round"/>' +
+            '<circle cx="204" cy="368" r="2.6" fill="#fef08a" stroke="#b45309" stroke-width="0.6"/>'
+          ) +
+          /* Emerald jewel corset bodice sculpted like interlocking forest leaves */
+          '<path d="M238,342 C258,334 282,338 300,352 C318,338 342,334 362,342 C360,372 355,398 348,416 L342,436 L258,436 L252,416 C245,398 240,372 238,342 Z" fill="url(#top16-emerald)" stroke="#064e3b" stroke-width="1.3"/>' +
+          mirrorX(
+            '<path d="M243,345 C266,342 290,355 298,382 C280,390 256,384 245,364 Z" fill="url(#top16-leaf)" opacity="0.88" stroke="#047857" stroke-width="0.9"/>' +
+            '<path d="M254,352 C268,358 280,368 288,378" fill="none" stroke="#fef08a" stroke-width="1.1" opacity="0.8"/>' +
+            '<path d="M266,388 C274,402 276,418 274,432" fill="none" stroke="url(#top16-gold)" stroke-width="1.3" opacity="0.85"/>'
+          ) +
+          /* Golden botanical waist vine & multi-pointed leaf-petal peplum */
+          '<path d="M258,432 C244,442 242,456 254,462 C266,466 276,456 282,446 C288,460 300,468 300,468 C300,468 312,460 318,446 C324,456 334,466 346,462 C358,456 356,442 342,432 Z" fill="url(#top16-leaf)" stroke="#047857" stroke-width="1.1"/>' +
+          '<path d="M266,434 C260,446 268,456 278,454 C288,452 294,442 300,438 C306,442 312,452 322,454 C332,456 340,446 334,434 Z" fill="url(#top16-emerald)" stroke="url(#top16-gold)" stroke-width="1"/>' +
+          '<path d="M258,426 Q300,435 342,426 L342,436 Q300,445 258,436 Z" fill="url(#top16-gold)" stroke="#92400e" stroke-width="0.9"/>' +
+          /* Central emerald jewel & golden fairy wings clasp */
+          '<path d="M286,354 C290,348 296,350 300,356 C304,350 310,348 314,354 C310,360 304,362 300,358 C296,362 290,360 286,354 Z" fill="url(#top16-gold)" stroke="#92400e" stroke-width="0.7"/>' +
+          gemCircle(300, 356, 5.5, 'top16-gem', 'url(#top16-gold)') +
+          gemCircle(300, 434, 4.2, 'top16-gem', '#fef08a') +
+          star4(286, 344, 4.5, '#ffffff', 0.95) +
+          star4(314, 344, 4.5, '#ffffff', 0.95) +
+          star4(300, 404, 4.2, '#fef08a', 0.9) +
+        '</g>'
+    },
+
+    /* ======================================================================
+       17. Áo Blazer Học Viện Hoàng Gia Phối Nơ
+       ====================================================================== */
+    {
+      id: 'top-17',
+      name: 'Áo Blazer Học Viện Hoàng Gia Phối Nơ',
+      icon: '🎓',
+      accentColor: '#3b82f6',
+      previewBox: '162 292 276 212',
+      defs:
+        '<linearGradient id="top17-navy" x1="0%" y1="0%" x2="100%" y2="12%">' +
+          '<stop offset="0%" stop-color="#172554"/>' +
+          '<stop offset="26%" stop-color="#2563eb"/>' +
+          '<stop offset="50%" stop-color="#60a5fa"/>' +
+          '<stop offset="76%" stop-color="#1d4ed8"/>' +
+          '<stop offset="100%" stop-color="#1e3a8a"/>' +
+        '</linearGradient>' +
+        '<linearGradient id="top17-shirt" x1="0%" y1="0%" x2="0%" y2="100%">' +
+          '<stop offset="0%" stop-color="#ffffff"/>' +
+          '<stop offset="100%" stop-color="#eff6ff"/>' +
+        '</linearGradient>' +
+        '<linearGradient id="top17-ribbon" x1="0%" y1="0%" x2="100%" y2="25%">' +
+          '<stop offset="0%" stop-color="#1d4ed8"/>' +
+          '<stop offset="35%" stop-color="#38bdf8"/>' +
+          '<stop offset="55%" stop-color="#bae6fd"/>' +
+          '<stop offset="85%" stop-color="#2563eb"/>' +
+          '<stop offset="100%" stop-color="#1e3a8a"/>' +
+        '</linearGradient>' +
+        '<linearGradient id="top17-gold" x1="0%" y1="0%" x2="100%" y2="100%">' +
+          '<stop offset="0%" stop-color="#fef9c3"/>' +
+          '<stop offset="50%" stop-color="#fbbf24"/>' +
+          '<stop offset="100%" stop-color="#b45309"/>' +
+        '</linearGradient>' +
+        '<radialGradient id="top17-gem" cx="35%" cy="30%" r="70%">' +
+          '<stop offset="0%" stop-color="#ffffff"/>' +
+          '<stop offset="34%" stop-color="#93c5fd"/>' +
+          '<stop offset="72%" stop-color="#2563eb"/>' +
+          '<stop offset="100%" stop-color="#172554"/>' +
+        '</radialGradient>',
+      backSvg:
+        '<g>' +
+          '<path d="M276,318 Q300,312 324,318 L318,328 L282,328 Z" fill="url(#top17-navy)" stroke="#172554" stroke-width="1"/>' +
+          mirrorX(
+            '<path d="M256,432 L242,462 L262,464 L270,438 Z" fill="#1e3a8a" opacity="0.88" stroke="#172554" stroke-width="0.9"/>'
+          ) +
+        '</g>',
+      svg:
+        '<g>' +
+          /* Crisp ivory academy shirt underneath */
+          '<path d="M242,326 C256,319 276,318 285,318 L315,318 C324,318 344,319 358,326 L350,438 L250,438 Z" fill="url(#top17-shirt)" stroke="#cbd5e1" stroke-width="1"/>' +
+          '<path d="M282,318 L272,338 L296,334 L300,324 L304,334 L328,338 L318,318 Q300,324 282,318 Z" fill="#ffffff" stroke="#93c5fd" stroke-width="0.9"/>' +
+          /* Tailored royal navy puff-shoulder sleeves */
+          mirrorX(
+            '<ellipse cx="220" cy="339" rx="31" ry="29" fill="url(#top17-navy)" stroke="#172554" stroke-width="1.2"/>' +
+            '<path d="M200,323 C211,314 230,316 240,328" fill="none" stroke="#93c5fd" stroke-width="2" opacity="0.65" stroke-linecap="round"/>' +
+            '<path d="M195,358 Q220,367 243,358 L241,370 Q220,379 197,369 Z" fill="url(#top17-shirt)" stroke="#1e3a8a" stroke-width="1"/>' +
+            '<path d="M196,363 Q220,372 242,363" fill="none" stroke="url(#top17-gold)" stroke-width="1.5"/>' +
+            '<circle cx="206" cy="364" r="1.8" fill="url(#top17-gold)"/>'
+          ) +
+          /* Tailored double-breasted royal academy blazer */
+          '<path d="M236,331 C250,321 270,318 282,319 L300,372 L318,319 C330,318 350,321 364,331 C363,364 358,395 349,415 L342,434 L356,458 Q328,466 300,456 Q272,466 244,458 L258,434 L251,415 C242,395 237,364 236,331 Z" fill="url(#top17-navy)" stroke="#172554" stroke-width="1.3"/>' +
+          /* Gold-piped notched lapels & structured princess darts */
+          mirrorX(
+            '<polygon points="282,319 262,334 274,352 268,360 296,374" fill="#1d4ed8" stroke="url(#top17-gold)" stroke-width="1.1"/>' +
+            '<path d="M266,368 C270,390 272,412 273,432" fill="none" stroke="#172554" stroke-width="1.3" opacity="0.5"/>' +
+            '<path d="M258,412 L278,412 L277,418 L259,418 Z" fill="#1e3a8a" stroke="url(#top17-gold)" stroke-width="0.8"/>'
+          ) +
+          /* Gold piped blazer hem & center placket */
+          '<path d="M300,372 L300,456" fill="none" stroke="#172554" stroke-width="1.4" opacity="0.65"/>' +
+          '<path d="M246,454 Q273,462 300,453 Q327,462 354,454" fill="none" stroke="url(#top17-gold)" stroke-width="2"/>' +
+          '<path d="M249,450 Q274,457 300,449 Q326,457 351,450" fill="none" stroke="#ffffff" stroke-width="1" opacity="0.85"/>' +
+          /* Double-breasted heraldic gold buttons */
+          '<circle cx="284" cy="388" r="3.4" fill="url(#top17-gold)" stroke="#92400e" stroke-width="0.7"/>' +
+          '<circle cx="316" cy="388" r="3.4" fill="url(#top17-gold)" stroke="#92400e" stroke-width="0.7"/>' +
+          '<circle cx="284" cy="410" r="3.4" fill="url(#top17-gold)" stroke="#92400e" stroke-width="0.7"/>' +
+          '<circle cx="316" cy="410" r="3.4" fill="url(#top17-gold)" stroke="#92400e" stroke-width="0.7"/>' +
+          /* Royal Academy embroidered crest shield on left chest */
+          '<path d="M322,368 L338,368 L338,380 C338,386 330,390 330,390 C330,390 322,386 322,380 Z" fill="#172554" stroke="url(#top17-gold)" stroke-width="1.1"/>' +
+          '<path d="M325,365 L327,361 L330,364 L333,361 L335,365 Z" fill="url(#top17-gold)"/>' +
+          star4(330, 378, 3.8, '#fef08a', 0.95) +
+          /* Royal Academy striped ribbon bow with sapphire brooch */
+          '<g>' +
+            '<path d="M294,348 L280,388 L291,383 L298,391 L300,352 L302,391 L309,383 L320,388 L306,348 Z" fill="url(#top17-ribbon)" stroke="#1e3a8a" stroke-width="0.9"/>' +
+            '<path d="M296,342 C268,324 260,348 273,360 C282,366 293,358 297,349 Z" fill="url(#top17-ribbon)" stroke="#1e3a8a" stroke-width="1"/>' +
+            '<path d="M304,342 C332,324 340,348 327,360 C318,366 307,358 303,349 Z" fill="url(#top17-ribbon)" stroke="#1e3a8a" stroke-width="1"/>' +
+            '<path d="M270,344 L292,350 M330,344 L308,350" fill="none" stroke="url(#top17-gold)" stroke-width="1.3" opacity="0.9"/>' +
+            '<rect x="293" y="338" width="14" height="13" rx="4" fill="url(#top17-ribbon)" stroke="#1e3a8a" stroke-width="0.9"/>' +
+            gemCircle(300, 344.5, 4.4, 'top17-gem', 'url(#top17-gold)') +
+          '</g>' +
+          star4(309, 336, 4, '#ffffff', 0.95) +
+        '</g>'
+    },
+
+    /* ======================================================================
+       18. Áo Kẹo Bông Macaron Tay Bồng
+       ====================================================================== */
+    {
+      id: 'top-18',
+      name: 'Áo Kẹo Bông Macaron Tay Bồng',
+      icon: '🍭',
+      accentColor: '#f472b6',
+      previewBox: '160 288 280 216',
+      defs:
+        '<linearGradient id="top18-pink" x1="0%" y1="0%" x2="100%" y2="10%">' +
+          '<stop offset="0%" stop-color="#f472b6"/>' +
+          '<stop offset="28%" stop-color="#fbcfe8"/>' +
+          '<stop offset="52%" stop-color="#fff5fa"/>' +
+          '<stop offset="78%" stop-color="#f9a8d4"/>' +
+          '<stop offset="100%" stop-color="#ec4899"/>' +
+        '</linearGradient>' +
+        '<linearGradient id="top18-mint" x1="0%" y1="0%" x2="100%" y2="100%">' +
+          '<stop offset="0%" stop-color="#ecfdf5"/>' +
+          '<stop offset="50%" stop-color="#a7f3d0"/>' +
+          '<stop offset="100%" stop-color="#34d399"/>' +
+        '</linearGradient>' +
+        '<linearGradient id="top18-lav" x1="0%" y1="0%" x2="100%" y2="100%">' +
+          '<stop offset="0%" stop-color="#f5f3ff"/>' +
+          '<stop offset="50%" stop-color="#ddd6fe"/>' +
+          '<stop offset="100%" stop-color="#a78bfa"/>' +
+        '</linearGradient>' +
+        '<linearGradient id="top18-lemon" x1="0%" y1="0%" x2="0%" y2="100%">' +
+          '<stop offset="0%" stop-color="#fefce8"/>' +
+          '<stop offset="100%" stop-color="#fde047"/>' +
+        '</linearGradient>' +
+        '<linearGradient id="top18-white" x1="0%" y1="0%" x2="0%" y2="100%">' +
+          '<stop offset="0%" stop-color="#ffffff"/>' +
+          '<stop offset="100%" stop-color="#ffeef6"/>' +
+        '</linearGradient>' +
+        '<radialGradient id="top18-candy" cx="35%" cy="30%" r="70%">' +
+          '<stop offset="0%" stop-color="#ffffff"/>' +
+          '<stop offset="35%" stop-color="#f9a8d4"/>' +
+          '<stop offset="75%" stop-color="#ec4899"/>' +
+          '<stop offset="100%" stop-color="#9d174d"/>' +
+        '</radialGradient>',
+      backSvg:
+        '<g>' +
+          mirrorX(
+            '<path d="M262,430 C240,450 230,478 228,502 L245,494 L254,506 C262,480 268,454 274,434 Z" fill="url(#top18-mint)" opacity="0.9" stroke="#10b981" stroke-width="0.9"/>'
+          ) +
+        '</g>',
+      svg:
+        '<g>' +
+          /* Extra-fluffy 2-tier cloud macaron puff sleeves */
+          mirrorX(
+            '<ellipse cx="218" cy="343" rx="32" ry="26" fill="url(#top18-lav)" stroke="#a78bfa" stroke-width="1.1"/>' +
+            '<ellipse cx="222" cy="331" rx="28" ry="23" fill="url(#top18-pink)" stroke="#ec4899" stroke-width="1.1"/>' +
+            '<path d="M202,320 C213,311 231,313 240,324" fill="none" stroke="#ffffff" stroke-width="2.4" opacity="0.9" stroke-linecap="round"/>' +
+            '<path d="M194,358 Q220,368 244,358 L241,371 Q220,380 197,369 Z" fill="url(#top18-white)" stroke="#f472b6" stroke-width="0.9"/>' +
+            scallopTrim(197, 369, 241, 371, 6, 4.5, '#ffffff', '#f9a8d4', 0.8) +
+            '<path d="M206,365 C199,360 199,370 206,367 Z M206,365 C213,360 213,370 206,367 Z" fill="url(#top18-mint)" stroke="#10b981" stroke-width="0.7"/>'
+          ) +
+          /* Sweet pastel macaron-striped bodice */
+          '<path d="M237,333 C252,321 274,319 286,320 Q300,332 314,320 C326,319 348,321 363,333 C362,366 357,396 349,416 L342,436 L258,436 L251,416 C243,396 238,366 237,333 Z" fill="url(#top18-pink)" stroke="#db2777" stroke-width="1.2"/>' +
+          /* Pastel pistachio & lavender macaron panel stripes */
+          '<path d="M262,334 L276,336 L278,432 L264,432 Z" fill="url(#top18-mint)" opacity="0.78"/>' +
+          '<path d="M338,334 L324,336 L322,432 L336,432 Z" fill="url(#top18-lav)" opacity="0.78"/>' +
+          '<path d="M286,334 L314,334 L312,432 L288,432 Z" fill="url(#top18-white)" opacity="0.88"/>' +
+          /* Whipped-cream frosting collar */
+          '<path d="M280,318 C270,328 264,344 282,344 C292,344 298,334 300,328 C302,334 308,344 318,344 C336,344 330,328 320,318 Q300,326 280,318 Z" fill="url(#top18-white)" stroke="#f472b6" stroke-width="1"/>' +
+          /* Double-tiered lemon & strawberry-cream ruffled macaron peplum */
+          '<path d="M256,436 C244,445 240,456 244,461 Q300,470 356,461 C360,456 356,445 344,436 Z" fill="url(#top18-lemon)" stroke="#eab308" stroke-width="0.9"/>' +
+          scallopTrim(244, 459, 356, 459, 11, 5.5, 'url(#top18-lemon)', '#eab308', 0.85) +
+          '<path d="M258,432 C249,440 247,448 250,452 Q300,460 350,452 C353,448 351,440 342,432 Z" fill="url(#top18-mint)" stroke="#10b981" stroke-width="0.9"/>' +
+          scallopTrim(250, 450, 350, 450, 10, 4.5, 'url(#top18-mint)', '#10b981', 0.8) +
+          /* Pink candy belt & lollipop-macaron chest brooch */
+          '<path d="M258,426 Q300,433 342,426 L342,437 Q300,444 258,437 Z" fill="#ec4899" stroke="#be185d" stroke-width="0.9"/>' +
+          '<path d="M295,431 C276,419 272,437 285,441 C292,443 297,437 299,433 Z M305,431 C324,419 328,437 315,441 C308,443 303,437 301,433 Z" fill="#f472b6" stroke="#be185d" stroke-width="0.9"/>' +
+          '<circle cx="300" cy="433" r="4.2" fill="url(#top18-lemon)" stroke="#eab308" stroke-width="0.8"/>' +
+          /* Swirly candy lollipop chest badge */
+          '<circle cx="300" cy="354" r="9.5" fill="url(#top18-candy)" stroke="#ffffff" stroke-width="1.3"/>' +
+          '<path d="M300,348 C304,348 306,353 303,356 C300,359 295,357 295,353 C295,349 299,346 303,347" fill="none" stroke="#ffffff" stroke-width="1.4" stroke-linecap="round"/>' +
+          /* Rainbow sugar sprinkles across sleeves & bodice */
+          glitterDots([
+            [212, 329, 1.7, '#fde047'], [228, 336, 1.7, '#6ee7b7'], [216, 348, 1.6, '#ffffff'],
+            [388, 329, 1.7, '#fde047'], [372, 336, 1.7, '#6ee7b7'], [384, 348, 1.6, '#ffffff'],
+            [268, 376, 1.8, '#fde047'], [271, 398, 1.8, '#f472b6'], [332, 376, 1.8, '#fde047'],
+            [329, 398, 1.8, '#34d399'], [295, 386, 1.6, '#a78bfa'], [305, 404, 1.6, '#34d399']
+          ], '#ffffff', 0.92) +
+          star4(288, 343, 4.2, '#ffffff', 0.95) +
+          star4(312, 343, 4.2, '#ffffff', 0.95) +
+        '</g>'
+    },
+
+    /* ======================================================================
+       19. Áo Nữ Hoàng Tuyết Áo Choàng Pha Lê
+       ====================================================================== */
+    {
+      id: 'top-19',
+      name: 'Áo Nữ Hoàng Tuyết Áo Choàng Pha Lê',
+      icon: '❄️',
+      accentColor: '#06b6d4',
+      previewBox: '134 270 332 258',
+      defs:
+        '<linearGradient id="top19-cyan" x1="0%" y1="0%" x2="100%" y2="12%">' +
+          '<stop offset="0%" stop-color="#155e75"/>' +
+          '<stop offset="25%" stop-color="#06b6d4"/>' +
+          '<stop offset="50%" stop-color="#a5f3fc"/>' +
+          '<stop offset="76%" stop-color="#0891b2"/>' +
+          '<stop offset="100%" stop-color="#164e63"/>' +
+        '</linearGradient>' +
+        '<linearGradient id="top19-frost" x1="0%" y1="0%" x2="0%" y2="100%">' +
+          '<stop offset="0%" stop-color="#ffffff"/>' +
+          '<stop offset="55%" stop-color="#ecfeff"/>' +
+          '<stop offset="100%" stop-color="#a5f3fc"/>' +
+        '</linearGradient>' +
+        '<linearGradient id="top19-aurora" x1="0%" y1="0%" x2="100%" y2="100%">' +
+          '<stop offset="0%" stop-color="#cffafe" stop-opacity="0.78"/>' +
+          '<stop offset="45%" stop-color="#22d3ee" stop-opacity="0.58"/>' +
+          '<stop offset="78%" stop-color="#818cf8" stop-opacity="0.46"/>' +
+          '<stop offset="100%" stop-color="#e0f2fe" stop-opacity="0.22"/>' +
+        '</linearGradient>' +
+        '<linearGradient id="top19-collar" x1="50%" y1="0%" x2="50%" y2="100%">' +
+          '<stop offset="0%" stop-color="#ffffff"/>' +
+          '<stop offset="45%" stop-color="#67e8f9"/>' +
+          '<stop offset="100%" stop-color="#0e7490"/>' +
+        '</linearGradient>' +
+        '<linearGradient id="top19-silver" x1="0%" y1="0%" x2="100%" y2="100%">' +
+          '<stop offset="0%" stop-color="#ffffff"/>' +
+          '<stop offset="50%" stop-color="#bae6fd"/>' +
+          '<stop offset="100%" stop-color="#64748b"/>' +
+        '</linearGradient>' +
+        '<radialGradient id="top19-gem" cx="35%" cy="30%" r="70%">' +
+          '<stop offset="0%" stop-color="#ffffff"/>' +
+          '<stop offset="35%" stop-color="#67e8f9"/>' +
+          '<stop offset="75%" stop-color="#06b6d4"/>' +
+          '<stop offset="100%" stop-color="#083344"/>' +
+        '</radialGradient>',
+      backSvg:
+        '<g>' +
+          /* Majestic sweeping glacier-aurora crystal cloak */
+          '<path d="M226,326 C170,382 138,490 132,632 C194,654 252,658 300,646 C348,658 406,654 468,632 C462,490 430,382 374,326 Z" fill="url(#top19-aurora)" stroke="#a5f3fc" stroke-width="1.3"/>' +
+          '<path d="M236,336 C194,394 166,498 158,622" fill="none" stroke="#ffffff" stroke-width="1.8" opacity="0.62"/>' +
+          '<path d="M364,336 C406,394 434,498 442,622" fill="none" stroke="#ffffff" stroke-width="1.8" opacity="0.62"/>' +
+          /* Regal stand-up crystalline Snow Queen collar rising behind neck */
+          '<path d="M268,326 C246,298 248,274 266,268 C278,278 286,294 300,296 C314,294 322,278 334,268 C352,274 354,298 332,326 Z" fill="url(#top19-collar)" stroke="#ffffff" stroke-width="1.2"/>' +
+          '<polygon points="266,270 280,296 270,318 258,292" fill="#ffffff" opacity="0.34"/>' +
+          '<polygon points="334,270 320,296 330,318 342,292" fill="#ffffff" opacity="0.24"/>' +
+          snowflake(186, 470, 14, '#ffffff', 0.84) +
+          snowflake(414, 470, 14, '#ffffff', 0.84) +
+          snowflake(208, 574, 17, '#cffafe', 0.76) +
+          snowflake(392, 574, 17, '#cffafe', 0.76) +
+          star4(170, 524, 6, '#ffffff', 0.9) +
+          star4(430, 524, 6, '#ffffff', 0.9) +
+        '</g>',
+      svg:
+        '<g>' +
+          /* Frosted high-neck Snow Queen bodice covering torso & collarbone cleanly */
+          '<path d="M238,340 C246,324 270,318 286,318 L314,318 C330,318 354,324 362,340 C361,370 356,396 349,416 L342,435 L258,435 L251,416 C244,396 239,370 238,340 Z" fill="url(#top19-cyan)" stroke="#0e7490" stroke-width="1.3"/>' +
+          /* Frosted platinum-ice sweetheart overlay & geometric aurora prism facets */
+          '<path d="M242,338 C252,324 272,319 286,319 L314,319 C328,319 348,324 358,338 L346,356 C328,342 312,344 300,356 C288,344 272,342 254,356 Z" fill="url(#top19-frost)" stroke="#67e8f9" stroke-width="1"/>' +
+          '<path d="M282,319 Q300,328 318,319" fill="none" stroke="url(#top19-silver)" stroke-width="2.2"/>' +
+          '<polygon points="244,358 282,356 286,400 250,398" fill="#ffffff" opacity="0.2"/>' +
+          '<polygon points="356,358 318,356 314,400 350,398" fill="#083344" opacity="0.16"/>' +
+          mirrorX(
+            '<path d="M274,354 L284,386 L278,426" fill="none" stroke="url(#top19-silver)" stroke-width="1.5" opacity="0.9"/>' +
+            '<path d="M256,368 L272,382 L262,408" fill="none" stroke="#cffafe" stroke-width="1" opacity="0.75"/>'
+          ) +
+          /* Sculpted crystal ice pauldron sleeves covering shoulders cleanly */
+          mirrorX(
+            '<path d="M248,322 C222,310 190,322 190,348 C192,364 218,370 246,358 Z" fill="url(#top19-frost)" stroke="#0891b2" stroke-width="1.1"/>' +
+            '<path d="M244,334 C220,332 194,344 194,362 C208,372 232,370 247,358 Z" fill="url(#top19-cyan)" stroke="#ffffff" stroke-width="0.9"/>' +
+            '<polygon points="200,362 204,376 208,364" fill="#cffafe" stroke="#ffffff" stroke-width="0.6"/>' +
+            '<polygon points="218,365 222,380 226,366" fill="#cffafe" stroke="#ffffff" stroke-width="0.6"/>' +
+            '<path d="M204,328 C216,320 230,322 240,332" fill="none" stroke="#ffffff" stroke-width="1.8" stroke-linecap="round"/>'
+          ) +
+          /* Pointed crystalline icicle peplum & silver crystal belt */
+          '<path d="M258,426 Q300,434 342,426 L342,436 Q300,444 258,436 Z" fill="url(#top19-silver)" stroke="#0891b2" stroke-width="0.9"/>' +
+          '<path d="M258,435 L252,458 L270,444 L282,464 L294,446 L300,468 L306,446 L318,464 L330,444 L348,458 L342,435 Z" fill="url(#top19-frost)" stroke="#0891b2" stroke-width="1"/>' +
+          '<polygon points="300,444 295,457 300,467 305,457" fill="url(#top19-gem)" stroke="#ffffff" stroke-width="0.6"/>' +
+          /* Hexagonal glacier diamond chest brooch */
+          '<polygon points="300,344 310,350 310,362 300,368 290,362 290,350" fill="url(#top19-silver)" stroke="#0e7490" stroke-width="0.8"/>' +
+          gemCircle(300, 356, 5.2, 'top19-gem', '#ffffff') +
+          snowflake(300, 404, 8, '#ecfeff', 0.9) +
+          star4(284, 340, 4.5, '#ffffff', 0.95) +
+          star4(316, 340, 4.5, '#ffffff', 0.95) +
+          star4(300, 431, 4.5, '#ffffff', 0.95) +
+        '</g>'
+    },
+
+    /* ======================================================================
+       20. Áo Dạ Hội Vàng Champagne Nơ Tulle
+       ====================================================================== */
+    {
+      id: 'top-20',
+      name: 'Áo Dạ Hội Vàng Champagne Nơ Tulle',
+      icon: '✨',
+      accentColor: '#eab308',
+      previewBox: '148 284 304 228',
+      defs:
+        '<linearGradient id="top20-champ" x1="0%" y1="0%" x2="100%" y2="10%">' +
+          '<stop offset="0%" stop-color="#b45309"/>' +
+          '<stop offset="24%" stop-color="#f59e0b"/>' +
+          '<stop offset="50%" stop-color="#fef9c3"/>' +
+          '<stop offset="76%" stop-color="#fbbf24"/>' +
+          '<stop offset="100%" stop-color="#92400e"/>' +
+        '</linearGradient>' +
+        '<linearGradient id="top20-tulle" x1="0%" y1="0%" x2="100%" y2="100%">' +
+          '<stop offset="0%" stop-color="#fffbeb" stop-opacity="0.88"/>' +
+          '<stop offset="52%" stop-color="#fde68a" stop-opacity="0.72"/>' +
+          '<stop offset="100%" stop-color="#f59e0b" stop-opacity="0.45"/>' +
+        '</linearGradient>' +
+        '<linearGradient id="top20-gold" x1="0%" y1="0%" x2="100%" y2="100%">' +
+          '<stop offset="0%" stop-color="#ffffff"/>' +
+          '<stop offset="45%" stop-color="#fde047"/>' +
+          '<stop offset="100%" stop-color="#b45309"/>' +
+        '</linearGradient>' +
+        '<linearGradient id="top20-cream" x1="0%" y1="0%" x2="0%" y2="100%">' +
+          '<stop offset="0%" stop-color="#fffef5"/>' +
+          '<stop offset="100%" stop-color="#fef3c7"/>' +
+        '</linearGradient>' +
+        '<radialGradient id="top20-gem" cx="35%" cy="30%" r="70%">' +
+          '<stop offset="0%" stop-color="#ffffff"/>' +
+          '<stop offset="35%" stop-color="#fef08a"/>' +
+          '<stop offset="75%" stop-color="#eab308"/>' +
+          '<stop offset="100%" stop-color="#78350f"/>' +
+        '</radialGradient>',
+      backSvg:
+        '<g>' +
+          /* Giant dramatic champagne tulle bow billowing behind shoulders & waist ribbons */
+          mirrorX(
+            '<path d="M254,344 C208,292 152,306 164,354 C172,386 220,382 252,364 Z" fill="url(#top20-tulle)" stroke="#fef08a" stroke-width="1.3"/>' +
+            '<path d="M244,350 C206,314 172,324 176,352" fill="none" stroke="#ffffff" stroke-width="1.4" opacity="0.78"/>' +
+            '<path d="M262,424 C232,456 216,496 214,536 L236,522 L246,540 C254,502 262,462 272,434 Z" fill="url(#top20-tulle)" stroke="#fde68a" stroke-width="1"/>' +
+            star4(178, 336, 5, '#ffffff', 0.92) +
+            star4(232, 514, 4.5, '#fef08a', 0.9)
+          ) +
+        '</g>',
+      svg:
+        '<g>' +
+          /* Opaque champagne-ivory illusion chest yoke with gold pearl trim */
+          '<path d="M236,342 C242,323 268,319 285,320 Q300,328 315,320 C332,319 358,323 364,342 L348,362 L252,362 Z" fill="url(#top20-cream)" stroke="#fcd34d" stroke-width="0.9"/>' +
+          pearlChain(283, 320, 300, 329, 317, 320, 7, 2.2, 'top20-gem', '#d97706') +
+          /* Multi-ruffled champagne tulle puff sleeves covering shoulder joints cleanly */
+          mirrorX(
+            '<ellipse cx="220" cy="340" rx="32" ry="29" fill="url(#top20-champ)" stroke="#b45309" stroke-width="1.1"/>' +
+            '<ellipse cx="218" cy="336" rx="28" ry="24" fill="url(#top20-tulle)" stroke="#fef08a" stroke-width="1"/>' +
+            '<path d="M196,336 Q218,348 242,336" fill="none" stroke="#ffffff" stroke-width="1.4" opacity="0.85"/>' +
+            '<path d="M198,350 Q220,362 242,350" fill="none" stroke="#fef08a" stroke-width="1.3" opacity="0.85"/>' +
+            '<path d="M200,324 C212,314 230,316 240,328" fill="none" stroke="#ffffff" stroke-width="2" opacity="0.85" stroke-linecap="round"/>'
+          ) +
+          /* Draped couture wrap-pleated champagne satin ballgown bodice */
+          '<path d="M238,340 C258,332 282,337 300,350 C318,337 342,332 362,340 C360,370 355,396 348,415 L342,436 L258,436 L252,415 C245,396 240,370 238,340 Z" fill="url(#top20-champ)" stroke="#92400e" stroke-width="1.2"/>' +
+          /* Diagonal pleated crossover bust drapery */
+          mirrorX(
+            '<path d="M242,346 C264,352 286,364 300,378" fill="none" stroke="#fffbeb" stroke-width="1.5" opacity="0.72"/>' +
+            '<path d="M244,358 C266,366 284,376 298,390" fill="none" stroke="#92400e" stroke-width="1.1" opacity="0.35"/>' +
+            '<path d="M248,370 C268,380 284,392 296,404" fill="none" stroke="#fffbeb" stroke-width="1.2" opacity="0.58"/>' +
+            '<path d="M268,382 L274,432" fill="none" stroke="url(#top20-gold)" stroke-width="1.3" opacity="0.8"/>'
+          ) +
+          /* Tiered airy champagne tulle peplum flounce */
+          '<path d="M258,433 C242,444 234,458 238,464 Q268,472 300,462 Q332,472 362,464 C366,458 358,444 342,433 Z" fill="url(#top20-tulle)" stroke="#fbbf24" stroke-width="1.1"/>' +
+          '<path d="M239,462 Q268,470 300,460 Q332,470 361,462" fill="none" stroke="url(#top20-gold)" stroke-width="1.8"/>' +
+          '<path d="M258,425 Q300,433 342,425 L342,436 Q300,444 258,436 Z" fill="url(#top20-gold)" stroke="#92400e" stroke-width="0.9"/>' +
+          /* Couture satin & tulle waist bow + diamond chest sunburst */
+          '<path d="M295,431 C272,415 264,438 282,444 C290,447 297,439 299,434 Z M305,431 C328,415 336,438 318,444 C310,447 303,439 301,434 Z" fill="url(#top20-cream)" stroke="#d97706" stroke-width="1"/>' +
+          gemCircle(300, 434, 4.4, 'top20-gem', 'url(#top20-gold)') +
+          gemCircle(300, 355, 5.8, 'top20-gem', '#ffffff') +
+          star4(300, 355, 11, '#ffffff', 0.42) +
+          star4(286, 344, 4.5, '#ffffff', 0.95) +
+          star4(314, 344, 4.5, '#ffffff', 0.95) +
+          star4(300, 404, 4, '#fffbeb', 0.9) +
+        '</g>'
+    },
+
+    /* ======================================================================
+       21. Áo Khoác Cyber Pop Idol Hologram
+       ====================================================================== */
+    {
+      id: 'top-21',
+      name: 'Áo Khoác Cyber Pop Idol Hologram',
+      icon: '⚡',
+      accentColor: '#a855f7',
+      previewBox: '158 290 284 214',
+      defs:
+        '<linearGradient id="top21-holo" x1="0%" y1="0%" x2="100%" y2="25%">' +
+          '<stop offset="0%" stop-color="#06b6d4"/>' +
+          '<stop offset="26%" stop-color="#c084fc"/>' +
+          '<stop offset="50%" stop-color="#f5d0fe"/>' +
+          '<stop offset="74%" stop-color="#f472b6"/>' +
+          '<stop offset="100%" stop-color="#22d3ee"/>' +
+        '</linearGradient>' +
+        '<linearGradient id="top21-dark" x1="0%" y1="0%" x2="0%" y2="100%">' +
+          '<stop offset="0%" stop-color="#312e81"/>' +
+          '<stop offset="55%" stop-color="#1e1b4b"/>' +
+          '<stop offset="100%" stop-color="#0f172a"/>' +
+        '</linearGradient>' +
+        '<linearGradient id="top21-neon" x1="0%" y1="0%" x2="100%" y2="100%">' +
+          '<stop offset="0%" stop-color="#22d3ee"/>' +
+          '<stop offset="50%" stop-color="#e879f9"/>' +
+          '<stop offset="100%" stop-color="#ec4899"/>' +
+        '</linearGradient>' +
+        '<linearGradient id="top21-chrome" x1="0%" y1="0%" x2="100%" y2="100%">' +
+          '<stop offset="0%" stop-color="#ffffff"/>' +
+          '<stop offset="48%" stop-color="#cbd5e1"/>' +
+          '<stop offset="100%" stop-color="#475569"/>' +
+        '</linearGradient>' +
+        '<linearGradient id="top21-volt" x1="0%" y1="0%" x2="100%" y2="100%">' +
+          '<stop offset="0%" stop-color="#fef08a"/>' +
+          '<stop offset="50%" stop-color="#22d3ee"/>' +
+          '<stop offset="100%" stop-color="#e879f9"/>' +
+        '</linearGradient>',
+      backSvg:
+        '<g>' +
+          /* Angular holographic cyber ribbon fins trailing behind waist */
+          mirrorX(
+            '<path d="M244,352 C214,382 198,438 206,494 L224,478 L234,498 C240,456 248,410 258,376 Z" fill="url(#top21-holo)" opacity="0.72" stroke="#22d3ee" stroke-width="1.1"/>' +
+            '<path d="M214,478 L234,404" fill="none" stroke="#ffffff" stroke-width="1" opacity="0.7"/>'
+          ) +
+        '</g>',
+      svg:
+        '<g>' +
+          /* Sleek obsidian cyber crop-top underneath covering full torso cleanly */
+          '<path d="M238,332 C252,321 274,318 286,320 Q300,332 314,320 C326,318 348,321 362,332 C361,365 356,396 349,416 L342,438 L258,438 L251,416 C244,396 239,365 238,332 Z" fill="url(#top21-dark)" stroke="#4c1d95" stroke-width="1.1"/>' +
+          /* Cyber choker, harness straps & glowing neon lightning crest */
+          '<path d="M284,319 Q300,328 316,319 L316,326 Q300,335 284,326 Z" fill="url(#top21-neon)" stroke="#ffffff" stroke-width="0.7"/>' +
+          '<path d="M276,326 L300,350 L324,326" fill="none" stroke="#22d3ee" stroke-width="2"/>' +
+          '<circle cx="300" cy="350" r="4.5" fill="none" stroke="url(#top21-chrome)" stroke-width="2.2"/>' +
+          '<polygon points="303,362 292,377 299,377 295,392 309,374 301,374" fill="url(#top21-volt)" stroke="#ffffff" stroke-width="0.9"/>' +
+          /* Angular padded hologram shoulder armor puffs covering arm joints cleanly */
+          mirrorX(
+            '<path d="M248,320 C220,312 190,324 190,350 C192,366 218,374 246,360 Z" fill="url(#top21-holo)" stroke="#4c1d95" stroke-width="1.2"/>' +
+            '<path d="M200,332 C214,322 230,324 240,334" fill="none" stroke="#ffffff" stroke-width="2.2" opacity="0.85" stroke-linecap="round"/>' +
+            '<path d="M196,348 L240,342" fill="none" stroke="#22d3ee" stroke-width="1.8"/>' +
+            '<path d="M195,360 Q220,369 243,360 L241,371 Q220,380 197,370 Z" fill="url(#top21-dark)" stroke="#ec4899" stroke-width="1"/>' +
+            '<rect x="212" y="362" width="14" height="6" rx="2" fill="url(#top21-chrome)"/>'
+          ) +
+          /* Open holographic cropped cyber moto-jacket panels */
+          mirrorX(
+            '<path d="M236,331 C250,321 268,317 282,318 L278,354 L283,414 L247,414 C239,394 236,362 236,331 Z" fill="url(#top21-holo)" stroke="#581c87" stroke-width="1.2"/>' +
+            '<polygon points="282,318 263,332 272,356 280,352" fill="url(#top21-neon)" stroke="#ffffff" stroke-width="0.9"/>' +
+            '<path d="M278,356 L282,412" fill="none" stroke="url(#top21-chrome)" stroke-width="2" stroke-dasharray="3,2"/>' +
+            '<path d="M252,374 L268,374 L272,398" fill="none" stroke="#22d3ee" stroke-width="1.4" opacity="0.9"/>' +
+            '<circle cx="272" cy="398" r="2.2" fill="#ffffff"/>' +
+            '<path d="M247,407 L283,407 L283,415 L249,415 Z" fill="url(#top21-dark)" stroke="#22d3ee" stroke-width="0.9"/>'
+          ) +
+          /* Cyber neon waist belt & angular hologram peplum fins */
+          '<path d="M258,426 Q300,433 342,426 L343,440 Q300,447 257,440 Z" fill="url(#top21-dark)" stroke="#22d3ee" stroke-width="1.1"/>' +
+          '<path d="M257,439 L246,458 L272,448 L286,462 L300,444 L314,462 L328,448 L354,458 L343,439 Z" fill="url(#top21-holo)" stroke="#4c1d95" stroke-width="1"/>' +
+          '<rect x="291" y="424" width="18" height="17" rx="4" fill="url(#top21-chrome)" stroke="#1e1b4b" stroke-width="0.9"/>' +
+          '<polygon points="301,427 296,433 300,433 298,439 305,432 301,432" fill="#22d3ee"/>' +
+          star4(268, 350, 4.5, '#ffffff', 0.95) +
+          star4(332, 350, 4.5, '#ffffff', 0.95) +
+          star4(300, 408, 4, '#22d3ee', 0.95) +
+        '</g>'
+    },
+
+    /* ======================================================================
+       22. Áo Phượng Hoàng Lửa Cánh Vàng
+       ====================================================================== */
+    {
+      id: 'top-22',
+      name: 'Áo Phượng Hoàng Lửa Cánh Vàng',
+      icon: '🔥',
+      accentColor: '#f97316',
+      previewBox: '108 232 384 300',
+      defs:
+        '<linearGradient id="top22-crimson" x1="0%" y1="0%" x2="100%" y2="12%">' +
+          '<stop offset="0%" stop-color="#7f1d1d"/>' +
+          '<stop offset="26%" stop-color="#dc2626"/>' +
+          '<stop offset="50%" stop-color="#fb7185"/>' +
+          '<stop offset="76%" stop-color="#b91c1c"/>' +
+          '<stop offset="100%" stop-color="#450a0a"/>' +
+        '</linearGradient>' +
+        '<linearGradient id="top22-flame" x1="0%" y1="0%" x2="100%" y2="100%">' +
+          '<stop offset="0%" stop-color="#fef08a"/>' +
+          '<stop offset="48%" stop-color="#f97316"/>' +
+          '<stop offset="100%" stop-color="#b91c1c"/>' +
+        '</linearGradient>' +
+        '<linearGradient id="top22-gold" x1="0%" y1="0%" x2="100%" y2="100%">' +
+          '<stop offset="0%" stop-color="#fef9c3"/>' +
+          '<stop offset="48%" stop-color="#fbbf24"/>' +
+          '<stop offset="100%" stop-color="#b45309"/>' +
+        '</linearGradient>' +
+        '<linearGradient id="top22-wing-hi" x1="0%" y1="0%" x2="100%" y2="100%">' +
+          '<stop offset="0%" stop-color="#fef08a"/>' +
+          '<stop offset="46%" stop-color="#fbbf24"/>' +
+          '<stop offset="82%" stop-color="#f97316"/>' +
+          '<stop offset="100%" stop-color="#dc2626"/>' +
+        '</linearGradient>' +
+        '<linearGradient id="top22-wing-lo" x1="0%" y1="0%" x2="100%" y2="100%">' +
+          '<stop offset="0%" stop-color="#fbbf24" stop-opacity="0.94"/>' +
+          '<stop offset="55%" stop-color="#f97316" stop-opacity="0.9"/>' +
+          '<stop offset="100%" stop-color="#991b1b" stop-opacity="0.86"/>' +
+        '</linearGradient>' +
+        '<radialGradient id="top22-ruby" cx="35%" cy="30%" r="70%">' +
+          '<stop offset="0%" stop-color="#ffffff"/>' +
+          '<stop offset="32%" stop-color="#fde047"/>' +
+          '<stop offset="72%" stop-color="#f97316"/>' +
+          '<stop offset="100%" stop-color="#7f1d1d"/>' +
+        '</radialGradient>',
+      backSvg:
+        '<g>' +
+          /* Blazing Golden Phoenix Wings & flowing ember tail plumes */
+          mirrorX(
+            '<path d="M276,348 C238,274 156,226 112,246 C100,260 116,288 144,302 C114,310 110,334 138,350 C120,362 126,384 160,392 C148,408 162,426 196,426 C230,426 260,398 276,374 Z" fill="url(#top22-wing-hi)" stroke="#9a3412" stroke-width="1.2"/>' +
+            '<path d="M262,354 C214,300 156,264 124,258" fill="none" stroke="#fef9c3" stroke-width="2.2" opacity="0.88" stroke-linecap="round"/>' +
+            '<path d="M254,362 C210,332 164,314 132,316" fill="none" stroke="#fef08a" stroke-width="1.6" opacity="0.82"/>' +
+            '<path d="M250,372 C210,360 170,356 140,366" fill="none" stroke="#fed7aa" stroke-width="1.4" opacity="0.76"/>' +
+            '<path d="M248,382 C216,388 188,398 168,412" fill="none" stroke="#fef08a" stroke-width="1.2" opacity="0.72"/>' +
+            '<path d="M272,388 C236,416 184,452 174,492 C178,512 204,516 226,496 C248,476 266,440 276,406 Z" fill="url(#top22-wing-lo)" stroke="#9a3412" stroke-width="1.1"/>' +
+            '<path d="M256,408 C226,436 198,468 190,496" fill="none" stroke="#fef08a" stroke-width="1.4" opacity="0.8"/>' +
+            star4(122, 254, 6, '#fef08a', 0.95) +
+            star4(182, 488, 5, '#ffffff', 0.92)
+          ) +
+        '</g>',
+      svg:
+        '<g>' +
+          /* Flame-scalloped crimson-gold upper yoke covering collarbone cleanly */
+          '<path d="M236,342 C242,324 268,318 285,319 Q300,328 315,319 C332,318 358,324 364,342 L348,364 L252,364 Z" fill="url(#top22-flame)" stroke="#9a3412" stroke-width="1"/>' +
+          '<path d="M282,319 Q300,329 318,319" fill="none" stroke="url(#top22-gold)" stroke-width="2.4"/>' +
+          /* Layered crimson-and-gold phoenix feather shoulder pauldrons covering joints cleanly */
+          mirrorX(
+            '<path d="M248,322 C220,308 188,320 188,346 C192,362 218,368 246,356 Z" fill="url(#top22-gold)" stroke="#9a3412" stroke-width="1.1"/>' +
+            '<path d="M244,335 C216,334 192,348 196,368 C210,378 234,372 248,358 Z" fill="url(#top22-crimson)" stroke="url(#top22-gold)" stroke-width="1.1"/>' +
+            '<path d="M202,329 C215,320 230,322 240,332" fill="none" stroke="#fef9c3" stroke-width="2" opacity="0.85" stroke-linecap="round"/>' +
+            '<path d="M200,350 L236,344" fill="none" stroke="#fef08a" stroke-width="1.3" opacity="0.8"/>'
+          ) +
+          /* Imperial Phoenix Empress crimson corset bodice */
+          '<path d="M238,340 C256,332 282,336 300,350 C318,336 344,332 362,340 C360,370 355,396 348,416 L342,435 L258,435 L252,416 C245,396 240,370 238,340 Z" fill="url(#top22-crimson)" stroke="#7f1d1d" stroke-width="1.3"/>' +
+          /* Sculpted 24k gold phoenix-wing breastplate filigree */
+          mirrorX(
+            '<path d="M244,344 C264,342 288,356 298,382 C280,388 258,380 246,360 Z" fill="url(#top22-flame)" opacity="0.86" stroke="url(#top22-gold)" stroke-width="1.1"/>' +
+            '<path d="M254,354 C268,360 280,370 288,380" fill="none" stroke="#fef9c3" stroke-width="1.4" opacity="0.85"/>' +
+            '<path d="M268,388 C274,404 275,418 274,432" fill="none" stroke="url(#top22-gold)" stroke-width="1.6"/>'
+          ) +
+          /* Multi-layered golden feather & crimson flame-petal peplum */
+          '<path d="M258,432 C244,442 240,458 254,464 C268,468 278,456 284,446 C290,462 300,468 300,468 C300,468 310,462 316,446 C322,456 332,468 346,464 C360,458 356,442 342,432 Z" fill="url(#top22-flame)" stroke="#9a3412" stroke-width="1.1"/>' +
+          '<path d="M266,434 C260,446 268,458 280,456 C290,454 295,444 300,438 C305,444 310,454 320,456 C332,458 340,446 334,434 Z" fill="url(#top22-gold)" stroke="#b45309" stroke-width="0.9"/>' +
+          '<path d="M258,426 Q300,435 342,426 L342,437 Q300,446 258,437 Z" fill="url(#top22-gold)" stroke="#92400e" stroke-width="0.9"/>' +
+          /* Blazing sun-ruby phoenix chest & waist emblems */
+          '<path d="M282,354 C288,344 296,348 300,355 C304,348 312,344 318,354 C312,362 304,364 300,358 C296,364 288,362 282,354 Z" fill="url(#top22-gold)" stroke="#92400e" stroke-width="0.8"/>' +
+          gemCircle(300, 356, 5.6, 'top22-ruby', 'url(#top22-gold)') +
+          gemCircle(300, 434, 4.4, 'top22-ruby', '#fef08a') +
+          star4(284, 342, 4.5, '#ffffff', 0.95) +
+          star4(316, 342, 4.5, '#ffffff', 0.95) +
+          star4(300, 404, 4.5, '#fef08a', 0.95) +
         '</g>'
     }
   ];
