@@ -1479,8 +1479,8 @@
                       (DOLL_RIG.legsSvg || '') +
                       (DOLL_RIG.torsoSvg || '') +
                       '<g id="layer-bottoms"></g>' +
-                      '<g id="layer-tops"></g>' +
                       (DOLL_RIG.armsSvg || '') +
+                      '<g id="layer-tops"></g>' +
                       headSvgWithHairLayer +
                     '</svg>' +
                   '</div>' +

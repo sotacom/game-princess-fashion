@@ -165,8 +165,8 @@
           '<stop offset="100%" stop-color="#b81665"/>' +
         '</radialGradient>' +
         '<linearGradient id="top01-sheer" x1="0%" y1="0%" x2="0%" y2="100%">' +
-          '<stop offset="0%" stop-color="#fff5fa" stop-opacity="0.72"/>' +
-          '<stop offset="100%" stop-color="#ffb8dc" stop-opacity="0.88"/>' +
+          '<stop offset="0%" stop-color="#fff5fa" stop-opacity="0.88"/>' +
+          '<stop offset="100%" stop-color="#ffb8dc" stop-opacity="0.96"/>' +
         '</linearGradient>' +
         '<linearGradient id="top01-gold" x1="0%" y1="0%" x2="100%" y2="100%">' +
           '<stop offset="0%" stop-color="#fff3b0"/>' +
@@ -198,16 +198,16 @@
       svg:
         '<g>' +
           /* Sheer sweetheart yoke protecting neckline */
-          '<path d="M240,344 C244,325 266,319 283,319 C290,326 310,326 317,319 C334,319 356,325 360,344 L348,358 L252,358 Z" fill="url(#top01-sheer)" stroke="#ff85c2" stroke-width="0.9"/>' +
+          '<path d="M236,342 C240,324 264,319 283,319 C290,326 310,326 317,319 C336,319 360,324 364,342 L348,358 L252,358 Z" fill="url(#top01-sheer)" stroke="#ff85c2" stroke-width="0.9"/>' +
           /* Left & right lush princess puff sleeves framing shoulders */
           mirrorX(
-            '<ellipse cx="217" cy="340" rx="30" ry="30" fill="url(#top01-puff)" stroke="#b81665" stroke-width="1.2"/>' +
-            '<path d="M198,322 C209,311 228,312 238,324 C232,336 222,348 216,356" fill="none" stroke="#ffeaf5" stroke-width="2.4" stroke-linecap="round" opacity="0.72"/>' +
-            '<path d="M195,342 C202,352 210,358 218,363" fill="none" stroke="#b81665" stroke-width="1.2" opacity="0.45"/>' +
-            '<path d="M194,362 Q217,370 240,362 L238,372 Q217,380 196,371 Z" fill="url(#top01-satin)" stroke="#9e1054" stroke-width="1"/>' +
-            scallopTrim(196, 371, 238, 372, 6, 4.5, 'url(#top01-lace)', '#f2a7cc', 0.8) +
-            '<path d="M204,368 C196,363 195,374 204,370 Z M204,368 C212,363 213,374 204,370 Z" fill="#ff99cc" stroke="#b81665" stroke-width="0.8"/>' +
-            '<circle cx="204" cy="369" r="2.2" fill="#ffd166"/>'
+            '<ellipse cx="220" cy="338" rx="32" ry="29" fill="url(#top01-puff)" stroke="#b81665" stroke-width="1.2"/>' +
+            '<path d="M198,322 C209,312 230,313 241,324 C235,336 225,346 218,354" fill="none" stroke="#ffeaf5" stroke-width="2.4" stroke-linecap="round" opacity="0.72"/>' +
+            '<path d="M196,342 C203,352 211,358 220,362" fill="none" stroke="#b81665" stroke-width="1.2" opacity="0.45"/>' +
+            '<path d="M195,361 Q220,369 243,361 L241,371 Q220,379 197,370 Z" fill="url(#top01-satin)" stroke="#9e1054" stroke-width="1"/>' +
+            scallopTrim(197, 370, 241, 371, 6, 4.5, 'url(#top01-lace)', '#f2a7cc', 0.8) +
+            '<path d="M206,367 C198,362 197,373 206,369 Z M206,367 C214,362 215,373 206,369 Z" fill="#ff99cc" stroke="#b81665" stroke-width="0.8"/>' +
+            '<circle cx="206" cy="368" r="2.2" fill="#ffd166"/>'
           ) +
           /* Main contoured satin bodice hugging bust & ribcage */
           '<path d="M240,344 C256,335 280,336 300,350 C320,336 344,335 360,344 C361,368 359,394 353,413 C349,423 343,430 342,436 C326,442 312,448 300,456 C288,448 274,442 258,436 C257,430 251,423 247,413 C241,394 239,368 240,344 Z" fill="url(#top01-satin)" stroke="#9e1054" stroke-width="1.3"/>' +
@@ -257,8 +257,8 @@
           '<stop offset="100%" stop-color="#b8f0ff" stop-opacity="0.18"/>' +
         '</linearGradient>' +
         '<linearGradient id="top02-mesh" x1="0%" y1="0%" x2="0%" y2="100%">' +
-          '<stop offset="0%" stop-color="#f5fdff" stop-opacity="0.66"/>' +
-          '<stop offset="100%" stop-color="#9ee8ff" stop-opacity="0.82"/>' +
+          '<stop offset="0%" stop-color="#f5fdff" stop-opacity="0.94"/>' +
+          '<stop offset="100%" stop-color="#9ee8ff" stop-opacity="0.98"/>' +
         '</linearGradient>' +
         '<linearGradient id="top02-silver" x1="0%" y1="0%" x2="100%" y2="100%">' +
           '<stop offset="0%" stop-color="#ffffff"/>' +
@@ -286,13 +286,14 @@
       svg:
         '<g>' +
           /* Sheer icy illusion upper yoke & silver collar */
-          '<path d="M240,344 C244,324 268,318 284,318 C292,324 308,324 316,318 C332,318 356,324 360,344 L348,360 L252,360 Z" fill="url(#top02-mesh)" stroke="#b3ebff" stroke-width="0.9"/>' +
+          '<path d="M236,342 C240,322 266,318 284,318 C292,324 308,324 316,318 C334,318 360,322 364,342 L348,360 L252,360 Z" fill="url(#top02-mesh)" stroke="#b3ebff" stroke-width="0.9"/>' +
           '<path d="M282,318 Q300,327 318,318 L317,325 Q300,334 283,325 Z" fill="url(#top02-silver)" stroke="#5ba4dc" stroke-width="0.8"/>' +
-          /* Off-shoulder frosted tulle ruffles */
+          /* Frosted ice-silk shoulder drapes covering shoulder cap cleanly */
           mirrorX(
-            '<path d="M245,338 C220,334 196,342 190,356 C198,366 222,370 245,360 Z" fill="url(#top02-mesh)" stroke="#9ae2ff" stroke-width="1"/>' +
-            '<path d="M244,344 C220,342 200,350 192,362 C206,374 230,374 246,364 Z" fill="url(#top02-ice)" opacity="0.74" stroke="#ffffff" stroke-width="0.8"/>' +
-            gemCircle(239, 344, 3.8, 'top02-crystal', '#ffffff')
+            '<path d="M248,324 C222,316 196,328 191,352 C197,366 222,372 246,360 Z" fill="url(#top02-mesh)" stroke="#9ae2ff" stroke-width="1"/>' +
+            '<path d="M246,334 C222,328 198,342 192,362 C206,375 230,375 247,364 Z" fill="url(#top02-ice)" opacity="0.96" stroke="#ffffff" stroke-width="0.9"/>' +
+            '<path d="M203,332 C214,323 228,323 240,332" fill="none" stroke="#ffffff" stroke-width="1.8" opacity="0.75" stroke-linecap="round"/>' +
+            gemCircle(239, 342, 3.8, 'top02-crystal', '#ffffff')
           ) +
           /* Faceted crystal corset body */
           '<path d="M240,344 C260,336 280,340 300,352 C320,340 340,336 360,344 C360,370 356,396 350,415 L342,435 L322,446 L300,458 L278,446 L258,435 L250,415 C244,396 240,370 240,344 Z" fill="url(#top02-ice)" stroke="#1670b8" stroke-width="1.3"/>' +
@@ -365,13 +366,13 @@
         '<g>' +
           /* Crisp white sailor blouse sleeves */
           mirrorX(
-            '<ellipse cx="217" cy="342" rx="29" ry="28" fill="url(#top03-white)" stroke="#8eb4e6" stroke-width="1.2"/>' +
-            '<path d="M198,326 C210,316 228,318 238,332" fill="none" stroke="#ffffff" stroke-width="2.4" opacity="0.85" stroke-linecap="round"/>' +
-            '<path d="M194,360 Q217,368 240,360 L238,371 Q217,379 196,370 Z" fill="url(#top03-blue)" stroke="#2366b5" stroke-width="1"/>' +
-            '<path d="M195,365 Q217,373 239,365" fill="none" stroke="#ffffff" stroke-width="1.6"/>'
+            '<ellipse cx="220" cy="338" rx="31" ry="29" fill="url(#top03-white)" stroke="#8eb4e6" stroke-width="1.2"/>' +
+            '<path d="M199,323 C211,313 230,315 240,329" fill="none" stroke="#ffffff" stroke-width="2.4" opacity="0.85" stroke-linecap="round"/>' +
+            '<path d="M195,358 Q220,367 243,358 L241,369 Q220,378 197,368 Z" fill="url(#top03-blue)" stroke="#2366b5" stroke-width="1"/>' +
+            '<path d="M196,363 Q220,372 242,363" fill="none" stroke="#ffffff" stroke-width="1.6"/>'
           ) +
           /* Sailor white fitted blouse torso */
-          '<path d="M240,334 C252,322 272,318 284,318 L316,318 C328,318 348,322 360,334 C361,364 358,395 351,415 L342,436 L258,436 L249,415 C242,395 239,364 240,334 Z" fill="url(#top03-white)" stroke="#8eb4e6" stroke-width="1.3"/>' +
+          '<path d="M236,332 C249,321 271,318 284,318 L316,318 C329,318 351,321 364,332 C363,363 359,395 351,415 L342,436 L258,436 L249,415 C241,395 237,363 236,332 Z" fill="url(#top03-white)" stroke="#8eb4e6" stroke-width="1.3"/>' +
           '<path d="M276,374 C278,396 280,414 282,428 M324,374 C322,396 320,414 318,428" fill="none" stroke="#b9d1f2" stroke-width="1.4" opacity="0.75"/>' +
           /* Sailor V-collar with double stripes & gold stars */
           '<path d="M282,318 C264,318 244,324 236,336 C242,354 256,368 300,382 C344,368 358,354 364,336 C356,324 336,318 318,318 L315,326 L300,370 L285,326 Z" fill="url(#top03-blue)" stroke="#2366b5" stroke-width="1.2"/>' +
@@ -436,8 +437,8 @@
           '<stop offset="100%" stop-color="#ec4899"/>' +
         '</radialGradient>' +
         '<linearGradient id="top04-sheer" x1="0%" y1="0%" x2="0%" y2="100%">' +
-          '<stop offset="0%" stop-color="#f0fff9" stop-opacity="0.65"/>' +
-          '<stop offset="100%" stop-color="#d8fff0" stop-opacity="0.85"/>' +
+          '<stop offset="0%" stop-color="#f0fff9" stop-opacity="0.94"/>' +
+          '<stop offset="100%" stop-color="#d8fff0" stop-opacity="0.98"/>' +
         '</linearGradient>',
       backSvg:
         '<g>' +
@@ -456,13 +457,13 @@
         '</g>',
       svg:
         '<g>' +
-          '<path d="M240,342 C246,324 272,318 286,320 Q300,328 314,320 C328,318 354,324 360,342 L348,360 L252,360 Z" fill="url(#top04-sheer)" stroke="#86efac" stroke-width="0.9"/>' +
+          '<path d="M236,340 C242,323 270,318 286,320 Q300,328 314,320 C330,318 358,323 364,340 L348,360 L252,360 Z" fill="url(#top04-sheer)" stroke="#86efac" stroke-width="0.9"/>' +
           mirrorX(
-            '<path d="M246,326 C220,310 192,320 196,344 C200,362 224,370 245,356 Z" fill="url(#top04-lav)" stroke="#6d28d9" stroke-width="1"/>' +
-            '<path d="M242,336 C216,334 196,348 200,366 C210,376 232,374 246,360 Z" fill="url(#top04-mint)" stroke="#157a5e" stroke-width="1"/>' +
-            '<path d="M208,332 C218,324 230,326 238,336" fill="none" stroke="#ffffff" stroke-width="1.6" opacity="0.7" stroke-linecap="round"/>'
+            '<path d="M248,323 C221,308 190,320 193,345 C197,364 224,372 247,358 Z" fill="url(#top04-lav)" stroke="#6d28d9" stroke-width="1"/>' +
+            '<path d="M244,335 C217,333 195,347 199,366 C209,376 232,375 247,360 Z" fill="url(#top04-mint)" stroke="#157a5e" stroke-width="1"/>' +
+            '<path d="M208,331 C219,322 232,324 240,334" fill="none" stroke="#ffffff" stroke-width="1.6" opacity="0.75" stroke-linecap="round"/>'
           ) +
-          '<path d="M240,342 C258,334 282,338 300,352 C318,338 342,334 360,342 C360,370 356,396 349,415 L342,436 L258,436 L251,415 C244,396 240,370 240,342 Z" fill="url(#top04-mint)" stroke="#157a5e" stroke-width="1.2"/>' +
+          '<path d="M238,340 C256,333 282,337 300,352 C318,337 344,333 362,340 C361,370 356,396 349,415 L342,436 L258,436 L251,415 C244,396 239,370 238,340 Z" fill="url(#top04-mint)" stroke="#157a5e" stroke-width="1.2"/>' +
           '<path d="M242,344 C264,342 292,354 300,382 C282,392 254,386 244,364 Z" fill="url(#top04-lav)" opacity="0.88" stroke="#6d28d9" stroke-width="0.9"/>' +
           '<path d="M358,344 C336,342 308,354 300,382 C318,392 346,386 356,364 Z" fill="url(#top04-lav)" opacity="0.88" stroke="#6d28d9" stroke-width="0.9"/>' +
           '<path d="M268,382 C284,390 296,388 300,432 C284,432 266,424 257,412 Z" fill="#a7f3d0" opacity="0.52"/>' +
@@ -530,21 +531,21 @@
       svg:
         '<g>' +
           /* Inner idol fitted tee covering full torso cleanly */
-          '<path d="M241,332 C252,322 274,319 285,319 Q300,332 315,319 C326,319 348,322 359,332 C360,364 358,394 351,414 L342,438 L258,438 L249,414 C242,394 240,364 241,332 Z" fill="url(#top05-tee)" stroke="#c4b5fd" stroke-width="1"/>' +
+          '<path d="M237,331 C250,321 273,318 285,319 Q300,332 315,319 C327,318 350,321 363,331 C362,364 358,394 351,414 L342,438 L258,438 L249,414 C242,394 238,364 237,331 Z" fill="url(#top05-tee)" stroke="#c4b5fd" stroke-width="1"/>' +
           '<path d="M284,320 Q300,334 316,320" fill="none" stroke="#ff3b9a" stroke-width="2.4"/>' +
           '<path d="' + heartPath(300, 372, 22) + '" fill="url(#top05-neon)" stroke="#ffffff" stroke-width="1.2"/>' +
           star5(300, 372, 8.5, 3.8, '#fef08a', '#ff2e93', 0.8) +
           /* Jacket puff varsity-idol sleeves */
           mirrorX(
-            '<ellipse cx="217" cy="344" rx="29" ry="30" fill="url(#top05-jacket)" stroke="#581c87" stroke-width="1.2"/>' +
-            '<path d="M198,326 C210,316 228,318 238,332" fill="none" stroke="#fae8ff" stroke-width="2.2" opacity="0.72" stroke-linecap="round"/>' +
-            star5(204, 344, 7.2, 3.2, '#22d3ee', '#ffffff', 0.9) +
-            '<path d="M194,364 Q217,372 240,364 L238,375 Q217,383 196,374 Z" fill="url(#top05-belt)" stroke="#22d3ee" stroke-width="1"/>' +
-            '<path d="M195,369 Q217,377 239,369" fill="none" stroke="#ff3b9a" stroke-width="1.6"/>'
+            '<ellipse cx="220" cy="340" rx="31" ry="30" fill="url(#top05-jacket)" stroke="#581c87" stroke-width="1.2"/>' +
+            '<path d="M199,324 C211,314 230,316 240,329" fill="none" stroke="#fae8ff" stroke-width="2.2" opacity="0.72" stroke-linecap="round"/>' +
+            star5(205, 342, 7.2, 3.2, '#22d3ee', '#ffffff', 0.9) +
+            '<path d="M195,361 Q220,370 243,361 L241,372 Q220,381 197,371 Z" fill="url(#top05-belt)" stroke="#22d3ee" stroke-width="1"/>' +
+            '<path d="M196,366 Q220,375 242,366" fill="none" stroke="#ff3b9a" stroke-width="1.6"/>'
           ) +
           /* Cropped open sequin jacket panels */
           mirrorX(
-            '<path d="M240,332 C252,322 268,318 282,320 L278,354 L283,414 L247,414 C240,394 238,362 240,332 Z" fill="url(#top05-jacket)" stroke="#581c87" stroke-width="1.2"/>' +
+            '<path d="M236,331 C250,321 268,318 282,320 L278,354 L283,414 L247,414 C239,394 236,362 236,331 Z" fill="url(#top05-jacket)" stroke="#581c87" stroke-width="1.2"/>' +
             '<polygon points="282,320 264,334 274,358 281,354" fill="#22d3ee" stroke="#ffffff" stroke-width="0.8" opacity="0.9"/>' +
             '<path d="M278,356 L282,412" fill="none" stroke="url(#top05-gold)" stroke-width="2.2" stroke-dasharray="3,2"/>' +
             '<path d="M247,407 L283,407 L283,415 L249,415 Z" fill="url(#top05-belt)" stroke="#22d3ee" stroke-width="0.9"/>'
@@ -605,14 +606,14 @@
           scallopTrim(258, 437, 342, 437, 10, 5.5, 'url(#top06-cream)', '#e6b8a2', 0.9) +
           /* Cozy knit puff cardigan sleeves */
           mirrorX(
-            '<ellipse cx="217" cy="344" rx="29" ry="29" fill="url(#top06-peach)" stroke="#cc5a35" stroke-width="1.2"/>' +
-            '<path d="M204,322 C208,336 208,350 206,362 M218,318 C222,334 222,350 220,362 M232,324 C234,338 234,350 232,360" fill="none" stroke="#e87a56" stroke-width="1.4" opacity="0.45"/>' +
-            '<path d="M200,328 C210,319 226,320 236,332" fill="none" stroke="#fff4ed" stroke-width="2.2" opacity="0.65" stroke-linecap="round"/>' +
-            '<path d="M194,362 Q217,370 240,362 L238,375 Q217,383 196,374 Z" fill="url(#top06-peach)" stroke="#cc5a35" stroke-width="1"/>' +
-            '<path d="M201,365 L201,373 M209,367 L209,376 M217,368 L217,377 M225,367 L225,376 M233,365 L233,374" fill="none" stroke="#cc5a35" stroke-width="0.9" opacity="0.55"/>'
+            '<ellipse cx="220" cy="340" rx="31" ry="29" fill="url(#top06-peach)" stroke="#cc5a35" stroke-width="1.2"/>' +
+            '<path d="M206,320 C210,334 210,348 208,360 M220,316 C224,332 224,348 222,360 M234,322 C236,336 236,348 234,358" fill="none" stroke="#e87a56" stroke-width="1.4" opacity="0.45"/>' +
+            '<path d="M201,325 C211,316 229,317 239,329" fill="none" stroke="#fff4ed" stroke-width="2.2" opacity="0.65" stroke-linecap="round"/>' +
+            '<path d="M195,359 Q220,368 243,359 L241,372 Q220,381 197,371 Z" fill="url(#top06-peach)" stroke="#cc5a35" stroke-width="1"/>' +
+            '<path d="M203,362 L203,370 M211,364 L211,373 M220,365 L220,374 M229,364 L229,373 M237,362 L237,371" fill="none" stroke="#cc5a35" stroke-width="0.9" opacity="0.55"/>'
           ) +
           /* Cozy peach cable-knit cardigan body */
-          '<path d="M240,334 C252,322 270,318 284,318 L298,350 L302,350 L316,318 C330,318 348,322 360,334 C361,366 356,396 347,424 Q300,432 253,424 C244,396 239,366 240,334 Z" fill="url(#top06-peach)" stroke="#cc5a35" stroke-width="1.2"/>' +
+          '<path d="M236,331 C250,321 270,318 284,318 L298,350 L302,350 L316,318 C330,318 350,321 364,331 C363,365 357,396 347,424 Q300,432 253,424 C243,396 237,365 236,331 Z" fill="url(#top06-peach)" stroke="#cc5a35" stroke-width="1.2"/>' +
           mirrorX(
             '<path d="M262,334 C256,344 268,354 262,364 C256,374 268,384 262,394 C256,404 266,412 262,418" fill="none" stroke="#ffe8de" stroke-width="2.6" stroke-linecap="round" opacity="0.72"/>' +
             '<path d="M262,334 C268,344 256,354 262,364 C268,374 256,384 262,394 C268,404 258,412 262,418" fill="none" stroke="#c95836" stroke-width="1.2" opacity="0.45"/>' +
@@ -668,14 +669,14 @@
         '<g>' +
           /* Tiered Lolita eyelet-lace puff sleeves */
           mirrorX(
-            '<ellipse cx="217" cy="340" rx="30" ry="29" fill="url(#top07-milk)" stroke="#c73c63" stroke-width="1.2"/>' +
-            '<ellipse cx="217" cy="340" rx="23" ry="20" fill="url(#top07-cream)" opacity="0.45"/>' +
-            '<path d="M200,322 C210,313 228,315 238,326" fill="none" stroke="#ffffff" stroke-width="2" opacity="0.8" stroke-linecap="round"/>' +
-            '<path d="M192,358 Q217,368 242,358 L239,372 Q217,380 195,370 Z" fill="url(#top07-cream)" stroke="#e69bb2" stroke-width="0.9"/>' +
-            scallopTrim(195, 370, 239, 372, 6, 4.5, '#ffffff', '#e69bb2', 0.8)
+            '<ellipse cx="220" cy="338" rx="31" ry="29" fill="url(#top07-milk)" stroke="#c73c63" stroke-width="1.2"/>' +
+            '<ellipse cx="220" cy="338" rx="23" ry="20" fill="url(#top07-cream)" opacity="0.5"/>' +
+            '<path d="M201,321 C212,312 230,314 240,325" fill="none" stroke="#ffffff" stroke-width="2" opacity="0.8" stroke-linecap="round"/>' +
+            '<path d="M194,356 Q220,367 244,356 L241,370 Q220,379 197,368 Z" fill="url(#top07-cream)" stroke="#e69bb2" stroke-width="0.9"/>' +
+            scallopTrim(197, 368, 241, 370, 6, 4.5, '#ffffff', '#e69bb2', 0.8)
           ) +
           /* Strawberry-milk blouse body */
-          '<path d="M240,334 C252,322 272,318 284,318 L316,318 C328,318 348,322 360,334 C361,366 357,396 349,416 L342,436 L258,436 L251,416 C243,396 239,366 240,334 Z" fill="url(#top07-milk)" stroke="#c73c63" stroke-width="1.2"/>' +
+          '<path d="M236,332 C250,321 271,318 284,318 L316,318 C329,318 350,321 364,332 C363,365 358,396 349,416 L342,436 L258,436 L251,416 C242,396 237,365 236,332 Z" fill="url(#top07-milk)" stroke="#c73c63" stroke-width="1.2"/>' +
           '<path d="M258,432 C246,442 242,452 244,458 Q300,468 356,458 C358,452 354,442 342,432 Z" fill="url(#top07-cream)" stroke="#e08ba5" stroke-width="1"/>' +
           scallopTrim(244, 456, 356, 456, 12, 5.5, '#ffffff', '#e08ba5', 0.85) +
           '<path d="M284,332 L316,332 L314,432 L286,432 Z" fill="url(#top07-cream)" stroke="#f0a8be" stroke-width="0.9"/>' +
@@ -722,9 +723,14 @@
           '<stop offset="100%" stop-color="#0f766e"/>' +
         '</linearGradient>' +
         '<linearGradient id="top08-fin" x1="0%" y1="0%" x2="100%" y2="100%">' +
-          '<stop offset="0%" stop-color="#99f6e4" stop-opacity="0.72"/>' +
-          '<stop offset="55%" stop-color="#f5d0fe" stop-opacity="0.6"/>' +
-          '<stop offset="100%" stop-color="#67e8f9" stop-opacity="0.25"/>' +
+          '<stop offset="0%" stop-color="#99f6e4" stop-opacity="0.82"/>' +
+          '<stop offset="55%" stop-color="#f5d0fe" stop-opacity="0.72"/>' +
+          '<stop offset="100%" stop-color="#67e8f9" stop-opacity="0.38"/>' +
+        '</linearGradient>' +
+        '<linearGradient id="top08-cap" x1="0%" y1="0%" x2="100%" y2="100%">' +
+          '<stop offset="0%" stop-color="#a5f3fc" stop-opacity="0.96"/>' +
+          '<stop offset="50%" stop-color="#f5d0fe" stop-opacity="0.96"/>' +
+          '<stop offset="100%" stop-color="#5eead4" stop-opacity="0.98"/>' +
         '</linearGradient>' +
         '<radialGradient id="top08-pearl" cx="34%" cy="30%" r="68%">' +
           '<stop offset="0%" stop-color="#ffffff"/>' +
@@ -745,8 +751,13 @@
         '</g>',
       svg:
         '<g>' +
-          /* Iridescent sea-silk sheer chest lining covering collarbone cleanly */
-          '<path d="M242,344 C248,326 266,320 282,322 Q300,330 318,322 C334,320 352,326 358,344 L348,370 L252,370 Z" fill="url(#top08-fin)" stroke="#99f6e4" stroke-width="0.9"/>' +
+          /* Iridescent sea-silk chest lining covering collarbone cleanly */
+          '<path d="M236,342 C244,324 266,320 282,322 Q300,330 318,322 C334,320 356,324 364,342 L348,370 L252,370 Z" fill="url(#top08-cap)" stroke="#99f6e4" stroke-width="0.9"/>' +
+          /* Iridescent sea-silk fin flutter cap sleeves covering shoulders cleanly */
+          mirrorX(
+            '<path d="M248,328 C222,316 196,324 195,346 C198,362 222,368 246,356 Z" fill="url(#top08-cap)" stroke="#2dd4bf" stroke-width="1.1"/>' +
+            '<path d="M204,335 C215,326 229,327 239,336" fill="none" stroke="#ffffff" stroke-width="1.6" opacity="0.75" stroke-linecap="round"/>'
+          ) +
           /* Opaque sea-silk scale fitted midriff rising behind shells (y: 356..454) so zero camisole shows */
           '<path d="M242,358 Q300,368 358,358 C359,382 355,402 348,418 L342,436 Q320,446 300,454 Q280,446 258,436 L252,418 C245,402 241,382 242,358 Z" fill="url(#top08-scale)" stroke="#0f766e" stroke-width="1.2"/>' +
           '<path d="M254,396 Q268,406 280,396 Q292,406 300,396 Q308,406 320,396 Q332,406 346,396" fill="none" stroke="#ffffff" stroke-width="1.1" opacity="0.55"/>' +
@@ -817,11 +828,11 @@
       svg:
         '<g>' +
           mirrorX(
-            '<ellipse cx="217" cy="340" rx="30" ry="29" fill="url(#top09-velvet)" stroke="#5e051d" stroke-width="1.2"/>' +
-            '<path d="M200,322 C210,313 228,315 238,326" fill="none" stroke="#ff85a3" stroke-width="2" opacity="0.5" stroke-linecap="round"/>' +
-            '<path d="M194,360 Q217,368 241,360 C244,367 240,374 232,374 C222,377 212,377 202,374 C194,374 190,367 194,360 Z" fill="url(#top09-fur)" stroke="#cbd5e1" stroke-width="1"/>'
+            '<ellipse cx="220" cy="338" rx="31" ry="29" fill="url(#top09-velvet)" stroke="#5e051d" stroke-width="1.2"/>' +
+            '<path d="M201,321 C212,312 230,314 240,325" fill="none" stroke="#ff85a3" stroke-width="2" opacity="0.5" stroke-linecap="round"/>' +
+            '<path d="M195,358 Q220,367 244,358 C247,365 243,373 234,373 C224,376 214,376 204,373 C196,373 191,365 195,358 Z" fill="url(#top09-fur)" stroke="#cbd5e1" stroke-width="1"/>'
           ) +
-          '<path d="M240,334 C252,322 272,318 284,318 L316,318 C328,318 348,322 360,334 C361,366 357,396 349,416 L342,434 L356,456 Q330,464 306,456 L300,442 L294,456 Q270,464 244,456 L258,434 L251,416 C243,396 239,366 240,334 Z" fill="url(#top09-velvet)" stroke="#5e051d" stroke-width="1.3"/>' +
+          '<path d="M236,332 C250,321 271,318 284,318 L316,318 C329,318 350,321 364,332 C363,365 358,396 349,416 L342,434 L356,456 Q330,464 306,456 L300,442 L294,456 Q270,464 244,456 L258,434 L251,416 C242,396 237,365 236,332 Z" fill="url(#top09-velvet)" stroke="#5e051d" stroke-width="1.3"/>' +
           '<path d="M280,316 C272,326 266,336 276,342 C286,346 294,340 300,346 C306,340 314,346 324,342 C334,336 328,326 320,316 Q300,324 280,316 Z" fill="url(#top09-fur)" stroke="#cbd5e1" stroke-width="1"/>' +
           '<path d="M244,453 Q270,461 294,453 L296,462 Q270,470 241,461 Z" fill="url(#top09-fur)" stroke="#cbd5e1" stroke-width="0.9"/>' +
           '<path d="M356,453 Q330,461 306,453 L304,462 Q330,470 359,461 Z" fill="url(#top09-fur)" stroke="#cbd5e1" stroke-width="0.9"/>' +
@@ -868,8 +879,8 @@
           '<stop offset="100%" stop-color="#d97706"/>' +
         '</linearGradient>' +
         '<linearGradient id="top10-tulle" x1="0%" y1="0%" x2="100%" y2="100%">' +
-          '<stop offset="0%" stop-color="#e9d5ff" stop-opacity="0.72"/>' +
-          '<stop offset="100%" stop-color="#6d28d9" stop-opacity="0.82"/>' +
+          '<stop offset="0%" stop-color="#e9d5ff" stop-opacity="0.95"/>' +
+          '<stop offset="100%" stop-color="#6d28d9" stop-opacity="0.99"/>' +
         '</linearGradient>',
       backSvg:
         '<g>' +
@@ -886,16 +897,16 @@
       svg:
         '<g>' +
           mirrorX(
-            '<ellipse cx="217" cy="340" rx="30" ry="29" fill="url(#top10-tulle)" stroke="#7c3aed" stroke-width="1.1"/>' +
-            '<path d="M200,322 C210,313 228,315 238,326" fill="none" stroke="#f5d0fe" stroke-width="2" opacity="0.68" stroke-linecap="round"/>' +
-            star4(207, 336, 4.5, '#fef08a', 0.95) +
-            star4(224, 350, 3.5, '#ffffff', 0.9) +
-            '<path d="M194,360 Q217,368 240,360 L238,371 Q217,379 196,370 Z" fill="url(#top10-galaxy)" stroke="url(#top10-gold)" stroke-width="1.1"/>'
+            '<ellipse cx="220" cy="337" rx="32" ry="29" fill="url(#top10-tulle)" stroke="#7c3aed" stroke-width="1.1"/>' +
+            '<path d="M201,321 C212,312 230,314 240,325" fill="none" stroke="#f5d0fe" stroke-width="2" opacity="0.78" stroke-linecap="round"/>' +
+            star4(209, 334, 4.5, '#fef08a', 0.95) +
+            star4(226, 348, 3.5, '#ffffff', 0.9) +
+            '<path d="M195,358 Q220,367 243,358 L241,369 Q220,378 197,368 Z" fill="url(#top10-galaxy)" stroke="url(#top10-gold)" stroke-width="1.1"/>'
           ) +
-          '<path d="M240,340 C258,330 278,322 300,324 C322,322 342,330 360,340 C361,370 357,396 349,416 L342,436 L354,458 Q326,466 300,454 Q274,466 246,458 L258,436 L251,416 C243,396 239,370 240,340 Z" fill="url(#top10-galaxy)" stroke="#3b0764" stroke-width="1.3"/>' +
+          '<path d="M236,332 C254,322 276,319 300,322 C324,319 346,322 364,332 C363,365 358,396 349,416 L342,436 L354,458 Q326,466 300,454 Q274,466 246,458 L258,436 L251,416 C242,396 237,365 236,332 Z" fill="url(#top10-galaxy)" stroke="#3b0764" stroke-width="1.3"/>' +
           '<ellipse cx="300" cy="378" rx="34" ry="22" fill="#f472b6" opacity="0.18"/>' +
           '<path d="M280,318 Q300,342 320,318 L317,328 Q300,350 283,328 Z" fill="url(#top10-gold)" stroke="#b45309" stroke-width="0.9"/>' +
-          '<path d="M250,334 Q300,354 350,334" fill="none" stroke="url(#top10-gold)" stroke-width="1.6"/>' +
+          '<path d="M244,332 Q300,352 356,332" fill="none" stroke="url(#top10-gold)" stroke-width="1.6"/>' +
           '<path d="M302,340 C294,341 290,350 295,357 C299,362 307,361 310,355 C304,358 298,354 299,348 C299,344 301,342 302,340 Z" fill="url(#top10-gold)" stroke="#b45309" stroke-width="0.7"/>' +
           star5(305, 349, 4.2, 1.8, '#ffffff', '#fbbf24', 0.5) +
           '<path d="M258,428 Q300,438 342,428 L343,439 Q300,449 257,439 Z" fill="url(#top10-gold)" stroke="#92400e" stroke-width="0.9"/>' +
@@ -946,11 +957,11 @@
       svg:
         '<g>' +
           mirrorX(
-            '<path d="M244,324 C220,312 192,324 192,348 C194,368 220,376 244,360 Z" fill="url(#top11-champ)" stroke="#c2956b" stroke-width="1.1"/>' +
-            '<path d="M242,334 C220,332 200,344 196,364 C212,374 232,370 245,358 Z" fill="url(#top11-rose)" opacity="0.82" stroke="#a8414e" stroke-width="0.9"/>' +
-            '<path d="M204,332 C214,324 228,326 238,334" fill="none" stroke="#ffffff" stroke-width="1.8" opacity="0.75" stroke-linecap="round"/>'
+            '<path d="M248,323 C222,310 190,322 191,348 C193,369 220,377 246,360 Z" fill="url(#top11-champ)" stroke="#c2956b" stroke-width="1.1"/>' +
+            '<path d="M245,333 C221,331 198,344 195,365 C211,375 233,371 247,358 Z" fill="url(#top11-rose)" opacity="0.96" stroke="#a8414e" stroke-width="0.9"/>' +
+            '<path d="M204,331 C215,323 230,325 240,333" fill="none" stroke="#ffffff" stroke-width="1.8" opacity="0.78" stroke-linecap="round"/>'
           ) +
-          '<path d="M240,336 C254,324 274,320 286,324 Q300,338 314,324 C326,320 346,324 360,336 C360,366 356,396 349,415 L342,432 L258,432 L251,415 C244,396 240,366 240,336 Z" fill="url(#top11-champ)" stroke="#c2956b" stroke-width="1.2"/>' +
+          '<path d="M236,333 C251,322 273,319 286,324 Q300,338 314,324 C327,319 349,322 364,333 C362,365 357,396 349,415 L342,432 L258,432 L251,415 C243,396 238,365 236,333 Z" fill="url(#top11-champ)" stroke="#c2956b" stroke-width="1.2"/>' +
           '<path d="M242,344 C264,338 286,342 300,354 C314,342 336,338 358,344" fill="none" stroke="url(#top11-rose)" stroke-width="2.6"/>' +
           '<path d="M268,348 C272,378 274,404 276,430 M332,348 C328,378 326,404 324,430" fill="none" stroke="url(#top11-rose)" stroke-width="1.4" opacity="0.85"/>' +
           '<path d="M258,432 C244,446 234,458 234,464 Q268,472 300,464 Q332,472 366,464 C366,458 356,446 342,432 Z" fill="url(#top11-champ)" stroke="#c2956b" stroke-width="1.2"/>' +
@@ -1011,12 +1022,12 @@
         '</g>',
       svg:
         '<g>' +
-          '<path d="M240,342 C246,324 270,318 285,320 Q300,328 315,320 C330,318 354,324 360,342 L348,360 L252,360 Z" fill="#f0f8ff" opacity="0.72" stroke="#bfdbfe" stroke-width="0.9"/>' +
+          '<path d="M236,340 C244,322 268,318 285,320 Q300,328 315,320 C332,318 356,322 364,340 L348,360 L252,360 Z" fill="#f0f8ff" opacity="0.95" stroke="#bfdbfe" stroke-width="0.9"/>' +
           mirrorX(
-            '<path d="M246,326 C220,310 192,322 192,344 C196,358 210,364 224,358 C218,368 230,374 244,362 Z" fill="url(#top12-plume)" stroke="#9ac2ed" stroke-width="1.1"/>' +
-            '<path d="M206,330 C216,322 230,324 238,334" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round"/>'
+            '<path d="M248,323 C221,308 190,320 190,345 C194,360 209,366 224,359 C218,369 231,375 247,362 Z" fill="url(#top12-plume)" stroke="#9ac2ed" stroke-width="1.1"/>' +
+            '<path d="M206,329 C217,320 232,322 240,333" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round"/>'
           ) +
-          '<path d="M240,342 C258,334 282,338 300,350 C318,338 342,334 360,342 C360,370 356,396 349,416 L342,436 L258,436 L251,416 C244,396 240,370 240,342 Z" fill="url(#top12-swan)" stroke="#9ac2ed" stroke-width="1.2"/>' +
+          '<path d="M238,340 C257,333 282,337 300,350 C318,337 343,333 362,340 C361,369 356,396 349,416 L342,436 L258,436 L251,416 C244,396 239,369 238,340 Z" fill="url(#top12-swan)" stroke="#9ac2ed" stroke-width="1.2"/>' +
           '<path d="M244,356 Q262,366 276,356 Q290,366 300,356 Q310,366 324,356 Q338,366 356,356" fill="none" stroke="#bdd8f7" stroke-width="1.3"/>' +
           '<path d="M250,376 Q268,386 284,376 Q300,388 316,376 Q332,386 350,376" fill="none" stroke="#bdd8f7" stroke-width="1.3"/>' +
           '<path d="M256,398 Q278,408 300,398 Q322,408 344,398" fill="none" stroke="#bdd8f7" stroke-width="1.2"/>' +

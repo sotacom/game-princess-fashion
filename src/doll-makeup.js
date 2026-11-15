@@ -333,11 +333,11 @@
       <path d="M 285,274 L 315,274 C 315,296 316,314 320,322 L 280,322 C 284,314 285,296 285,274 Z"
             fill="url(#doll-skin-neck)" stroke="#e4a795" stroke-width="0.8"/>
 
-      <!-- Main Torso Silhouette: Shoulders (226,326 & 374,326), Bust (242..358, 322..415), Waist (262..338 at 432), Hips (240..360, 450..520) -->
+      <!-- Main Torso Silhouette: Shoulders (230,328 & 370,328), Bust (242..358, 322..415), Waist (262..338 at 432), Hips (240..360, 450..520) -->
       <path d="M 281,321
-               C 265,322 240,323 226,326
-               C 220,328 219,338 225,346
-               C 232,354 242,355 245,358
+               C 266,322 250,324 230,328
+               C 223,331 221,337 223,342
+               C 226,350 238,354 245,358
                C 246,374 242,390 245,404
                C 249,417 262,425 262,432
                C 262,442 252,456 245,472
@@ -348,9 +348,9 @@
                C 348,456 338,442 338,432
                C 338,425 351,417 355,404
                C 358,390 354,374 355,358
-               C 358,355 368,354 375,346
-               C 381,338 380,328 374,326
-               C 360,323 335,322 319,321
+               C 362,354 374,350 377,342
+               C 379,337 377,331 370,328
+               C 350,324 334,322 319,321
                C 309,324 291,324 281,321 Z"
             fill="url(#doll-skin-torso)" stroke="#e4a795" stroke-width="0.9"/>
 
@@ -423,11 +423,11 @@
   // ==================== ARMS & HANDS WITH 10 PAINTABLE NAILS ====================
   const armsSvg = `
     <g id="rig-arms">
-      <!-- Left Arm (origin 230, 330; shoulder 226,326 -> elbow 196,425 -> hand 176,510) -->
+      <!-- Left Arm (origin 230, 330; shoulder 226,325 -> elbow 196,425 -> hand 176,510) -->
       <g id="rig-arm-left" style="transform-origin: 230px 330px;">
         <!-- Arm Contour + Graceful 5-Finger Hand -->
-        <path d="M 229,319
-                 C 218,321 211,334 208,355
+        <path d="M 226,325
+                 C 217,327 210,336 208,355
                  C 204,380 194,405 191,425
                  C 188,446 181,474 176,496
                  C 172,504 167,510 164,515
@@ -444,12 +444,12 @@
                  C 188,502 187,498 186,495
                  C 191,475 200,446 204,427
                  C 208,408 221,384 228,360
-                 C 235,342 242,334 238,324
-                 C 236,320 233,318 229,319 Z"
+                 C 234,344 238,334 234,327
+                 C 232,324 229,324 226,325 Z"
               fill="url(#doll-skin-arm-l)" stroke="#e4a795" stroke-width="0.85"/>
 
         <!-- 2.5D Arm Specular Highlight & Elbow Dimple -->
-        <path d="M 218,334 Q 205,382 195,422" fill="none" stroke="#fff7f2" stroke-width="3" stroke-linecap="round" opacity="0.5"/>
+        <path d="M 217,338 Q 205,382 195,422" fill="none" stroke="#fff7f2" stroke-width="3" stroke-linecap="round" opacity="0.5"/>
         <path d="M 192,434 Q 184,468 179,492" fill="none" stroke="#fff7f2" stroke-width="2.2" stroke-linecap="round" opacity="0.5"/>
         <path d="M 197,424 Q 200,427 202,424" fill="none" stroke="#e49d8a" stroke-width="0.9" stroke-linecap="round" opacity="0.55"/>
 
@@ -478,10 +478,10 @@
         <g class="doll-nail-fx" data-hand="left" data-finger="4" pointer-events="none"></g>
       </g>
 
-      <!-- Right Arm (origin 370, 330; shoulder 374,326 -> elbow 404,425 -> hand 424,510) -->
+      <!-- Right Arm (origin 370, 330; shoulder 374,325 -> elbow 404,425 -> hand 424,510) -->
       <g id="rig-arm-right" style="transform-origin: 370px 330px;">
-        <path d="M 371,319
-                 C 382,321 389,334 392,355
+        <path d="M 374,325
+                 C 383,327 390,336 392,355
                  C 396,380 406,405 409,425
                  C 412,446 419,474 424,496
                  C 428,504 433,510 436,515
@@ -498,11 +498,11 @@
                  C 412,502 413,498 414,495
                  C 409,475 400,446 396,427
                  C 392,408 379,384 372,360
-                 C 365,342 358,334 362,324
-                 C 364,320 367,318 371,319 Z"
+                 C 366,344 362,334 366,327
+                 C 368,324 371,324 374,325 Z"
               fill="url(#doll-skin-arm-r)" stroke="#e4a795" stroke-width="0.85"/>
 
-        <path d="M 382,334 Q 395,382 405,422" fill="none" stroke="#fff7f2" stroke-width="3" stroke-linecap="round" opacity="0.5"/>
+        <path d="M 383,338 Q 395,382 405,422" fill="none" stroke="#fff7f2" stroke-width="3" stroke-linecap="round" opacity="0.5"/>
         <path d="M 408,434 Q 416,468 421,492" fill="none" stroke="#fff7f2" stroke-width="2.2" stroke-linecap="round" opacity="0.5"/>
         <path d="M 403,424 Q 400,427 398,424" fill="none" stroke="#e49d8a" stroke-width="0.9" stroke-linecap="round" opacity="0.55"/>
 
