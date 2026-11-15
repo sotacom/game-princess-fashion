@@ -663,9 +663,9 @@
       leftSvg:
         '<g>' +
           /* Translucent stained-glass fairy butterfly wings flaring off outer ankle (x:230..262) */
-          '<path d="M261,826 C249,814 233,795 230,803 C227.5,810 236,824 252,829 C239,833 234,845 241,850 C247,854 256,844 261,834 Z" fill="url(#shoe06-wing)" stroke="#f5d0fe" stroke-width="0.85"/>' +
-          '<path d="M257,826 C246,816 237,806 234,806 M255,831 C246,836 242,843 243,846" fill="none" stroke="#ffffff" stroke-width="0.7" opacity="0.85"/>' +
-          '<circle cx="238" cy="811" r="1.3" fill="#ffffff" opacity="0.85"/>' +
+          '<path d="M261,826 C252,816 241,802 239,808 C237.5,814 242,824 253,829 C242,833 238,844 243,849 C248,853 256,844 261,834 Z" fill="url(#shoe06-wing)" stroke="#f5d0fe" stroke-width="0.85"/>' +
+          '<path d="M257,826 C250,818 244,810 241,810 M255,831 C247,836 244,842 245,845" fill="none" stroke="#ffffff" stroke-width="0.7" opacity="0.85"/>' +
+          '<circle cx="244" cy="814" r="1.3" fill="#ffffff" opacity="0.85"/>' +
           '<circle cx="243" cy="843" r="1.1" fill="#fde047" opacity="0.9"/>' +
           /* Rose-gold stiletto heel */
           '<path d="M270.2,847 L275.5,847 L274.2,879 L270.4,879 Z" fill="url(#shoe06-gold)" stroke="#92400e" stroke-width="0.6"/>' +
@@ -682,7 +682,7 @@
           '<path d="M265.2,863 C269,858 273.5,860 272,864.5 C270.5,867 265.2,865.5 265.2,865.5 Z" fill="url(#shoe06-wing)" stroke="#ffffff" stroke-width="0.5"/>' +
           gemOval(265, 864.5, 1.6, 2.2, 'shoe06-gem', '#fef08a') +
           gemOval(268, 829, 1.6, 1.6, 'shoe06-gem', '#ffffff') +
-          sparkle4(233.5, 800.5, 3.0, '#ffffff', 0.95) +
+          sparkle4(241.5, 805.5, 2.8, '#ffffff', 0.95) +
           sparkle4(274.5, 862, 2.3, '#f5d0fe', 0.9) +
         '</g>'
     },
@@ -1523,9 +1523,9 @@
       leftSvg:
         '<g>' +
           /* Soaring layered phoenix fire-wings sweeping up the outer calf (y=738..850) */
-          '<path d="M261,836 C246,818 228,778 232,742 C238,760 245,775 253,788 C242,782 234,768 236,756 C244,774 252,792 260,806 Z" fill="url(#shoe22-flame)" stroke="#fef08a" stroke-width="0.75"/>' +
-          '<path d="M261,838 C247,824 236,804 235,786 C243,798 250,810 259,820 Z" fill="url(#shoe22-gold)" stroke="#9a3412" stroke-width="0.65"/>' +
-          '<path d="M234,749 C240,768 249,792 257,815" fill="none" stroke="#ffffff" stroke-width="0.9" opacity="0.8"/>' +
+          '<path d="M261,836 C250,818 240,778 243,744 C247,760 251,775 256,788 C249,782 244,768 246,756 C251,774 255,792 260,806 Z" fill="url(#shoe22-flame)" stroke="#fef08a" stroke-width="0.75"/>' +
+          '<path d="M261,838 C250,824 243,804 242,786 C248,798 253,810 259,820 Z" fill="url(#shoe22-gold)" stroke="#9a3412" stroke-width="0.65"/>' +
+          '<path d="M244,750 C248,768 253,792 258,815" fill="none" stroke="#ffffff" stroke-width="0.9" opacity="0.8"/>' +
           /* Sculpted curved phoenix-flame golden stiletto heel */
           '<path d="M270.2,846.5 C273.5,854 274.5,865 274,879.5 L270.4,879.5 C271.4,865 271.2,854 270.2,846.5 Z" fill="url(#shoe22-gold)" stroke="#9a3412" stroke-width="0.65"/>' +
           '<path d="M273.5,846.5 L276,846.5 L274.2,879.5 L273,879.5 Z" fill="url(#shoe22-gold)"/>' +
@@ -1543,8 +1543,8 @@
           gemDiamond(265, 859.5, 2.5, 3.6, 'shoe22-opal', '#fef08a') +
           '<path d="M256,863 Q259.5,871.5 266,873" fill="none" stroke="#fef08a" stroke-width="1.25" stroke-linecap="round" opacity="0.85"/>' +
           /* Floating ember sparks */
-          sparkle4(233, 740, 3.1, '#fef08a', 0.95) +
-          sparkle4(240, 770, 2.4, '#ffffff', 0.9) +
+          sparkle4(244, 742, 2.8, '#fef08a', 0.95) +
+          sparkle4(247, 770, 2.4, '#ffffff', 0.9) +
           sparkle4(274.5, 868, 2.4, '#fef08a', 0.92) +
         '</g>'
     }

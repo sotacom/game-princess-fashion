@@ -1525,9 +1525,9 @@
                       '<g id="layer-back-train"></g>' +
                       '<g id="layer-back-hair"></g>' +
                       (DOLL_RIG.legsSvg || '') +
+                      '<g id="layer-shoes"><g id="layer-shoe-left"></g><g id="layer-shoe-right"></g></g>' +
                       (DOLL_RIG.torsoSvg || '') +
                       '<g id="layer-bottoms"></g>' +
-                      '<g id="layer-shoes"><g id="layer-shoe-left"></g><g id="layer-shoe-right"></g></g>' +
                       (DOLL_RIG.armsSvg || '') +
                       '<g id="layer-tops"></g>' +
                       headSvgWithHairLayer +
