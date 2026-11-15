@@ -476,10 +476,23 @@
     '  border-radius: 999px; margin-bottom: 4px; text-align: center;',
     '  box-shadow: 0 3px 8px rgba(255, 105, 180, 0.15);',
     '}',
-    '.ns-hand-svg { width: 100%; max-width: 360px; height: auto; max-height: 350px; overflow: visible; filter: drop-shadow(0 10px 16px rgba(185, 70, 130, 0.2)); }',
-    '.ns-finger-hit { cursor: pointer; transition: transform 0.16s ease; }',
+    '.ns-hand-svg { width: 100%; max-width: 360px; height: auto; max-height: 330px; overflow: visible; filter: drop-shadow(0 10px 16px rgba(185, 70, 130, 0.2)); }',
+    '.ns-finger-hit { cursor: pointer; touch-action: manipulation; }',
+    '.ns-finger-visual { transition: transform 0.14s ease; }',
     '.ns-finger-hit:hover { filter: brightness(1.04); }',
-    '.ns-finger-hit:active { transform: scale(0.98); }',
+    '.ns-finger-hit:active .ns-finger-visual { transform: scale(0.94); }',
+    '.ns-finger-pills { display: flex; flex-wrap: wrap; justify-content: center; gap: 5px; width: 100%; margin-top: 4px; }',
+    '.ns-finger-pill {',
+    '  border: 2px solid #ffd1e8; border-radius: 999px; background: #fff;',
+    '  color: #9d2466; font-weight: 800; font-size: 12px; padding: 5px 10px;',
+    '  cursor: pointer; transition: transform 0.14s ease, background 0.14s ease, color 0.14s ease;',
+    '  box-shadow: 0 2px 6px rgba(210, 80, 150, 0.14);',
+    '}',
+    '.ns-finger-pill:active { transform: scale(0.94); }',
+    '.ns-finger-pill.active {',
+    '  background: linear-gradient(180deg, #ff7eb9 0%, #e11d88 100%); color: #fff;',
+    '  border-color: #fff; box-shadow: 0 4px 10px rgba(225, 29, 136, 0.3);',
+    '}',
     '.ns-halo-ring { animation: nsHaloPulse 1.3s ease-in-out infinite; pointer-events: none; }',
     '@keyframes nsHaloPulse { 0%,100% { opacity: 0.95; stroke-width: 3.5; } 50% { opacity: 0.45; stroke-width: 5.5; } }',
     '.ns-sparkle-layer { position: absolute; inset: 0; pointer-events: none; overflow: hidden; }',
@@ -1075,18 +1088,20 @@
     var nailsMarkup = HAND_NAILS_GEOM.map(function (g) {
       return (
         '<g class="ns-finger-hit" data-finger="' + g.idx + '" transform="translate(' + g.cx + ',' + g.cy + ') rotate(' + g.rot + ') scale(' + g.sx + ',' + g.sy + ')">' +
-          '<circle cx="0" cy="0" r="34" fill="transparent"/>' +
-          '<path id="ns-nail-halo-' + g.idx + '" class="ns-halo-ring" d="M 0,-24 C 12,-24 19,-14 19,3 C 19,16 12,24 0,24 C -12,24 -19,16 -19,3 C -19,-14 -12,-24 0,-24 Z" fill="none" stroke="#ffd43b" stroke-width="3.5" stroke-dasharray="5 3" style="display:none"/>' +
-          '<g clip-path="url(#ns-nail-clip-' + g.idx + ')">' +
-            '<path id="ns-nail-base-' + g.idx + '" d="' + NAIL_ALMOND_PATH + '" fill="#ff4da6"/>' +
-            '<path d="' + NAIL_ALMOND_PATH + '" fill="url(#ns-nail-depth)" pointer-events="none"/>' +
-            '<g id="ns-nail-pattern-' + g.idx + '"></g>' +
-            '<path d="M -8,-14 C -4,-16 0,-12 -2,2 C -3,10 -6,14 -9,10 C -11,4 -11,-10 -8,-14 Z" fill="#ffffff" opacity="0.45"/>' +
-            '<ellipse cx="5" cy="-11" rx="2.5" ry="4" fill="#ffffff" opacity="0.52"/>' +
+          '<path class="ns-finger-hitbox" d="M 0,-34 C 24,-34 28,-10 28,65 C 28,85 -28,85 -28,65 C -28,-10 -24,-34 0,-34 Z" fill="rgba(255,255,255,0.001)"/>' +
+          '<g class="ns-finger-visual">' +
+            '<path id="ns-nail-halo-' + g.idx + '" class="ns-halo-ring" d="M 0,-24 C 12,-24 19,-14 19,3 C 19,16 12,24 0,24 C -12,24 -19,16 -19,3 C -19,-14 -12,-24 0,-24 Z" fill="none" stroke="#ffd43b" stroke-width="3.5" stroke-dasharray="5 3" style="display:none"/>' +
+            '<g clip-path="url(#ns-nail-clip-' + g.idx + ')">' +
+              '<path id="ns-nail-base-' + g.idx + '" d="' + NAIL_ALMOND_PATH + '" fill="#ff4da6"/>' +
+              '<path d="' + NAIL_ALMOND_PATH + '" fill="url(#ns-nail-depth)" pointer-events="none"/>' +
+              '<g id="ns-nail-pattern-' + g.idx + '"></g>' +
+              '<path d="M -8,-14 C -4,-16 0,-12 -2,2 C -3,10 -6,14 -9,10 C -11,4 -11,-10 -8,-14 Z" fill="#ffffff" opacity="0.45"/>' +
+              '<ellipse cx="5" cy="-11" rx="2.5" ry="4" fill="#ffffff" opacity="0.52"/>' +
+            '</g>' +
+            '<path d="' + NAIL_ALMOND_PATH + '" fill="none" stroke="rgba(255,255,255,0.85)" stroke-width="1.6"/>' +
+            '<path d="M -11,15 C -5,21 5,21 11,15" fill="none" stroke="#d8828c" stroke-width="1.4" opacity="0.55"/>' +
+            '<g id="ns-nail-charm-' + g.idx + '" transform="translate(0, 3)"></g>' +
           '</g>' +
-          '<path d="' + NAIL_ALMOND_PATH + '" fill="none" stroke="rgba(255,255,255,0.85)" stroke-width="1.6"/>' +
-          '<path d="M -11,15 C -5,21 5,21 11,15" fill="none" stroke="#d8828c" stroke-width="1.4" opacity="0.55"/>' +
-          '<g id="ns-nail-charm-' + g.idx + '" transform="translate(0, 3)"></g>' +
         '</g>'
       );
     }).join('');
@@ -1275,6 +1290,11 @@
     if (hintEl) {
       hintEl.textContent = '👆 Đang chọn: ' + FINGER_NAMES[nailState.selectedFinger] + ' — Chạm vào ngón tay để sơn!';
     }
+    var pills = nailState.modalEl.querySelectorAll('.ns-finger-pill');
+    for (var p = 0; p < pills.length; p++) {
+      var pIdx = parseInt(pills[p].getAttribute('data-finger'), 10);
+      pills[p].classList.toggle('active', pIdx === nailState.selectedFinger);
+    }
   }
 
   function applyActiveTabBrushToFinger(fingerIdx) {
@@ -1341,6 +1361,10 @@
       var target = hostContainer || document.body;
       target.appendChild(modal);
     }
+    var fingerPillsMarkup = FINGER_NAMES.map(function (fname, idx) {
+      return '<button type="button" class="ns-finger-pill' + (idx === nailState.selectedFinger ? ' active' : '') + '" data-finger="' + idx + '">' + fname + '</button>';
+    }).join('');
+
     modal.setAttribute('role', 'dialog');
     modal.setAttribute('aria-label', 'Tiệm Làm Móng Công Chúa');
     modal.innerHTML =
@@ -1356,6 +1380,7 @@
           '<div class="ns-hand-stage">' +
             '<div class="ns-finger-hint">👆 Chạm ngón tay để sơn móng nhé!</div>' +
             buildHandSvgMarkup() +
+            '<div class="ns-finger-pills" aria-label="Chọn ngón tay">' + fingerPillsMarkup + '</div>' +
             '<div class="ns-sparkle-layer"></div>' +
             '<div class="ns-hand-actions">' +
               '<button type="button" class="ns-btn-all">✨ Sơn Cả 5 Ngón</button>' +
@@ -1377,6 +1402,25 @@
 
     if (!modal._nsBound) {
       modal._nsBound = true;
+      var lastFingerDown = { idx: -1, time: 0 };
+
+      function selectAndPaintFinger(fIdx) {
+        if (isNaN(fIdx) || fIdx < 0 || fIdx > 4) return;
+        nailState.selectedFinger = fIdx;
+        applyActiveTabBrushToFinger(fIdx);
+      }
+
+      // Immediate touch/pointer selection on SVG nails so even quick or slight-drag iPad taps work reliably
+      modal.addEventListener('pointerdown', function (e) {
+        var fingerHit = e.target && e.target.closest && e.target.closest('.ns-finger-hit');
+        if (!fingerHit) return;
+        var fIdx = parseInt(fingerHit.getAttribute('data-finger'), 10);
+        if (isNaN(fIdx) || fIdx < 0 || fIdx > 4) return;
+        lastFingerDown.idx = fIdx;
+        lastFingerDown.time = Date.now();
+        selectAndPaintFinger(fIdx);
+      });
+
       // Event delegation inside Nail Salon modal
       modal.addEventListener('click', function (e) {
       if (e.target === modal) {
@@ -1409,6 +1453,16 @@
         renderPaletteItems();
         return;
       }
+      var fingerPill = e.target.closest('.ns-finger-pill');
+      if (fingerPill) {
+        var pIdx = parseInt(fingerPill.getAttribute('data-finger'), 10);
+        if (!isNaN(pIdx) && pIdx >= 0 && pIdx <= 4) {
+          nailState.selectedFinger = pIdx;
+          SOUND_FX.playPop();
+          renderHandNails();
+        }
+        return;
+      }
       var swatchBtn = e.target.closest('.ns-swatch-btn');
       if (swatchBtn) {
         var kind = swatchBtn.getAttribute('data-kind');
@@ -1432,8 +1486,11 @@
       if (fingerHit) {
         var fIdx = parseInt(fingerHit.getAttribute('data-finger'), 10);
         if (!isNaN(fIdx) && fIdx >= 0 && fIdx <= 4) {
-          nailState.selectedFinger = fIdx;
-          applyActiveTabBrushToFinger(fIdx);
+          if (lastFingerDown.idx === fIdx && (Date.now() - lastFingerDown.time) < 600) {
+            lastFingerDown.idx = -1;
+            return;
+          }
+          selectAndPaintFinger(fIdx);
         }
       }
       });
