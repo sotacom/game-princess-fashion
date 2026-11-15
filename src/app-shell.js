@@ -20,14 +20,23 @@
       -webkit-tap-highlight-color: transparent;
     }
 
-    html, body {
+    :root {
+      --app-height: 100vh;
+    }
+
+    :root, html, body {
       margin: 0;
       padding: 0;
       width: 100%;
-      height: 100%;
+      min-height: 100vh;
+      min-height: -webkit-fill-available;
+      min-height: var(--app-height, 100vh);
+      height: var(--app-height, 100vh);
       overflow: hidden;
       overscroll-behavior: none;
-      background: linear-gradient(155deg, #fff1f9 0%, #ffd8ee 34%, #ebd6ff 70%, #d8ecff 100%);
+      background-color: #ebd6ff;
+      background-image: linear-gradient(170deg, #ffe8f6 0%, #f8d8ff 48%, #d9e9ff 100%);
+      background-attachment: fixed;
       font-family: 'SF Pro Rounded', 'Nunito', 'Quicksand', 'Hiragino Maru Gothic ProN', 'Segoe UI', system-ui, -apple-system, sans-serif;
       color: #5c1946;
       user-select: none;
@@ -36,10 +45,14 @@
     }
 
     #app {
-      position: relative;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
       width: 100vw;
-      height: 100dvh;
-      height: 100vh;
+      height: var(--app-height, 100vh);
+      min-height: var(--app-height, 100vh);
       overflow: hidden;
       display: flex;
       flex-direction: column;
@@ -47,16 +60,10 @@
       gap: 8px;
     }
 
-    @supports (height: 100dvh) {
-      #app {
-        height: 100dvh;
-      }
-    }
-
     /* ==================== DREAMY 2.5D PRINCESS CASTLE BACKDROP ==================== */
     .castle-backdrop {
-      position: absolute;
-      inset: 0;
+      position: fixed;
+      inset: -40px;
       z-index: 0;
       pointer-events: none;
       overflow: hidden;
@@ -1188,22 +1195,6 @@
     }
     favLink.href = icon192;
 
-    var manifestObj = {
-      name: 'Công Chúa 2.5D - Thời Trang & Trang Điểm',
-      short_name: 'Công Chúa 2.5D',
-      description: 'Game Thời Trang, Trang Điểm, Làm Móng & Biểu Diễn Công Chúa 2.5D',
-      start_url: '.',
-      display: 'standalone',
-      orientation: 'any',
-      background_color: '#ffe6f3',
-      theme_color: '#ff69b4',
-      icons: [
-        { src: icon192, sizes: '192x192', type: 'image/png', purpose: 'any maskable' },
-        { src: icon512 || icon192, sizes: '512x512', type: 'image/png', purpose: 'any maskable' }
-      ]
-    };
-
-    var manifestHref = 'data:application/manifest+json;charset=utf-8,' + encodeURIComponent(JSON.stringify(manifestObj));
     var manifestLink = document.getElementById('app-manifest') || document.querySelector('link[rel="manifest"]');
     if (!manifestLink) {
       manifestLink = document.createElement('link');
@@ -1211,7 +1202,56 @@
       manifestLink.rel = 'manifest';
       document.head.appendChild(manifestLink);
     }
-    manifestLink.href = manifestHref;
+
+    var isFileProto = Boolean(global.location && global.location.protocol === 'file:');
+    var currentHref = manifestLink.getAttribute('href') || '';
+    if (isFileProto || !currentHref || currentHref.indexOf('data:') === 0) {
+      var manifestObj = {
+        name: 'Công Chúa 2.5D - Thời Trang & Trang Điểm',
+        short_name: 'Công Chúa 2.5D',
+        description: 'Game Thời Trang, Trang Điểm, Làm Móng & Biểu Diễn Công Chúa 2.5D',
+        start_url: '.',
+        display: 'standalone',
+        orientation: 'any',
+        background_color: '#ebd6ff',
+        theme_color: '#ffe8f6',
+        icons: [
+          { src: icon192, sizes: '192x192', type: 'image/png', purpose: 'any maskable' },
+          { src: icon512 || icon192, sizes: '512x512', type: 'image/png', purpose: 'any maskable' }
+        ]
+      };
+      manifestLink.href = 'data:application/manifest+json;charset=utf-8,' + encodeURIComponent(JSON.stringify(manifestObj));
+    }
+  }
+
+  function syncViewportHeight() {
+    if (typeof document === 'undefined' || !document.documentElement) return;
+    var winW = global.innerWidth || document.documentElement.clientWidth || 0;
+    var winH = global.innerHeight || document.documentElement.clientHeight || 0;
+    if (!winH) return;
+
+    var isStandalone = Boolean(
+      (global.navigator && global.navigator.standalone === true) ||
+      (global.matchMedia && (
+        global.matchMedia('(display-mode: standalone)').matches ||
+        global.matchMedia('(display-mode: fullscreen)').matches
+      ))
+    );
+
+    var targetH = winH;
+    var sw = global.screen ? global.screen.width : 0;
+    var sh = global.screen ? global.screen.height : 0;
+    if (isStandalone && sw && sh) {
+      var isLandscape = winW >= winH;
+      var expectedScreenH = isLandscape ? Math.min(sw, sh) : Math.max(sw, sh);
+      var expectedScreenW = isLandscape ? Math.max(sw, sh) : Math.min(sw, sh);
+      var diff = expectedScreenH - winH;
+      if (diff > 0 && diff <= 44 && Math.abs(winW - expectedScreenW) <= 16) {
+        targetH = expectedScreenH;
+      }
+    }
+
+    document.documentElement.style.setProperty('--app-height', targetH + 'px');
   }
 
   function buildCastleBackdropSvg() {
@@ -1319,7 +1359,24 @@
 
   function initApp() {
     ensureAppShellStyles();
+    syncViewportHeight();
     setupPwaAssets();
+
+    if (typeof global.addEventListener === 'function') {
+      global.addEventListener('resize', syncViewportHeight, { passive: true });
+      global.addEventListener('orientationchange', function () {
+        syncViewportHeight();
+        setTimeout(syncViewportHeight, 120);
+        setTimeout(syncViewportHeight, 350);
+      }, { passive: true });
+      global.addEventListener('pageshow', syncViewportHeight, { passive: true });
+    }
+    if (typeof document !== 'undefined' && typeof document.addEventListener === 'function') {
+      document.addEventListener('visibilitychange', function () {
+        if (!document.hidden) syncViewportHeight();
+      });
+    }
+    setTimeout(syncViewportHeight, 120);
 
     var rootEl = document.getElementById('app');
     if (!rootEl) {

@@ -67,11 +67,12 @@ function main() {
     name: 'Công Chúa 2.5D - Thời Trang & Trang Điểm',
     short_name: 'Công Chúa 2.5D',
     description: 'Game Thời Trang, Trang Điểm, Làm Móng & Biểu Diễn Công Chúa 2.5D',
-    start_url: '.',
+    start_url: './',
+    scope: './',
     display: 'standalone',
     orientation: 'any',
-    background_color: '#ffe6f3',
-    theme_color: '#ff69b4',
+    background_color: '#ebd6ff',
+    theme_color: '#ffe8f6',
     icons: [
       {
         src: fallbackSvgIcon,
@@ -82,13 +83,19 @@ function main() {
     ]
   };
 
-  const manifestDataUri =
-    'data:application/manifest+json;charset=utf-8,' +
-    encodeURIComponent(JSON.stringify(initialManifest));
+  const manifestOutPath = path.join(__dirname, 'manifest.json');
+  fs.writeFileSync(manifestOutPath, JSON.stringify(initialManifest, null, 2) + '\n', 'utf8');
 
   const inlineScripts = sources
     .map((src) => `  <!-- Module: ${src.relPath} -->\n  <script>\n${escapeInlineScript(src.code)}\n  </script>`)
     .join('\n\n');
+
+  const earlyViewportScript =
+    '(function(){try{var w=innerWidth||document.documentElement.clientWidth||0,h=innerHeight||document.documentElement.clientHeight||0;' +
+    'var s=navigator.standalone===true||(typeof matchMedia==="function"&&(matchMedia("(display-mode: standalone)").matches||matchMedia("(display-mode: fullscreen)").matches));' +
+    'if(s&&screen&&screen.width&&screen.height){var l=w>=h,eh=l?Math.min(screen.width,screen.height):Math.max(screen.width,screen.height),' +
+    'ew=l?Math.max(screen.width,screen.height):Math.min(screen.width,screen.height);if(eh>h&&eh-h<=44&&Math.abs(w-ew)<=16)h=eh;}' +
+    'if(h)document.documentElement.style.setProperty("--app-height",h+"px");}catch(e){}})();';
 
   const html = `<!DOCTYPE html>
 <html lang="vi">
@@ -99,11 +106,12 @@ function main() {
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="apple-mobile-web-app-title" content="Công Chúa 2.5D">
   <meta name="mobile-web-app-capable" content="yes">
-  <meta name="theme-color" content="#ff69b4">
+  <meta name="theme-color" content="#ffe8f6">
   <title>Công Chúa 2.5D - Thời Trang &amp; Trang Điểm</title>
   <link id="apple-touch-icon" rel="apple-touch-icon" sizes="192x192" href="${fallbackSvgIcon}">
   <link id="app-favicon" rel="icon" type="image/svg+xml" href="${fallbackSvgIcon}">
-  <link id="app-manifest" rel="manifest" href="${manifestDataUri}">
+  <link id="app-manifest" rel="manifest" href="manifest.json">
+  <script>${earlyViewportScript}</script>
   <style id="doll-rig-styles">${escapeInlineStyle(dollRigCss)}</style>
   <style id="nails-stage-styles">${escapeInlineStyle(nailsStageCss)}</style>
   <style id="app-shell-styles">${escapeInlineStyle(appShellCss)}</style>

@@ -428,7 +428,7 @@
   var NAILS_STAGE_CSS = [
     '/* === Nail Salon Modal === */',
     '#nail-salon-modal {',
-    '  position: fixed; inset: 0; z-index: 9000;',
+    '  position: fixed; inset: 0; width: 100vw; height: var(--app-height, 100vh); min-height: var(--app-height, 100vh); z-index: 9000;',
     '  display: none; align-items: center; justify-content: center;',
     '  padding: 14px; box-sizing: border-box;',
     '  background: radial-gradient(circle at 50% 25%, rgba(255, 214, 240, 0.88), rgba(145, 58, 145, 0.78));',
@@ -547,7 +547,7 @@
     '',
     '/* === 2.5D Catwalk & Idol Dance Stage Show === */',
     '#stage-show-overlay {',
-    '  position: fixed; inset: 0; z-index: 9500; display: none;',
+    '  position: fixed; inset: 0; width: 100vw; height: var(--app-height, 100vh); min-height: var(--app-height, 100vh); z-index: 9500; display: none;',
     '  overflow: hidden; background: radial-gradient(ellipse at 50% 28%, #5e1772 0%, #26093a 58%, #10031c 100%);',
     '  font-family: "Quicksand", "Nunito", system-ui, -apple-system, sans-serif;',
     '  user-select: none; -webkit-user-select: none;',
